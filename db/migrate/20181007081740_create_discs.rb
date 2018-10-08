@@ -3,7 +3,6 @@ class CreateDiscs < ActiveRecord::Migration[5.2]
     create_table :discs do |t|
       t.integer :product_id
       t.string :disc_name
-      t.integer :product_id
 
       t.timestamps
     end
