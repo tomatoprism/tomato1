@@ -2,14 +2,14 @@ Rails.application.routes.draw do
 
 
 
-  root 'tops#top'
+  root to:'tops#top'
 
 
   devise_for :admins
   devise_for :users
 
   namespace :admin do
-      resources :users, only:[:index]
+      resources :users, only:[:index, :show]
   end
   scope module: :public do
   	  resources :users, only:[:show, :edit, :update]
