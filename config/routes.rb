@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
 
-  root :top => 'tops#top'
+  root 'tops#top'
 
 
   devise_for :admins
@@ -23,7 +23,8 @@ Rails.application.routes.draw do
   	  resources :products do
   	  	resource :favorites, only:[:index, :create, :destroy]
   	    resource :reviews, only:[:create, :destroy]
-  	    resource :discs, only:[:edit, :create, :update, :destroy]
+  	    resources :discs, only:[:edit, :create, :update, :destroy] do
+          resources :tracks, only:[:create, :update, :destroy]
     end
   end
 
@@ -38,10 +39,10 @@ Rails.application.routes.draw do
 
 
   namespace :admin do
-  	  resources :messeges, only:[:index, :show]
+  	  resources :messages, only:[:index, :show]
   end
   scope module: :public do
-      resources :messeges, only:[:new, :create]
+      resources :messages, only:[:new, :create]
   end
 
 
@@ -51,8 +52,7 @@ Rails.application.routes.draw do
   resources :artists, only:[:new, :create, :update, :destroy, :show]
 
 
-  resources :tracks, only:[:create, :update, :destroy]
-
+  
 
   resources :posts, only:[:create, :destroy]
 
