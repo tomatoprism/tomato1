@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   	    resource :reviews, only:[:create, :destroy]
   	    resources :discs, only:[:edit, :create, :update, :destroy] do
           resources :tracks, only:[:create, :update, :destroy]
+        end
     end
   end
 
