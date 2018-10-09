@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   delete '/delete_item' => 'carts#delete_item'
 
 
-  resources :category only:[:new, :create, :update, :destroy, :show]
+  resources :category, only:[:new, :create, :update, :destroy, :show]
 
 
   namespace :admin do
