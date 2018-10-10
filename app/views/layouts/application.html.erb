@@ -8,9 +8,22 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <header>y</header>
   <body>
+    <header class="navbar navbar-inverse">
+      <div class="container">
+        <nav class="nav navbar-nav navbar-left">
+          <span>トマトプリズム</span>
+        </nav>
+        <nav class="nav-list">
+          <ul class="nav navbar-nav navbar-right">
+            <li>ログイン</li>
+            <li>サインアップ</li>
+            <li>検索</li>
+          </ul>
+        </nav>
+      </div>
+    </header>
     <%= yield %>
+    <footer></footer>
   </body>
-  <footer>y</footer>
 </html>
