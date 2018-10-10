@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
 
-  root to:'tops#top'
+  root to:'top#top'
 
 
   devise_for :admins
