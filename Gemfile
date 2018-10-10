@@ -71,3 +71,5 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 # ページ
 gem 'kaminari'
+# 動的にフォームを追加削除
+gem 'cocoon'
