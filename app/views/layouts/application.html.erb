@@ -9,21 +9,38 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <header class="navbar navbar-inverse">
+    <header class="navbar navbar-top">
       <div class="container">
         <nav class="nav navbar-nav navbar-left">
-          <span>トマトプリズム</span>
+          <h1>トマトプリズム</h1>
         </nav>
         <nav class="nav-list">
           <ul class="nav navbar-nav navbar-right">
-            <li>ログイン</li>
-            <li>サインアップ</li>
-            <li>検索</li>
+            <li>
+              <p class="glyphicon glyphicon-log-in sin_in">ログイン</p>
+            </li>
+            <li>
+              <p class="glyphicon glyphicon-edit sin_up">サインアップ</p>
+            </li>
+            <li>
+              <p class="glyphicon glyphicon-search seach">検索</p>
+            </li>
           </ul>
         </nav>
       </div>
     </header>
-    <%= yield %>
-    <footer></footer>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-3 col-xs-offset-9">
+            <p>©️2018 All right Reserved</p>
+            <p>お問い合わせ</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
