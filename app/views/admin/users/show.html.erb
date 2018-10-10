@@ -1,0 +1,35 @@
+<h1>管理画面</h1>
+<p>受注状況</p>
+<p>売り上げ状況</p>
+<p>商品一覧へのリンクボタン</p>
+<p>User一覧へのリンクボタン</p>
+
+<div class="product-new">
+	<% form_for(@product_new) %>
+		<h2>新規追加</h2>
+		<p>画像</p>
+		<%= f.attachment_field :image_id, placeholder: "ジャケット画像" %>
+		<p>シングルアルバム名</p>
+		<%= f.text_field :title %>
+		<p>アーティスト</p><!-- 一覧から選択 -->
+		<%= f.collection_select :artist, Artist.all, :id, :artist_name, include_blank: ture %>
+		<p>カテゴリー</p><!-- 一覧から選択 -->
+		<%= collection_check_boxes(:category, :category_ids, Category.all, :id, :category_name) do |d| %>
+			<%= b.label {b.check_box + b.text} %>
+		<% end %>
+		<p>Disk枚数</p>
+		<%= f.text_field %>
+		<p>曲名</p><!-- フォーム追加で複数登録 -->
+		<%= f.text_field %>
+		<p>レーベル</p>
+		<%= f.text_field :label %>
+		<p>値段</p>
+		<%= f.text_field :price %>
+		<p>発売日</p>
+
+		<p>商品説明</p>
+		<%= f.text_area :introduction %>
+		<p>在庫数</p>
+		<%= f.text_field :stock %>
+	<% end %>
+</div>
