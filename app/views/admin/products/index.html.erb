@@ -1,0 +1,11 @@
+<h1>商品一覧</h1>
+<%= attachment_image_tag prodect, :image_id %>
+      <%= link_to "お気に入り", product_favorites_path, method: :post %>
+       <%= @product.title %>
+       <%= @product.artist_id %>
+
+       <%= link_to "詳細",admin_product_path(admin_product.id) %>
+       <%= link_to "削除", admin_product_path(admin_product.id), method: :delete %>
+
+
+       <%= link_to "戻る", :back %>

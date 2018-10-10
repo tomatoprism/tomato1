@@ -1,5 +1,6 @@
-class ProductsController < ApplicationController
+class Public::ProductsController < Public::ApplicationController
 	def index
+		@product = Product.find(params[:id])
 
 	end
 
@@ -26,4 +27,8 @@ class ProductsController < ApplicationController
 	def create
 		
 	end
+
+	def product_params
+        params.require(:product).permit(:title, :image_id, :pricd, :label, :stock, :release, :introduction, :artist_id, :category_id)
+    end
 end

@@ -1,4 +1,26 @@
+<table class="table">
+		  <tr>
+		    <th> 商品情報 </th>
+		    <th> </th>
+		    <th> 個数 </th>
+		    <th> 小計 </th>
+		    <th> </th>
 
+		  </tr>
+		  <tr>
+		  	<td> <%= attachment_image_tag prodect, :image_id %> </td>
+		  	<td> <%= product.title %>
+		  	     <%= product.artist_id %> </td>
+            <td> <%= quantity %> </td>
+            <td> <%= product.price %> </td>
+            <td> <%= link_to "削除",  %> </td>
 
-<h1>Carts#show</h1>
-<p>鈴木　カート</p>
+          <tr>
+          	<td> </td>
+          	<td> 合計 </td>
+          	<td> <%= quantity %> </td>
+          	<td> <%= product.price %> </td>
+          	<td>  </td>
+</table>
+
+<%= link_to "注文へ進む", payments_path %>

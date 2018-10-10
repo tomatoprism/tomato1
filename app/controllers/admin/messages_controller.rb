@@ -1,4 +1,4 @@
-class MessagesController < ApplicationController
+class Admin::MessagesController < Admin::ApplicationController
 	def index
 
 	end
