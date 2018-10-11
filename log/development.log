@@ -1347,3 +1347,74 @@ Completed 404 Not Found in 25ms (ActiveRecord: 3.3ms)
 ActiveRecord::RecordNotFound (Couldn't find Product without an ID):
   
 app/controllers/public/products_controller.rb:3:in `index'
+Started GET "/messages/new" for 10.0.2.2 at 2018-10-11 03:39:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::MessagesController#new as HTML
+  Rendering public/messages/new.html.erb within layouts/application
+  Rendered public/messages/new.html.erb within layouts/application (23.9ms)
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>お問い合わせフォーム</h1>
+    2: 
+    3: <%= form_for(@message) do |f| %>
+    4: 
+    5: <h4>名前</h4>
+    6: <%= f.text_field :name %>
+  
+app/views/public/messages/new.html.erb:3:in `_app_views_public_messages_new_html_erb__157855177391693678_47310174497180'
+Started GET "/messages/new" for 10.0.2.2 at 2018-10-11 03:40:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::MessagesController#new as HTML
+  Rendering public/messages/new.html.erb within layouts/application
+  Rendered public/messages/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/vagrant/tomato/app/views/public/messages/new.html.erb:19: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/public/messages/new.html.erb:19: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/messages/new" for 10.0.2.2 at 2018-10-11 03:40:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::MessagesController#new as HTML
+  Rendering public/messages/new.html.erb within layouts/application
+  Rendered public/messages/new.html.erb within layouts/application (283.3ms)
+Completed 500 Internal Server Error in 379ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x0000560e844a4320>:0x0000560e846664d8>):
+    2: 
+    3: 
+    4: <h4>名前</h4>
+    5: <%= f.text_field :name %>
+    6: 
+    7: <h4>メールアドレス</h4>
+    8: <%= f.email_field :mail %>
+  
+app/views/public/messages/new.html.erb:5:in `_app_views_public_messages_new_html_erb__157855177391693678_47310175419040'
+Started GET "/users/sign_in" for 10.0.2.2 at 2018-10-11 03:58:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (0.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (76.9ms)
+Completed 200 OK in 1506ms (Views: 1463.7ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2018-10-11 03:59:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (0.7ms)
+  Rendered users/registrations/new.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 379ms (Views: 377.5ms | ActiveRecord: 0.0ms)
+
+
