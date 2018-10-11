@@ -1,14 +1,17 @@
-<%= attachment_image_tag prodect, :image_id %>
-<%= product.category_id %>
-<%= product.artist_id %>
-<%= product.title %>
-<%= product.label %>
-<%= product.release %>
-<%= product.price %>
-<%= product.stock %>
-<%= link_to "お気に入り", product_favorites_path, method: :post %>
-<%=  %>
-個数選択
+<% form_for %>
+
+<p> attachment_image_tag prodect, :image_id </p>
+<p> product.category_id </p>
+<p> product.artist_id </p>
+<p> product.title </p>
+<p> product.label </p>
+<p> product.release </p>
+<p> product.price </p>
+<p> product.stock </p>
+<p> link_to "お気に入り", product_favorites_path, method: :post %>
+<p>個数</p>
+<%= f.number_field_tag 'quantity', nil, in: 1...100
+# => <input id="quantity" name="quantity" min="1" max="9" type="number" /> %>
 <%= link_to "カートに入れる", cart_path(cart.id) %>
 
 <table class="table">
