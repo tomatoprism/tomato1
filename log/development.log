@@ -3166,3 +3166,39 @@ Processing by TopController#top as HTML
 Completed 200 OK in 443ms (Views: 425.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 10.0.2.2 at 2018-10-11 08:04:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by TopController#top as HTML
+  Rendering top/top.html.erb within layouts/application
+  Rendered top/top.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 1645ms (Views: 1621.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/messages/new" for 10.0.2.2 at 2018-10-11 08:04:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::MessagesController#new as HTML
+  Rendering public/messages/new.html.erb within layouts/application
+  Rendered public/messages/new.html.erb within layouts/application (16.3ms)
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>お問い合わせフォーム</h1>
+    2: 
+    3: <%= form_for(@message) do |f| %>
+    4: 
+    5: <h4>名前</h4>
+    6: <%= f.text_field :name %>
+  
+app/views/public/messages/new.html.erb:3:in `_app_views_public_messages_new_html_erb__3552374236870849768_69834792859460'
+Started GET "/" for 10.0.2.2 at 2018-10-11 08:04:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TopController#top as HTML
+  Rendering top/top.html.erb within layouts/application
+  Rendered top/top.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 414ms (Views: 396.0ms | ActiveRecord: 0.0ms)
+
+
