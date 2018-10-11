@@ -8,12 +8,10 @@
 
 		  </tr>
 		  <tr>
-		  	<td> <%= attachment_image_tag prodect, :image_id %> </td>
-		  	<td> <%= product.title %>
-		  	     <%= product.artist_id %> </td>
-            <td> <%= quantity %> </td>
-            <td> <%= product.price %> </td>
-            <td> <%= link_to "削除",  %> </td>
+		  	<td> <%= @product.title %>
+		  	     <%= @product.artist_id %> </td>
+            <td> <%= @product.quantity %> </td>
+            <td> <%= @product.price %> </td>
 
           <tr>
           	<td> </td>

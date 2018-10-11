@@ -4842,3 +4842,942 @@ Filter chain halted as :require_no_authentication rendered or redirected
 Completed 302 Found in 5ms (ActiveRecord: 1.4ms)
 
 
+Started GET "/users/7" for 10.0.2.2 at 2018-10-11 09:58:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:3
+  Rendering public/users/show.html.erb within layouts/application
+  Rendered public/users/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 1429ms (Views: 1374.3ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/messages/new" for 10.0.2.2 at 2018-10-11 09:59:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::MessagesController#new as HTML
+  Rendering public/messages/new.html.erb within layouts/application
+  Rendered public/messages/new.html.erb within layouts/application (18.8ms)
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>お問い合わせフォーム</h1>
+    2: 
+    3: <%= form_for(@message) do |f| %>
+    4: 
+    5: <h4>名前</h4>
+    6: <%= f.text_field :name %>
+  
+app/views/public/messages/new.html.erb:3:in `_app_views_public_messages_new_html_erb___2069258366386145935_70006625395900'
+Started GET "/users/7" for 10.0.2.2 at 2018-10-11 09:59:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:3
+  Rendering public/users/show.html.erb within layouts/application
+  Rendered public/users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 368ms (Views: 340.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 10.0.2.2 at 2018-10-11 09:59:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TopController#top as HTML
+  Rendering top/top.html.erb within layouts/application
+  Rendered top/top.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+Completed 200 OK in 341ms (Views: 324.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/7" for 10.0.2.2 at 2018-10-11 09:59:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:3
+  Rendering public/users/show.html.erb within layouts/application
+  Rendered public/users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 338ms (Views: 305.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/users/7" for 10.0.2.2 at 2018-10-11 10:36:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:3
+  Rendering public/users/show.html.erb within layouts/application
+  Rendered public/users/show.html.erb within layouts/application (309.3ms)
+Completed 500 Internal Server Error in 379ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x0000564218665b88>:0x00007f5771c94bc0>
+Did you mean?  @user):
+     6: 
+     7:         <tr>
+     8:         	<td> フリガナ </td>
+     9:         	<td> <%= user.name_kana %> </td>
+    10:       	 </tr>
+    11: 
+    12:         <tr>
+  
+app/views/public/users/show.html.erb:9:in `_app_views_public_users_show_html_erb___3395090793894319040_70006773951120'
+Started GET "/users/7" for 10.0.2.2 at 2018-10-11 10:40:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:3
+  Rendering public/users/show.html.erb within layouts/application
+  Rendered public/users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 1426ms (Views: 1367.2ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/users/7" for 10.0.2.2 at 2018-10-11 10:41:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:3
+  Rendering public/users/show.html.erb within layouts/application
+  Rendered public/users/show.html.erb within layouts/application (302.2ms)
+Completed 500 Internal Server Error in 380ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x000055b3aa385230>:0x00007fc028038618>
+Did you mean?  @user):
+    35:         </tr>
+    36: 
+    37:     </table>
+    38:     <%= link_to edit_user_path(user), class: "edit_user_#{user.id}" %>
+    39: 
+    40: <h2>購入履歴</h2>
+    41: 
+  
+app/views/public/users/show.html.erb:38:in `_app_views_public_users_show_html_erb___2596678642678979114_70231640885180'
+Started GET "/users/7" for 10.0.2.2 at 2018-10-11 10:41:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:3
+  Rendering public/users/show.html.erb within layouts/application
+  Rendered public/users/show.html.erb within layouts/application (313.7ms)
+Completed 500 Internal Server Error in 401ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x000055b3aa385230>:0x00007fc0262ae868>
+Did you mean?  @user):
+    35:         </tr>
+    36: 
+    37:     </table>
+    38:     <%= link_to edit_user_path(@user), class: "edit_user_#{user.id}" %>
+    39: 
+    40: <h2>購入履歴</h2>
+    41: 
+  
+app/views/public/users/show.html.erb:38:in `_app_views_public_users_show_html_erb___2596678642678979114_70231625398660'
+Started GET "/users/7" for 10.0.2.2 at 2018-10-11 10:42:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:3
+  Rendering public/users/show.html.erb within layouts/application
+  Rendered public/users/show.html.erb within layouts/application (297.4ms)
+Completed 500 Internal Server Error in 371ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x000055b3aa385230>:0x00007fc028490210>
+Did you mean?  @user):
+    35:         </tr>
+    36: 
+    37:     </table>
+    38:     <%= link_to edit_user_path(user.id), class: "edit_user_#{user.id}" %>
+    39: 
+    40: <h2>購入履歴</h2>
+    41: 
+  
+app/views/public/users/show.html.erb:38:in `_app_views_public_users_show_html_erb___2596678642678979114_70231643162040'
+Started GET "/users/7" for 10.0.2.2 at 2018-10-11 10:46:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:3
+  Rendering public/users/show.html.erb within layouts/application
+  Rendered public/users/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 132ms (ActiveRecord: 4.5ms)
+
+
+  
+SyntaxError (/vagrant/tomato/app/views/public/users/show.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+...link_to "編集" edit_user_path(user.id), class: "edit_user_...
+...                 ^~~~~~~~~~~~~~
+/vagrant/tomato/app/views/public/users/show.html.erb:38: syntax error, unexpected ',', expecting ')'
+...編集" edit_user_path(user.id), class: "edit_user_#{user.id}...
+...                               ^):
+  
+app/views/public/users/show.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/public/users/show.html.erb:38: syntax error, unexpected ',', expecting ')'
+Started GET "/users/7" for 10.0.2.2 at 2018-10-11 10:47:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:3
+  Rendering public/users/show.html.erb within layouts/application
+  Rendered public/users/show.html.erb within layouts/application (286.1ms)
+Completed 500 Internal Server Error in 360ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x00005595111c6050>:0x0000559511044010>
+Did you mean?  @user):
+    35:         </tr>
+    36: 
+    37:     </table>
+    38:     <%= link_to "編集", edit_user_path(user.id), class: "edit_user_#{user.id}" %>
+    39: 
+    40: <h2>購入履歴</h2>
+    41: 
+  
+app/views/public/users/show.html.erb:38:in `_app_views_public_users_show_html_erb___3014654063199718713_47049361991300'
+Started GET "/users/7" for 10.0.2.2 at 2018-10-11 10:48:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:3
+  Rendering public/users/show.html.erb within layouts/application
+  Rendered public/users/show.html.erb within layouts/application (261.2ms)
+Completed 500 Internal Server Error in 357ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x00005595111c6050>:0x00007fe5a42b1e98>
+Did you mean?  @user):
+    35:         </tr>
+    36: 
+    37:     </table>
+    38:     <%= link_to "編集", "edit_user_#{user.id}", class: "edit_user_#{user.id}" %>
+    39: 
+    40: <h2>購入履歴</h2>
+    41: 
+  
+app/views/public/users/show.html.erb:38:in `_app_views_public_users_show_html_erb___3014654063199718713_70312139265680'
+Started GET "/users/7" for 10.0.2.2 at 2018-10-11 10:49:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:3
+  Rendering public/users/show.html.erb within layouts/application
+  Rendered public/users/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 1.7ms)
+
+
+  
+SyntaxError (/vagrant/tomato/app/views/public/users/show.html.erb:38: syntax error, unexpected tSTRING_BEG, expecting ')'
+...集", edit_user_path(@user.id)"edit_user_#{user.id}", class:...
+...                              ^
+/vagrant/tomato/app/views/public/users/show.html.erb:38: syntax error, unexpected ',', expecting ')'
+...user.id)"edit_user_#{user.id}", class: "edit_user_#{user.id}...
+...                              ^):
+  
+app/views/public/users/show.html.erb:38: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/public/users/show.html.erb:38: syntax error, unexpected ',', expecting ')'
+Started GET "/users/7" for 10.0.2.2 at 2018-10-11 10:49:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:3
+  Rendering public/users/show.html.erb within layouts/application
+  Rendered public/users/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 1.5ms)
+
+
+  
+SyntaxError (/vagrant/tomato/app/views/public/users/show.html.erb:38: syntax error, unexpected tSTRING_BEG, expecting ')'
+...編集", edit_user_path(user.id)"edit_user_#{user.id}", class:...
+...                                ^
+/vagrant/tomato/app/views/public/users/show.html.erb:38: syntax error, unexpected ',', expecting ')'
+...user.id)"edit_user_#{user.id}", class: "edit_user_#{user.id}...
+...                              ^):
+  
+app/views/public/users/show.html.erb:38: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/public/users/show.html.erb:38: syntax error, unexpected ',', expecting ')'
+Started GET "/users/7" for 10.0.2.2 at 2018-10-11 10:50:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:3
+  Rendering public/users/show.html.erb within layouts/application
+  Rendered public/users/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 1.8ms)
+
+
+  
+SyntaxError (/vagrant/tomato/app/views/public/users/show.html.erb:38: syntax error, unexpected tSTRING_BEG, expecting ')'
+...編集", edit_user_path(@user)"edit_user_#{user.id}", class:...
+...                              ^
+/vagrant/tomato/app/views/public/users/show.html.erb:38: syntax error, unexpected ',', expecting ')'
+...h(@user)"edit_user_#{user.id}", class: "edit_user_#{user.id}...
+...                              ^):
+  
+app/views/public/users/show.html.erb:38: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/public/users/show.html.erb:38: syntax error, unexpected ',', expecting ')'
+Started GET "/users/7" for 10.0.2.2 at 2018-10-11 10:51:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:3
+  Rendering public/users/show.html.erb within layouts/application
+  Rendered public/users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 1419ms (Views: 1394.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users/7/edit" for 10.0.2.2 at 2018-10-11 10:51:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:8
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:9
+  Rendering public/users/edit.html.erb within layouts/application
+  Rendered public/users/edit.html.erb within layouts/application (47.2ms)
+Completed 500 Internal Server Error in 139ms (ActiveRecord: 2.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `post_address' for #<User:0x000055950fc63d20>
+Did you mean?  post_code):
+    17: <%= f.text_area :address %>
+    18: 
+    19: <h4>お届け先住所</h4>
+    20: <%= f.text_area :post_address %>
+    21: 
+    22: <h4>電話番号</h4>
+    23: <%= f.telephone_field :phone %>
+  
+app/views/public/users/edit.html.erb:20:in `block in _app_views_public_users_edit_html_erb___4349559992636212566_70312238675720'
+app/views/public/users/edit.html.erb:5:in `_app_views_public_users_edit_html_erb___4349559992636212566_70312238675720'
+Started GET "/users/7/edit" for 10.0.2.2 at 2018-10-11 11:15:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::UsersController#edit as HTML
+  Parameters: {"id"=>"7"}
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `current_users' for #<Public::UsersController:0x000055a3f79a5fb0>
+Did you mean?  current_user):
+  
+app/controllers/public/users_controller.rb:8:in `edit'
+Started GET "/users/7/edit" for 10.0.2.2 at 2018-10-11 11:16:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::UsersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:8
+  Rendering public/users/edit.html.erb within layouts/application
+  Rendered public/users/edit.html.erb within layouts/application (43.7ms)
+Completed 500 Internal Server Error in 174ms (ActiveRecord: 4.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `post_address' for #<User:0x00007fb650103430>
+Did you mean?  post_code):
+    17: <%= f.text_area :address %>
+    18: 
+    19: <h4>お届け先住所</h4>
+    20: <%= f.text_area :post_address %>
+    21: 
+    22: <h4>電話番号</h4>
+    23: <%= f.telephone_field :phone %>
+  
+app/views/public/users/edit.html.erb:20:in `block in _app_views_public_users_edit_html_erb__4141961286807011761_70210504236820'
+app/views/public/users/edit.html.erb:5:in `_app_views_public_users_edit_html_erb__4141961286807011761_70210504236820'
+Started GET "/users/7/edit" for 10.0.2.2 at 2018-10-11 11:29:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:8
+  Rendering public/users/edit.html.erb within layouts/application
+  Rendered public/users/edit.html.erb within layouts/application (21.3ms)
+Completed 500 Internal Server Error in 122ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `name_kana' for :user:Symbol):
+     5: <%= form_for(@user) do |f| %>
+     6: 
+     7: <h4>フリガナ</h4>
+     8: <%= f.text_field :user.name_kana %>
+     9: 
+    10: <h4>名前</h4>
+    11: <%= f.text_field :user.name %>
+  
+app/views/public/users/edit.html.erb:8:in `block in _app_views_public_users_edit_html_erb__4141961286807011761_47401254781880'
+app/views/public/users/edit.html.erb:5:in `_app_views_public_users_edit_html_erb__4141961286807011761_47401254781880'
+Started GET "/users/7/edit" for 10.0.2.2 at 2018-10-11 11:29:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:8
+  Rendering public/users/edit.html.erb within layouts/application
+  Rendered public/users/edit.html.erb within layouts/application (20.3ms)
+Completed 500 Internal Server Error in 144ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `name_kana' for :@user:Symbol):
+     5: <%= form_for(@user) do |f| %>
+     6: 
+     7: <h4>フリガナ</h4>
+     8: <%= f.text_field :@user.name_kana %>
+     9: 
+    10: <h4>名前</h4>
+    11: <%= f.text_field :user.name %>
+  
+app/views/public/users/edit.html.erb:8:in `block in _app_views_public_users_edit_html_erb__4141961286807011761_70210502838940'
+app/views/public/users/edit.html.erb:5:in `_app_views_public_users_edit_html_erb__4141961286807011761_70210502838940'
+Started GET "/users/7/edit" for 10.0.2.2 at 2018-10-11 11:36:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::UsersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:8
+  Rendering public/users/edit.html.erb within layouts/application
+  Rendered public/users/edit.html.erb within layouts/application (42.2ms)
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 5.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `post_address' for #<User:0x0000559a50076210>
+Did you mean?  post_code):
+    17: <%= f.text_area :address %>
+    18: 
+    19: <h4>お届け先住所</h4>
+    20: <%= f.text_area :post_address %>
+    21: 
+    22: <h4>電話番号</h4>
+    23: <%= f.telephone_field :phone %>
+  
+app/views/public/users/edit.html.erb:20:in `block in _app_views_public_users_edit_html_erb__629453515365607114_47060627961660'
+app/views/public/users/edit.html.erb:5:in `_app_views_public_users_edit_html_erb__629453515365607114_47060627961660'
+Started GET "/users/7/edit" for 10.0.2.2 at 2018-10-11 11:39:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::UsersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:8
+  Rendering public/users/edit.html.erb within layouts/application
+  Rendered public/users/edit.html.erb within layouts/application (46.0ms)
+Completed 500 Internal Server Error in 172ms (ActiveRecord: 3.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `post_address' for #<User:0x00005583b4ad7748>
+Did you mean?  post_code):
+    17: <%= f.text_area :address %>
+    18: 
+    19: <h4>お届け先住所</h4>
+    20: <%= f.text_area :post_address %>
+    21: 
+    22: <h4>電話番号</h4>
+    23: <%= f.telephone_field :phone %>
+  
+app/views/public/users/edit.html.erb:20:in `block in _app_views_public_users_edit_html_erb__2390502317307215951_47012080165620'
+app/views/public/users/edit.html.erb:5:in `_app_views_public_users_edit_html_erb__2390502317307215951_47012080165620'
+Started GET "/users/7" for 10.0.2.2 at 2018-10-11 11:39:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:3
+  Rendering public/users/show.html.erb within layouts/application
+  Rendered public/users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 1729ms (Views: 1695.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/7/edit" for 10.0.2.2 at 2018-10-11 11:39:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:8
+  Rendering public/users/edit.html.erb within layouts/application
+  Rendered public/users/edit.html.erb within layouts/application (25.6ms)
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `post_address' for #<User:0x00007fc20802cac0>
+Did you mean?  post_code):
+    17: <%= f.text_area :address %>
+    18: 
+    19: <h4>お届け先住所</h4>
+    20: <%= f.text_area :post_address %>
+    21: 
+    22: <h4>電話番号</h4>
+    23: <%= f.telephone_field :phone %>
+  
+app/views/public/users/edit.html.erb:20:in `block in _app_views_public_users_edit_html_erb__2390502317307215951_70235667414340'
+app/views/public/users/edit.html.erb:5:in `_app_views_public_users_edit_html_erb__2390502317307215951_70235667414340'
+Started GET "/users/7/edit" for 10.0.2.2 at 2018-10-11 11:40:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:8
+  Rendering public/users/edit.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/public/users/edit.html.erb:29
+  Rendered public/users/edit.html.erb within layouts/application (319.6ms)
+Completed 500 Internal Server Error in 420ms (ActiveRecord: 2.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `books_path' for #<#<Class:0x00005583b4ac75c8>:0x00007fc21d730e10>):
+    28: 
+    29: <%= f.hidden_field :user_id, value: current_user.id %>
+    30: <%= f.submit "更新", class:"btn btn-primary" %><br>
+    31: <%= link_to "戻る", books_path, class: "back" %>
+    32: 
+    33: <% end %>
+    34: 
+  
+app/views/public/users/edit.html.erb:31:in `block in _app_views_public_users_edit_html_erb__2390502317307215951_70235847232420'
+app/views/public/users/edit.html.erb:5:in `_app_views_public_users_edit_html_erb__2390502317307215951_70235847232420'
+Started GET "/users/7/edit" for 10.0.2.2 at 2018-10-11 11:41:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:8
+  Rendering public/users/edit.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/public/users/edit.html.erb:29
+  Rendered public/users/edit.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 373ms (Views: 352.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/7/edit" for 10.0.2.2 at 2018-10-11 11:41:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:8
+  Rendering public/users/edit.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/public/users/edit.html.erb:29
+  Rendered public/users/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 456ms (Views: 429.6ms | ActiveRecord: 2.5ms)
+
+
+Started PATCH "/users/7" for 10.0.2.2 at 2018-10-11 11:42:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D6g5TQd2pYrsKTjL7EGUW55/F+ITtAZbnHyxSzFuJIPxlA8pl6bCmrpB47/56TQ8mKT/EsqUYxug1wx/u/NsvA==", "user"=>{"name_kana"=>"zz", "name"=>"zz", "post_code"=>"zz", "address"=>"zz", "phone"=>"zz", "email"=>"z@z", "user_id"=>"7"}, "commit"=>"更新", "id"=>"7"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:12
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 0.8ms)
+
+
+  
+NameError (undefined local variable or method `blog_params' for #<Public::UsersController:0x00007fc2083bd8b0>
+Did you mean?  @_params):
+  
+app/controllers/public/users_controller.rb:13:in `update'
+Started PATCH "/users/7" for 10.0.2.2 at 2018-10-11 11:42:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D6g5TQd2pYrsKTjL7EGUW55/F+ITtAZbnHyxSzFuJIPxlA8pl6bCmrpB47/56TQ8mKT/EsqUYxug1wx/u/NsvA==", "user"=>{"name_kana"=>"zz", "name"=>"zz", "post_code"=>"zz", "address"=>"zz", "phone"=>"zz", "email"=>"z@z", "user_id"=>"7"}, "commit"=>"更新", "id"=>"7"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:12
+Unpermitted parameters: :address, :user_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public/users_controller.rb:13
+  [1m[36mUser Update (3.3ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "name_kana" = ?, "phone" = ?, "post_code" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "zz"], ["name_kana", "zz"], ["phone", "zz"], ["post_code", "zz"], ["updated_at", "2018-10-11 11:42:49.243465"], ["id", 7]]
+  ↳ app/controllers/public/users_controller.rb:13
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/public/users_controller.rb:13
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 62ms (ActiveRecord: 13.8ms)
+
+
+Started GET "/users/7" for 10.0.2.2 at 2018-10-11 11:42:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:3
+  Rendering public/users/show.html.erb within layouts/application
+  Rendered public/users/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 1366ms (Views: 1341.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/7/edit" for 10.0.2.2 at 2018-10-11 11:42:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:8
+  Rendering public/users/edit.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/public/users/edit.html.erb:29
+  Rendered public/users/edit.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 339ms (Views: 314.2ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/users/7" for 10.0.2.2 at 2018-10-11 11:43:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NZYq6L98egzZ2jcd3yHzvLltT1m/Uz0TECvLYeD7p3hvSeXORdVhE4QhD6dEYMbG+GX9nLlj8Ci7heqcpLXutg==", "user"=>{"name_kana"=>"zz", "name"=>"zz", "post_code"=>"zz", "address"=>"z", "phone"=>"zz", "email"=>"z@z", "user_id"=>"7"}, "commit"=>"更新", "id"=>"7"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:12
+Unpermitted parameters: :address, :user_id
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/public/users_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/public/users_controller.rb:13
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 11ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/users/7" for 10.0.2.2 at 2018-10-11 11:43:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:3
+  Rendering public/users/show.html.erb within layouts/application
+  Rendered public/users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 453ms (Views: 409.1ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/users/7" for 10.0.2.2 at 2018-10-11 11:43:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:3
+  Rendering public/users/show.html.erb within layouts/application
+  Rendered public/users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 328ms (Views: 304.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/7/edit" for 10.0.2.2 at 2018-10-11 11:44:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:8
+  Rendering public/users/edit.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/public/users/edit.html.erb:29
+  Rendered public/users/edit.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 333ms (Views: 304.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users/7" for 10.0.2.2 at 2018-10-11 11:44:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:3
+  Rendering public/users/show.html.erb within layouts/application
+  Rendered public/users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 364ms (Views: 332.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/7" for 10.0.2.2 at 2018-10-11 11:45:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:3
+  Rendering public/users/show.html.erb within layouts/application
+  Rendered public/users/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 381ms (Views: 361.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2018-10-11 11:47:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TopController#top as HTML
+  Rendering top/top.html.erb within layouts/application
+  Rendered top/top.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+Completed 200 OK in 294ms (Views: 279.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/care" for 10.0.2.2 at 2018-10-11 11:47:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/care"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/cart/1" for 10.0.2.2 at 2018-10-11 11:48:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/cart/1"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/carts/1" for 10.0.2.2 at 2018-10-11 11:49:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/vagrant/tomato/app/views/carts/show.html.erb:16: syntax error, unexpected ')'
+...r.append=( link_to "削除",  );@output_buffer.safe_append='...
+...                              ^
+/vagrant/tomato/app/views/carts/show.html.erb:28: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/vagrant/tomato/app/views/carts/show.html.erb:30: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/carts/show.html.erb:16: syntax error, unexpected ')'
+app/views/carts/show.html.erb:28: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/carts/show.html.erb:30: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/carts/1" for 10.0.2.2 at 2018-10-11 11:57:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/vagrant/tomato/app/views/carts/show.html.erb:16: syntax error, unexpected ')'
+...th(user.id), method: :delete, );@output_buffer.safe_append='...
+...                              ^
+/vagrant/tomato/app/views/carts/show.html.erb:28: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/vagrant/tomato/app/views/carts/show.html.erb:30: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/carts/show.html.erb:16: syntax error, unexpected ')'
+app/views/carts/show.html.erb:28: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/carts/show.html.erb:30: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/carts/1" for 10.0.2.2 at 2018-10-11 11:57:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/vagrant/tomato/app/views/carts/show.html.erb:16: syntax error, unexpected ')'
+...th(user.id), method: :delete, );@output_buffer.safe_append='...
+...                              ^
+/vagrant/tomato/app/views/carts/show.html.erb:28: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/vagrant/tomato/app/views/carts/show.html.erb:30: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/carts/show.html.erb:16: syntax error, unexpected ')'
+app/views/carts/show.html.erb:28: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/carts/show.html.erb:30: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/carts/1" for 10.0.2.2 at 2018-10-11 11:57:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (262.8ms)
+Completed 500 Internal Server Error in 315ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `prodect' for #<#<Class:0x00007fb075e650f0>:0x00007fb0701f5ce8>
+Did you mean?  proc):
+     8: 
+     9: 		  </tr>
+    10: 		  <tr>
+    11: 		  	<td> <%= attachment_image_tag prodect, :image_id %> </td>
+    12: 		  	<td> <%= product.title %>
+    13: 		  	     <%= product.artist_id %> </td>
+    14:             <td> <%= quantity %> </td>
+  
+app/views/carts/show.html.erb:11:in `_app_views_carts_show_html_erb___2837787618620957325_70197886038900'
+Started GET "/carts/1" for 10.0.2.2 at 2018-10-11 11:58:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (284.6ms)
+Completed 500 Internal Server Error in 396ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `prodect' for #<#<Class:0x00007fb075e650f0>:0x00007fb07003de00>
+Did you mean?  proc):
+     8: 
+     9: 		  </tr>
+    10: 		  <tr>
+    11: 		  	<td> <%= attachment_image_tag prodect, :image %> </td>
+    12: 		  	<td> <%= product.title %>
+    13: 		  	     <%= product.artist_id %> </td>
+    14:             <td> <%= quantity %> </td>
+  
+app/views/carts/show.html.erb:11:in `_app_views_carts_show_html_erb___2837787618620957325_70197885137780'
+Started GET "/carts/1" for 10.0.2.2 at 2018-10-11 12:02:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (266.0ms)
+Completed 500 Internal Server Error in 355ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `prodect' for #<#<Class:0x00007f86ec3bfd38>:0x00007f86ec3bd178>
+Did you mean?  proc):
+     8: 
+     9: 		  </tr>
+    10: 		  <tr>
+    11: 		  	<td> <%= attachment_image_tag prodect, :image %> </td>
+    12: 		  	<td> <%= product.title %>
+    13: 		  	     <%= product.artist_id %> </td>
+    14:             <td> <%= quantity %> </td>
+  
+app/views/carts/show.html.erb:11:in `_app_views_carts_show_html_erb___4490640164271819520_47204712179500'
+Started GET "/carts/1" for 10.0.2.2 at 2018-10-11 12:04:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (254.3ms)
+Completed 500 Internal Server Error in 303ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `product' for #<#<Class:0x00007f86ec3bfd38>:0x00007f86ec6d2020>
+Did you mean?  product_url):
+     8: 
+     9: 		  </tr>
+    10: 		  <tr>
+    11: 		  	<td> <%= product.title %>
+    12: 		  	     <%= product.artist_id %> </td>
+    13:             <td> <%= quantity %> </td>
+    14:             <td> <%= product.price %> </td>
+  
+app/views/carts/show.html.erb:11:in `_app_views_carts_show_html_erb___4490640164271819520_70108734461220'
+Started GET "/carts/1" for 10.0.2.2 at 2018-10-11 12:07:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (17.6ms)
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+     8: 
+     9: 		  </tr>
+    10: 		  <tr>
+    11: 		  	<td> <%= @product.title %>
+    12: 		  	     <%= @product.artist_id %> </td>
+    13:             <td> <%= @product.quantity %> </td>
+    14:             <td> <%= @product.price %> </td>
+  
+app/views/carts/show.html.erb:11:in `_app_views_carts_show_html_erb___4490640164271819520_47204712706320'
