@@ -6,39 +6,38 @@
 
         <tr>
         	<td> フリガナ </td>
-        	<td> </td>
+        	<td> <%= @user.name_kana %> </td>
       	 </tr>
 
         <tr>
           <td> 名前 </td>
-          <td></td>
+          <td> <%= @user.name %> </td>
         </tr>
 
         <tr>
           <td> 郵便番号 </td>
-          <td></td>
+          <td> <%= @user.post_code %> </td>
         </tr>
 
         <tr>
           <td> 住所 </td>
-          <td></td>
+          <td> <%= @user.address %> </td>
         </tr>
 
         <tr>
           <td> 電話番号 </td>
-          <td></td>
+          <td> <%= @user.phone %> </td>
          </tr>
 
         <tr>
           <td> メールアドレス </td>
-          <td></td>
+          <td> <%= @user.email %> </td>
         </tr>
 
     </table>
+    <%= link_to "編集", edit_user_path(@user) %>
 
-<h2>購入履歴</h2>
-
-      
+<h3>購入履歴</h3>
 
 
        <%= link_to "退会", root_path %>
