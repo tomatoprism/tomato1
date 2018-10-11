@@ -37,19 +37,13 @@
     </table>
 
     <% if @user == current_user %>
-        <button class="btn btn-success" >
-        <%= link_to "Edit", edit_user_path %>
-      </button>
+        <%= link_to "Edit", edit_user_path(user.id) %>
      <% end %>
 
 <h2>購入履歴</h2>
 
-       <%= attachment_image_tag product %>
-       <%= buy_date %>
-       <%= title %>
-       <%= artist %>
-       <%= quantity %>
-       <%= price %>
+      
+
 
        <%= link_to "退会", root_path %>
        <%= link_to "戻る", :back %>
