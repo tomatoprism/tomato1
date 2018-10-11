@@ -1418,3 +1418,1075 @@ Processing by Users::RegistrationsController#new as HTML
 Completed 200 OK in 379ms (Views: 377.5ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (4.0ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "北海道"], ["created_at", "2018-10-11 06:05:40.976752"], ["updated_at", "2018-10-11 06:05:40.976752"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.8ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "青森県"], ["created_at", "2018-10-11 06:05:40.984662"], ["updated_at", "2018-10-11 06:05:40.984662"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.7ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "岩手県"], ["created_at", "2018-10-11 06:05:40.991590"], ["updated_at", "2018-10-11 06:05:40.991590"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.6ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "宮城県"], ["created_at", "2018-10-11 06:05:40.997898"], ["updated_at", "2018-10-11 06:05:40.997898"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.7ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "秋田県"], ["created_at", "2018-10-11 06:05:41.004468"], ["updated_at", "2018-10-11 06:05:41.004468"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.6ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "山形県"], ["created_at", "2018-10-11 06:05:41.010941"], ["updated_at", "2018-10-11 06:05:41.010941"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.6ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "福島県"], ["created_at", "2018-10-11 06:05:41.017707"], ["updated_at", "2018-10-11 06:05:41.017707"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.7ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "茨城県"], ["created_at", "2018-10-11 06:05:41.024502"], ["updated_at", "2018-10-11 06:05:41.024502"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (3.3ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "栃木県"], ["created_at", "2018-10-11 06:05:41.031095"], ["updated_at", "2018-10-11 06:05:41.031095"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (4.5ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "群馬県"], ["created_at", "2018-10-11 06:05:41.039476"], ["updated_at", "2018-10-11 06:05:41.039476"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (4.9ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "埼玉県"], ["created_at", "2018-10-11 06:05:41.051496"], ["updated_at", "2018-10-11 06:05:41.051496"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (3.4ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "千葉県"], ["created_at", "2018-10-11 06:05:41.063824"], ["updated_at", "2018-10-11 06:05:41.063824"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (3.6ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "東京都"], ["created_at", "2018-10-11 06:05:41.073933"], ["updated_at", "2018-10-11 06:05:41.073933"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (3.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "神奈川県"], ["created_at", "2018-10-11 06:05:41.082546"], ["updated_at", "2018-10-11 06:05:41.082546"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.7ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "新潟県"], ["created_at", "2018-10-11 06:05:41.089662"], ["updated_at", "2018-10-11 06:05:41.089662"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.7ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "富山県"], ["created_at", "2018-10-11 06:05:41.096945"], ["updated_at", "2018-10-11 06:05:41.096945"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (3.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "石川県"], ["created_at", "2018-10-11 06:05:41.103884"], ["updated_at", "2018-10-11 06:05:41.103884"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (3.0ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "福井県"], ["created_at", "2018-10-11 06:05:41.110807"], ["updated_at", "2018-10-11 06:05:41.110807"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.6ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "山梨県"], ["created_at", "2018-10-11 06:05:41.117078"], ["updated_at", "2018-10-11 06:05:41.117078"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.6ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "長野県"], ["created_at", "2018-10-11 06:05:41.123283"], ["updated_at", "2018-10-11 06:05:41.123283"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (3.0ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "岐阜県"], ["created_at", "2018-10-11 06:05:41.129405"], ["updated_at", "2018-10-11 06:05:41.129405"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.8ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "静岡県"], ["created_at", "2018-10-11 06:05:41.136310"], ["updated_at", "2018-10-11 06:05:41.136310"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.5ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "愛知県"], ["created_at", "2018-10-11 06:05:41.142527"], ["updated_at", "2018-10-11 06:05:41.142527"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.6ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "三重県"], ["created_at", "2018-10-11 06:05:41.148980"], ["updated_at", "2018-10-11 06:05:41.148980"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.7ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "滋賀県"], ["created_at", "2018-10-11 06:05:41.154864"], ["updated_at", "2018-10-11 06:05:41.154864"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.5ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "京都府"], ["created_at", "2018-10-11 06:05:41.160870"], ["updated_at", "2018-10-11 06:05:41.160870"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.8ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "大阪府"], ["created_at", "2018-10-11 06:05:41.166698"], ["updated_at", "2018-10-11 06:05:41.166698"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.6ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "兵庫県"], ["created_at", "2018-10-11 06:05:41.173090"], ["updated_at", "2018-10-11 06:05:41.173090"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.8ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "奈良県"], ["created_at", "2018-10-11 06:05:41.179020"], ["updated_at", "2018-10-11 06:05:41.179020"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.6ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "和歌山県"], ["created_at", "2018-10-11 06:05:41.185342"], ["updated_at", "2018-10-11 06:05:41.185342"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.7ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "鳥取県"], ["created_at", "2018-10-11 06:05:41.191434"], ["updated_at", "2018-10-11 06:05:41.191434"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.9ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "島根県"], ["created_at", "2018-10-11 06:05:41.198632"], ["updated_at", "2018-10-11 06:05:41.198632"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (3.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "岡山県"], ["created_at", "2018-10-11 06:05:41.204936"], ["updated_at", "2018-10-11 06:05:41.204936"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.6ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "広島県"], ["created_at", "2018-10-11 06:05:41.211863"], ["updated_at", "2018-10-11 06:05:41.211863"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.9ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "山口県"], ["created_at", "2018-10-11 06:05:41.217876"], ["updated_at", "2018-10-11 06:05:41.217876"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.6ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "徳島県"], ["created_at", "2018-10-11 06:05:41.224310"], ["updated_at", "2018-10-11 06:05:41.224310"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (3.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "香川県"], ["created_at", "2018-10-11 06:05:41.230868"], ["updated_at", "2018-10-11 06:05:41.230868"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.8ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "愛媛県"], ["created_at", "2018-10-11 06:05:41.238339"], ["updated_at", "2018-10-11 06:05:41.238339"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (3.6ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "高知県"], ["created_at", "2018-10-11 06:05:41.245295"], ["updated_at", "2018-10-11 06:05:41.245295"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.8ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "福岡県"], ["created_at", "2018-10-11 06:05:41.252377"], ["updated_at", "2018-10-11 06:05:41.252377"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.7ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "佐賀県"], ["created_at", "2018-10-11 06:05:41.258682"], ["updated_at", "2018-10-11 06:05:41.258682"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.7ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "長崎県"], ["created_at", "2018-10-11 06:05:41.264817"], ["updated_at", "2018-10-11 06:05:41.264817"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.4ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "熊本県"], ["created_at", "2018-10-11 06:05:41.271134"], ["updated_at", "2018-10-11 06:05:41.271134"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (3.7ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "大分県"], ["created_at", "2018-10-11 06:05:41.277287"], ["updated_at", "2018-10-11 06:05:41.277287"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.9ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "宮城県"], ["created_at", "2018-10-11 06:05:41.285759"], ["updated_at", "2018-10-11 06:05:41.285759"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.6ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "鹿児島県"], ["created_at", "2018-10-11 06:05:41.293155"], ["updated_at", "2018-10-11 06:05:41.293155"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.6ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "沖縄県"], ["created_at", "2018-10-11 06:05:41.299497"], ["updated_at", "2018-10-11 06:05:41.299497"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aaa@aaa"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (4.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "name_kana", "phone", "post_code", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "aaa@aaa"], ["encrypted_password", "$2a$11$7u5CFekZWW1qR2s5bztHOe82woB7fND9PKVILRF4.0tYaLOqzJdQK"], ["name", "田中太郎"], ["name_kana", "タナカタロウ"], ["phone", "00000000000"], ["post_code", "000-0000"], ["address", "東京都"], ["created_at", "2018-10-11 06:05:41.476590"], ["updated_at", "2018-10-11 06:05:41.476590"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mAdmin Exists (6.9ms)[0m  [1m[34mSELECT  1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "aaa@aaa"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mAdmin Create (5.7ms)[0m  [1m[32mINSERT INTO "admins" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "aaa@aaa"], ["encrypted_password", "$2a$11$vJEOuhNgDemITPSYDcITm.IkjVV.ktxEqjUDfzqErJOQ0zIoC4GEi"], ["created_at", "2018-10-11 06:05:41.616366"], ["updated_at", "2018-10-11 06:05:41.616366"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+Started GET "/users/sign_up" for 10.0.2.2 at 2018-10-11 06:05:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered users/registrations/new.html.erb within layouts/application (60.7ms)
+Completed 200 OK in 1957ms (Views: 1931.0ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2018-10-11 06:06:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JDuSBelDLsPlTQw6+wIuOsXmjnZxJv/EESTkEHwUTq8BSShuNm5xBwXeMXKiycDMwbVB3ZhOYxQaKfeWvYpWtg==", "user"=>{"name_kana"=>"", "name"=>"", "post_code"=>"", "address"=>"", "phone"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :email
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (0.7ms)
+  Rendered users/registrations/new.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 547ms (Views: 426.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2018-10-11 06:06:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered users/sessions/new.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 448ms (Views: 445.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 10.0.2.2 at 2018-10-11 06:06:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PLQ4wnIGXjTHbmovA27EdHjiBkkEfU3Q4fO6Ccy9NvXvBF0BMcsgusQ9aKP97IA8GPpGbQ5DRYeWQibwgyhTBw==", "user"=>{"email"=>"aaa@aaa", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PLQ4wnIGXjTHbmovA27EdHjiBkkEfU3Q4fO6Ccy9NvXvBF0BMcsgusQ9aKP97IA8GPpGbQ5DRYeWQibwgyhTBw==", "user"=>{"email"=>"aaa@aaa", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Unpermitted parameter: :email
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered users/sessions/new.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 585ms (Views: 427.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 10.0.2.2 at 2018-10-11 06:06:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0xnkHSflktakghJ0QjI77XJXDoH96j8XZ41Ry9SxRdb2a152+MjNEkQRLzwb+dUbdgTBKhSCo8dsgEJNFS9dzw==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0xnkHSflktakghJ0QjI77XJXDoH96j8XZ41Ry9SxRdb2a152+MjNEkQRLzwb+dUbdgTBKhSCo8dsgEJNFS9dzw==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Unpermitted parameter: :email
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered users/sessions/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 443ms (Views: 440.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (5.4ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "北海道"], ["created_at", "2018-10-11 06:08:03.403386"], ["updated_at", "2018-10-11 06:08:03.403386"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.0ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "青森県"], ["created_at", "2018-10-11 06:08:03.413557"], ["updated_at", "2018-10-11 06:08:03.413557"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.0ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "岩手県"], ["created_at", "2018-10-11 06:08:03.420198"], ["updated_at", "2018-10-11 06:08:03.420198"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.0ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "宮城県"], ["created_at", "2018-10-11 06:08:03.426179"], ["updated_at", "2018-10-11 06:08:03.426179"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.3ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "秋田県"], ["created_at", "2018-10-11 06:08:03.433233"], ["updated_at", "2018-10-11 06:08:03.433233"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.4ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "山形県"], ["created_at", "2018-10-11 06:08:03.439836"], ["updated_at", "2018-10-11 06:08:03.439836"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.3ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "福島県"], ["created_at", "2018-10-11 06:08:03.448435"], ["updated_at", "2018-10-11 06:08:03.448435"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "茨城県"], ["created_at", "2018-10-11 06:08:03.454763"], ["updated_at", "2018-10-11 06:08:03.454763"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "栃木県"], ["created_at", "2018-10-11 06:08:03.461069"], ["updated_at", "2018-10-11 06:08:03.461069"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "群馬県"], ["created_at", "2018-10-11 06:08:03.467311"], ["updated_at", "2018-10-11 06:08:03.467311"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (1.9ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "埼玉県"], ["created_at", "2018-10-11 06:08:03.473755"], ["updated_at", "2018-10-11 06:08:03.473755"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.0ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "千葉県"], ["created_at", "2018-10-11 06:08:03.479876"], ["updated_at", "2018-10-11 06:08:03.479876"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "東京都"], ["created_at", "2018-10-11 06:08:03.485923"], ["updated_at", "2018-10-11 06:08:03.485923"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (1.9ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "神奈川県"], ["created_at", "2018-10-11 06:08:03.492077"], ["updated_at", "2018-10-11 06:08:03.492077"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "新潟県"], ["created_at", "2018-10-11 06:08:03.497806"], ["updated_at", "2018-10-11 06:08:03.497806"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "富山県"], ["created_at", "2018-10-11 06:08:03.504318"], ["updated_at", "2018-10-11 06:08:03.504318"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "石川県"], ["created_at", "2018-10-11 06:08:03.510355"], ["updated_at", "2018-10-11 06:08:03.510355"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.9ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "福井県"], ["created_at", "2018-10-11 06:08:03.517284"], ["updated_at", "2018-10-11 06:08:03.517284"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "山梨県"], ["created_at", "2018-10-11 06:08:03.524526"], ["updated_at", "2018-10-11 06:08:03.524526"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "長野県"], ["created_at", "2018-10-11 06:08:03.530719"], ["updated_at", "2018-10-11 06:08:03.530719"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "岐阜県"], ["created_at", "2018-10-11 06:08:03.536861"], ["updated_at", "2018-10-11 06:08:03.536861"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.0ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "静岡県"], ["created_at", "2018-10-11 06:08:03.543560"], ["updated_at", "2018-10-11 06:08:03.543560"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (1.9ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "愛知県"], ["created_at", "2018-10-11 06:08:03.549331"], ["updated_at", "2018-10-11 06:08:03.549331"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.5ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "三重県"], ["created_at", "2018-10-11 06:08:03.555056"], ["updated_at", "2018-10-11 06:08:03.555056"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.0ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "滋賀県"], ["created_at", "2018-10-11 06:08:03.561715"], ["updated_at", "2018-10-11 06:08:03.561715"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "京都府"], ["created_at", "2018-10-11 06:08:03.568263"], ["updated_at", "2018-10-11 06:08:03.568263"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "大阪府"], ["created_at", "2018-10-11 06:08:03.574152"], ["updated_at", "2018-10-11 06:08:03.574152"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "兵庫県"], ["created_at", "2018-10-11 06:08:03.580385"], ["updated_at", "2018-10-11 06:08:03.580385"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "奈良県"], ["created_at", "2018-10-11 06:08:03.587019"], ["updated_at", "2018-10-11 06:08:03.587019"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "和歌山県"], ["created_at", "2018-10-11 06:08:03.593382"], ["updated_at", "2018-10-11 06:08:03.593382"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.0ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "鳥取県"], ["created_at", "2018-10-11 06:08:03.599557"], ["updated_at", "2018-10-11 06:08:03.599557"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (3.6ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "島根県"], ["created_at", "2018-10-11 06:08:03.608167"], ["updated_at", "2018-10-11 06:08:03.608167"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.5ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "岡山県"], ["created_at", "2018-10-11 06:08:03.616963"], ["updated_at", "2018-10-11 06:08:03.616963"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "広島県"], ["created_at", "2018-10-11 06:08:03.623505"], ["updated_at", "2018-10-11 06:08:03.623505"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "山口県"], ["created_at", "2018-10-11 06:08:03.629944"], ["updated_at", "2018-10-11 06:08:03.629944"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.0ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "徳島県"], ["created_at", "2018-10-11 06:08:03.636185"], ["updated_at", "2018-10-11 06:08:03.636185"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "香川県"], ["created_at", "2018-10-11 06:08:03.642203"], ["updated_at", "2018-10-11 06:08:03.642203"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "愛媛県"], ["created_at", "2018-10-11 06:08:03.649370"], ["updated_at", "2018-10-11 06:08:03.649370"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.3ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "高知県"], ["created_at", "2018-10-11 06:08:03.655124"], ["updated_at", "2018-10-11 06:08:03.655124"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "福岡県"], ["created_at", "2018-10-11 06:08:03.661538"], ["updated_at", "2018-10-11 06:08:03.661538"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.3ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "佐賀県"], ["created_at", "2018-10-11 06:08:03.667559"], ["updated_at", "2018-10-11 06:08:03.667559"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "長崎県"], ["created_at", "2018-10-11 06:08:03.673798"], ["updated_at", "2018-10-11 06:08:03.673798"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "熊本県"], ["created_at", "2018-10-11 06:08:03.680693"], ["updated_at", "2018-10-11 06:08:03.680693"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.0ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "大分県"], ["created_at", "2018-10-11 06:08:03.686864"], ["updated_at", "2018-10-11 06:08:03.686864"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.0ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "宮城県"], ["created_at", "2018-10-11 06:08:03.693069"], ["updated_at", "2018-10-11 06:08:03.693069"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "鹿児島県"], ["created_at", "2018-10-11 06:08:03.699580"], ["updated_at", "2018-10-11 06:08:03.699580"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.5ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "沖縄県"], ["created_at", "2018-10-11 06:08:03.707598"], ["updated_at", "2018-10-11 06:08:03.707598"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.5ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "北海道"], ["created_at", "2018-10-11 06:08:37.525631"], ["updated_at", "2018-10-11 06:08:37.525631"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "青森県"], ["created_at", "2018-10-11 06:08:37.532364"], ["updated_at", "2018-10-11 06:08:37.532364"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "岩手県"], ["created_at", "2018-10-11 06:08:37.538636"], ["updated_at", "2018-10-11 06:08:37.538636"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.0ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "宮城県"], ["created_at", "2018-10-11 06:08:37.545146"], ["updated_at", "2018-10-11 06:08:37.545146"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.3ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "秋田県"], ["created_at", "2018-10-11 06:08:37.551410"], ["updated_at", "2018-10-11 06:08:37.551410"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "山形県"], ["created_at", "2018-10-11 06:08:37.557518"], ["updated_at", "2018-10-11 06:08:37.557518"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "福島県"], ["created_at", "2018-10-11 06:08:37.564122"], ["updated_at", "2018-10-11 06:08:37.564122"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "茨城県"], ["created_at", "2018-10-11 06:08:37.570289"], ["updated_at", "2018-10-11 06:08:37.570289"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.4ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "栃木県"], ["created_at", "2018-10-11 06:08:37.576548"], ["updated_at", "2018-10-11 06:08:37.576548"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.0ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "群馬県"], ["created_at", "2018-10-11 06:08:37.582802"], ["updated_at", "2018-10-11 06:08:37.582802"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.5ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "埼玉県"], ["created_at", "2018-10-11 06:08:37.588998"], ["updated_at", "2018-10-11 06:08:37.588998"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "千葉県"], ["created_at", "2018-10-11 06:08:37.595755"], ["updated_at", "2018-10-11 06:08:37.595755"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "東京都"], ["created_at", "2018-10-11 06:08:37.602367"], ["updated_at", "2018-10-11 06:08:37.602367"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "神奈川県"], ["created_at", "2018-10-11 06:08:37.608111"], ["updated_at", "2018-10-11 06:08:37.608111"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.4ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "新潟県"], ["created_at", "2018-10-11 06:08:37.614227"], ["updated_at", "2018-10-11 06:08:37.614227"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (1.9ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "富山県"], ["created_at", "2018-10-11 06:08:37.621004"], ["updated_at", "2018-10-11 06:08:37.621004"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.6ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "石川県"], ["created_at", "2018-10-11 06:08:37.627238"], ["updated_at", "2018-10-11 06:08:37.627238"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "福井県"], ["created_at", "2018-10-11 06:08:37.634341"], ["updated_at", "2018-10-11 06:08:37.634341"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "山梨県"], ["created_at", "2018-10-11 06:08:37.640537"], ["updated_at", "2018-10-11 06:08:37.640537"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "長野県"], ["created_at", "2018-10-11 06:08:37.646219"], ["updated_at", "2018-10-11 06:08:37.646219"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.5ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "岐阜県"], ["created_at", "2018-10-11 06:08:37.652524"], ["updated_at", "2018-10-11 06:08:37.652524"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "静岡県"], ["created_at", "2018-10-11 06:08:37.659203"], ["updated_at", "2018-10-11 06:08:37.659203"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "愛知県"], ["created_at", "2018-10-11 06:08:37.665880"], ["updated_at", "2018-10-11 06:08:37.665880"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (3.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "三重県"], ["created_at", "2018-10-11 06:08:37.672233"], ["updated_at", "2018-10-11 06:08:37.672233"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "滋賀県"], ["created_at", "2018-10-11 06:08:37.679965"], ["updated_at", "2018-10-11 06:08:37.679965"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "京都府"], ["created_at", "2018-10-11 06:08:37.685648"], ["updated_at", "2018-10-11 06:08:37.685648"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.3ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "大阪府"], ["created_at", "2018-10-11 06:08:37.692569"], ["updated_at", "2018-10-11 06:08:37.692569"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.4ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "兵庫県"], ["created_at", "2018-10-11 06:08:37.698959"], ["updated_at", "2018-10-11 06:08:37.698959"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "奈良県"], ["created_at", "2018-10-11 06:08:37.705805"], ["updated_at", "2018-10-11 06:08:37.705805"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "和歌山県"], ["created_at", "2018-10-11 06:08:37.712179"], ["updated_at", "2018-10-11 06:08:37.712179"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "鳥取県"], ["created_at", "2018-10-11 06:08:37.718108"], ["updated_at", "2018-10-11 06:08:37.718108"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.6ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "島根県"], ["created_at", "2018-10-11 06:08:37.724369"], ["updated_at", "2018-10-11 06:08:37.724369"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.0ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "岡山県"], ["created_at", "2018-10-11 06:08:37.731182"], ["updated_at", "2018-10-11 06:08:37.731182"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "広島県"], ["created_at", "2018-10-11 06:08:37.737294"], ["updated_at", "2018-10-11 06:08:37.737294"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "山口県"], ["created_at", "2018-10-11 06:08:37.743345"], ["updated_at", "2018-10-11 06:08:37.743345"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "徳島県"], ["created_at", "2018-10-11 06:08:37.749950"], ["updated_at", "2018-10-11 06:08:37.749950"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (1.9ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "香川県"], ["created_at", "2018-10-11 06:08:37.756420"], ["updated_at", "2018-10-11 06:08:37.756420"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.4ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "愛媛県"], ["created_at", "2018-10-11 06:08:37.762077"], ["updated_at", "2018-10-11 06:08:37.762077"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "高知県"], ["created_at", "2018-10-11 06:08:37.768866"], ["updated_at", "2018-10-11 06:08:37.768866"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.3ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "福岡県"], ["created_at", "2018-10-11 06:08:37.775406"], ["updated_at", "2018-10-11 06:08:37.775406"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "佐賀県"], ["created_at", "2018-10-11 06:08:37.781605"], ["updated_at", "2018-10-11 06:08:37.781605"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "長崎県"], ["created_at", "2018-10-11 06:08:37.787964"], ["updated_at", "2018-10-11 06:08:37.787964"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "熊本県"], ["created_at", "2018-10-11 06:08:37.794224"], ["updated_at", "2018-10-11 06:08:37.794224"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "大分県"], ["created_at", "2018-10-11 06:08:37.800711"], ["updated_at", "2018-10-11 06:08:37.800711"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "宮城県"], ["created_at", "2018-10-11 06:08:37.807073"], ["updated_at", "2018-10-11 06:08:37.807073"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.1ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "鹿児島県"], ["created_at", "2018-10-11 06:08:37.813943"], ["updated_at", "2018-10-11 06:08:37.813943"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPrefecture Create (2.2ms)[0m  [1m[32mINSERT INTO "prefectures" ("prefecture", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["prefecture", "沖縄県"], ["created_at", "2018-10-11 06:08:37.821266"], ["updated_at", "2018-10-11 06:08:37.821266"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aaa@aaa"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mAdmin Exists (6.5ms)[0m  [1m[34mSELECT  1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "aaa@aaa"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:17
+Started GET "/admins/sign_in" for 10.0.2.2 at 2018-10-11 06:08:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (1.0ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (66.2ms)
+Completed 200 OK in 1746ms (Views: 1723.7ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/admins/sign_in" for 10.0.2.2 at 2018-10-11 06:09:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OVYp+35orceCtbHIvWErlR0zNG7CpcSOKkTYyUXYGEscJJOQoUXyA2ImjIDkqsVjGWD7xSvNWF4hSctPhEYAUg==", "admin"=>{"email"=>"aaa@aaa", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by Admins::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OVYp+35orceCtbHIvWErlR0zNG7CpcSOKkTYyUXYGEscJJOQoUXyA2ImjIDkqsVjGWD7xSvNWF4hSctPhEYAUg==", "admin"=>{"email"=>"aaa@aaa", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Unpermitted parameter: :email
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (0.9ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 456ms (Views: 340.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/sign_in" for 10.0.2.2 at 2018-10-11 06:14:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (0.9ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (57.2ms)
+Completed 200 OK in 1492ms (Views: 1465.1ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/admins/sign_in" for 10.0.2.2 at 2018-10-11 06:14:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wtX7n8v75b+P0qnzDIYNcB2J1hioFX6ILlyXzJweLabnp0H0FNa6e29BlLtVTeOGGdoZs0F94lglUYRKXYA1vw==", "admin"=>{"email"=>"aaa@aaa", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by Admins::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wtX7n8v75b+P0qnzDIYNcB2J1hioFX6ILlyXzJweLabnp0H0FNa6e29BlLtVTeOGGdoZs0F94lglUYRKXYA1vw==", "admin"=>{"email"=>"aaa@aaa", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (0.7ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 610ms (Views: 487.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/sign_in" for 10.0.2.2 at 2018-10-11 06:14:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/user/sign_in"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/sign_in" for 10.0.2.2 at 2018-10-11 06:15:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (0.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 475ms (Views: 443.0ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2018-10-11 06:15:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (0.7ms)
+  Rendered users/registrations/new.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 400ms (Views: 398.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2018-10-11 06:16:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered users/sessions/new.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 449ms (Views: 447.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2018-10-11 06:17:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (0.7ms)
+  Rendered users/registrations/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 477ms (Views: 475.5ms | ActiveRecord: 0.0ms)
+
+
