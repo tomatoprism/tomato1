@@ -6,7 +6,6 @@ class Public::UsersController < Public::ApplicationController
 
 	def edit
 		@user = User.find(params[:id])
-        if @user != current_user
             redirect_to user_path
         end
 
@@ -17,7 +16,13 @@ class Public::UsersController < Public::ApplicationController
         if @user.update(user_params)
          redirect_to user_path
        else
-        redirect_back
+        redirect_to iser_path
        end
-	end
+
+       private
+ 
+    def user_params
+        params.require(:user).permit(:name_kana, :name, :email, :phone, :post_code, :address)
+
+    end
 end

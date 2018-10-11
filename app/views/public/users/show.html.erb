@@ -35,10 +35,7 @@
         </tr>
 
     </table>
-
-    <% if @user == current_user %>
-        <%= link_to "Edit", edit_user_path(user.id) %>
-     <% end %>
+        <%= link_to "編集", edit_user_path(user.id) %>
 
 <h2>購入履歴</h2>
 
