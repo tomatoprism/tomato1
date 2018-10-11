@@ -16,15 +16,46 @@
         </nav>
         <nav class="nav-list">
           <ul class="nav navbar-nav navbar-right">
-            <li>
-              <p class="glyphicon glyphicon-log-in sin_in">ログイン</p>
-            </li>
-            <li>
-              <p class="glyphicon glyphicon-edit sin_up">サインアップ</p>
-            </li>
-            <li>
-              <p class="glyphicon glyphicon-search seach">検索</p>
-            </li>
+            <% if admin_signed_in? %>
+              <li>
+                <%=link_to "管理者",admin_user_path(current_admin) %>
+              </li>
+              <li>
+                <%=link_to "User一覧",admin_users_path %>
+              </li>
+              <li>
+                <%=link_to "商品一覧",admin_products_path %>
+              </li>
+              <li>
+                <%=link_to "ログアウト",destroy_admin_session_path, method: :delete %>
+              </li>
+            <% elsif user_signed_in? %>
+              <li>
+                <%=link_to "マイページ",user_path(current_user) %>
+              </li>
+              <li>
+                <%=link_to "カート",root_path %>
+              </li>
+              <li>
+                <%=link_to "お気に入り",root_path %>
+              </li>
+              <li>
+                <%=link_to "ログアウト",destroy_user_session_path, method: :delete %>
+              </li>
+              <li>
+                  <p>検索</p>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to"新規登録", new_user_registration_path %>
+              </li>
+              <li>
+                <%= link_to"ログイン", new_user_session_path %>
+              </li>
+              <li>
+                <p>検索</p>
+              </li>
+            <% end %>
           </ul>
         </nav>
       </div>
