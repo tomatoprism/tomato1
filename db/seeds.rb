@@ -11,3 +11,7 @@ pre = Prefecture.create([{:prefecture => '北海道'}, {:prefecture => '青森�
 					{:prefecture => '岐阜県'}, {:prefecture => '静岡県'}, {:prefecture => '愛知県'}, {:prefecture => '三重県'}, {:prefecture => '滋賀県'}, {:prefecture => '京都府'}, {:prefecture => '大阪府'}, {:prefecture => '兵庫県'}, {:prefecture => '奈良県'}, {:prefecture => '和歌山県'},
 					{:prefecture => '鳥取県'}, {:prefecture => '島根県'}, {:prefecture => '岡山県'}, {:prefecture => '広島県'}, {:prefecture => '山口県'}, {:prefecture => '徳島県'}, {:prefecture => '香川県'}, {:prefecture => '愛媛県'}, {:prefecture => '高知県'}, {:prefecture => '福岡県'},
 					{:prefecture => '佐賀県'}, {:prefecture => '長崎県'}, {:prefecture => '熊本県'}, {:prefecture => '大分県'}, {:prefecture => '宮城県'}, {:prefecture => '鹿児島県'}, {:prefecture => '沖縄県'}])
+
+User.create(name: '田中太郎', name_kana: 'タナカタロウ', mail: 'aaa@aaa', phone: '00000000000', password: 'aaaaaa', post_code: '000-0000', address: '東京都')
+
+Admin.create(mail: 'aaa@aaa', password: 'aaaaaa')
