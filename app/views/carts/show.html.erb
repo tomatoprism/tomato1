@@ -6,14 +6,14 @@
 		    <th> 小計 </th>
 		    <th> </th>
 		  </tr>
-	<% product.each do |f| %>
+	<% @cart_item.each do |f| %>
 		  <tr>
-		  	<td> <%= attachment_image_tag @user, :image %> </td>
+		  	<td> <%= attachment_image_tag cart_item, :image %> </td>
 		  	<td> <%= cart_item.product.title %> <br>
-		  	     <%= product.artist_id %> </td>
-            <td> <%= product.quantity %> </td>
-            <td> <%= product.price %> </td>
-            <td> <%= link_to "削除", path, method: :delete %> </td>
+		  	     <%= cart_item.product.artist_id %> </td>
+            <td> <%= cart_item.product.quantity %> </td>
+            <td> <%= cart_item.product.price %> </td>
+            <td> <%= link_to "削除", delete_item_path, method: :delete %> </td>
 
           <tr>
     <% end %>
@@ -24,4 +24,6 @@
           	<td>  </td>
 </table>
 
+<% if @cart.user_id == current_user %>
 <%= link_to "注文へ進む", payments_path %>
+<% end %>

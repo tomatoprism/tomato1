@@ -5,10 +5,15 @@ class Public::ProductsController < Public::ApplicationController
 
 	def show
 		@product = Product.find(params[:id])
-
+		if current_user
+			@product.add_item
+		else
+			redirect_to products_path
+		end
 	end
 
 	def product_params
         params.require(:product).permit(:title, :image_id, :price, :label, :stock, :release, :introduction, :artist_id, :category_id)
     end
 end
+

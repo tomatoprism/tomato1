@@ -47,12 +47,14 @@
         <tr>
           <td> 個数 </td>
           <td> <%= form_for @product do |f| %>
- 				 <%= f.collection_select :product, Product.all, :id, :stock, { prompt: '選択してください' } %>
-				<% end %> </td>
+ 				 <%= f.number_field :product, :stock %>
+				 </td>
         </tr>
         <tr>
-          <td> カートに入れる </td>
-          <td> <%= link_to "カートに入れる", cart_path(cart.id) %> </td>
+          <td> <%= f.submit 'カートに入れる' %>
+            <% end %>
+          </td>
+          <td></td>
         </tr>
     </table>
   </div>
@@ -70,9 +72,9 @@
 
 	     <tr>
 		    <th> </th>
-		    <th> product.disc.track </th>
-		    <th> product.artist_id </th>
-		    <th> product.introduction </th>
+		    <th> <%= @product.disc.track %> </th>
+		    <th> <%= @product.artist_id %> </th>
+		    <th> <%= @product.introduction %> </th>
 	     </tr>
 </table>
 
