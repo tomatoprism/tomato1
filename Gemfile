@@ -71,3 +71,5 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 # ページ
 gem 'kaminari'
+# 複数の入力フォーム
+gem 'cocoon'
