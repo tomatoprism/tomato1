@@ -5,7 +5,6 @@ class Public::ProductsController < Public::ApplicationController
 
 	def show
 		@product = Product.find(params[:id])
-
 	end
 
 	def product_params
