@@ -5,15 +5,18 @@
 		    <th> 個数 </th>
 		    <th> 小計 </th>
 		    <th> </th>
-
 		  </tr>
+	<% product.each do |f| %>
 		  <tr>
-		  	<td> <%= @product.title %>
-		  	     <%= @product.artist_id %> </td>
-            <td> <%= @product.quantity %> </td>
-            <td> <%= @product.price %> </td>
+		  	<td> <%= attachment_image_tag @user, :image %> </td>
+		  	<td> <%= cart_item.product.title %> <br>
+		  	     <%= product.artist_id %> </td>
+            <td> <%= product.quantity %> </td>
+            <td> <%= product.price %> </td>
+            <td> <%= link_to "削除", path, method: :delete %> </td>
 
           <tr>
+    <% end %>
           	<td> </td>
           	<td> 合計 </td>
           	<td> <%= quantity %> </td>

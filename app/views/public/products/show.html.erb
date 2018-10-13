@@ -1,18 +1,65 @@
-<% form_for %>
+<h1>CD詳細</h1>
 
-<p> attachment_image_tag prodect, :image_id </p>
-<p> product.category_id </p>
-<p> product.artist_id </p>
-<p> product.title </p>
-<p> product.label </p>
-<p> product.release </p>
-<p> product.price </p>
-<p> product.stock </p>
-<p> link_to "お気に入り", product_favorites_path, method: :post %>
-<p>個数</p>
-<%= f.number_field_tag 'quantity', nil, in: 1...100
-# => <input id="quantity" name="quantity" min="1" max="9" type="number" /> %>
-<%= link_to "カートに入れる", cart_path(cart.id) %>
+<li class = "item" >
+  <div class = "product-image" >
+    <%= attachment_image_tag @product, :image %>
+  </div>
+  <div class = "product-info" >
+  	<table class="table">
+    <tr>
+        <th></th>
+        <th></th>
+    </tr>
+
+        <tr>
+        	<td> カテゴリー </td>
+        	<td> <%= @product.category_id %> </td>
+      	 </tr>
+        <tr>
+          <td> アーティスト </td>
+          <td> <%= @product.artist_id %> </td>
+        </tr>
+
+        <tr>
+          <td> シングル・アルバム名 </td>
+          <td> <%= @product.title %> </td>
+        </tr>
+        <tr>
+          <td> レーベル名 </td>
+          <td> <%= @product.label %> </td>
+        </tr>
+        <tr>
+          <td> 発売日 </td>
+          <td> <%= @product.release %> </td>
+        </tr>
+        <tr>
+          <td> 値段 </td>
+          <td> <%= @product.price %> </td>
+        </tr>
+        <tr>
+          <td> 在庫数 </td>
+          <td> <%= @product.stock %> </td>
+        </tr>
+        <tr>
+          <td> お気に入り </td>
+          <td> <%= link_to "お気に入り", product_favorites_path, method: :post %> </td>
+        </tr>
+        <tr>
+          <td> 個数 </td>
+          <td> <%= form_for @product do |f| %>
+  				 <%= f.label :prefecture_id %>
+ 				 <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name %>
+				<% end %> </td>
+        </tr>
+        <tr>
+          <td> カートに入れる </td>
+          <td> <%= link_to "カートに入れる", cart_path(cart.id) %> </td>
+        </tr>
+    </table>
+  </div>
+</li>
+
+
 
 <table class="table">
 　　　　　<tr>
@@ -31,7 +78,7 @@
 </table>
 
 
-<h2>レビュー</h2>
+<h2>レビュー(仮)</h2>
 
 <%= form_for @review do |f| %>
 <%= f.text_field :text, rows:'5', class: "form-control", placeholder: "コメントをここに" %>
@@ -39,10 +86,10 @@
 <% end %>
 
  <% product.product_id.review.each do |review| %>
- <%= post_comment.created_at.strftime('%Y/%m/%d') %>
- <%= post_comment.comment %>
+ <%= product.review.created_at.strftime('%Y/%m/%d') %>
+ <%= product.review %>
  <% end %>
 
- <h3>関連情報</h3>
+ <h3>関連情報(仮)</h3>
 
  <%= link_to "戻る", books_path, class: "back" %>
