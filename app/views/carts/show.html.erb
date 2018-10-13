@@ -8,7 +8,7 @@
 		  </tr>
 	<% product.each do |f| %>
 		  <tr>
-		  	<td> 画像 </td>
+		  	<td> <%= attachment_image_tag @user, :image %> </td>
 		  	<td> <%= cart_item.product.title %> <br>
 		  	     <%= product.artist_id %> </td>
             <td> <%= product.quantity %> </td>
