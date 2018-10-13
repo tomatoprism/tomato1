@@ -1,18 +1,65 @@
-<% form_for %>
+<h1>CD詳細</h1>
 
-<p> attachment_image_tag prodect, :image_id </p>
-<p> product.category_id </p>
-<p> product.artist_id </p>
-<p> product.title </p>
-<p> product.label </p>
-<p> product.release </p>
-<p> product.price </p>
-<p> product.stock </p>
-<p> link_to "お気に入り", product_favorites_path, method: :post %>
-<p>個数</p>
-<%= f.number_field_tag 'quantity', nil, in: 1...100
-# => <input id="quantity" name="quantity" min="1" max="9" type="number" /> %>
+<li class = "item" >
+  <div class = "product-image" >
+    <%= attachment_image_tag @product, :image %>
+  </div>
+  <div class = "product-info" >
+  	<table class="table">
+    <tr>
+        <th></th>
+        <th></th>
+    </tr>
+
+        <tr>
+        	<td> フリガナ </td>
+        	<td> <%= product.category_id %> </td>
+      	 </tr>
+        <tr>
+          <td>  </td>
+          <td> <%= @user.name %> </td>
+        </tr>
+
+        <tr>
+          <td> 郵便番号 </td>
+          <td> <%= @user.post_code %> </td>
+        </tr>
+        <tr>
+          <td> 郵便番号 </td>
+          <td> <%= @user.post_code %> </td>
+        </tr>
+        <tr>
+          <td> 郵便番号 </td>
+          <td> <%= @user.post_code %> </td>
+        </tr>
+        <tr>
+          <td> 郵便番号 </td>
+          <td> <%= @user.post_code %> </td>
+        </tr>
+        <tr>
+          <td> 郵便番号 </td>
+          <td> <%= @user.post_code %> </td>
+        </tr>
+
+    <li> <%= product.category_id %> </li>
+    <li> <%= product.artist_id %> </li>
+    <li> <%= product.title %> </li>
+    <li> <%= product.label %> </li>
+    <li> <%= product.release %> </li>
+    <li> <%= roduct.price %> </li>
+    <li> <%= product.stock %> </li>
+    <li> <%= link_to "お気に入り", product_favorites_path, method: :post %> </li>
+	<li> 個数
+<%= form_for @user do |f| %>
+  <%= f.label :prefecture_id %>
+  <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name %>
+<%- end -%>
+</p>
 <%= link_to "カートに入れる", cart_path(cart.id) %>
+  </div>
+</li>
+
+
 
 <table class="table">
 　　　　　<tr>
