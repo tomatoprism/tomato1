@@ -47,8 +47,7 @@
         <tr>
           <td> 個数 </td>
           <td> <%= form_for @product do |f| %>
-  				 <%= f.label :prefecture_id %>
- 				 <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name %>
+ 				 <%= f.collection_select :product, Product.all, :id, :stock, { prompt: '選択してください' } %>
 				<% end %> </td>
         </tr>
         <tr>
