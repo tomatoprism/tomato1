@@ -3,6 +3,7 @@ class Public::UsersController < Public::ApplicationController
 	def create_cart
 		cart.create(User.id:self.id)
 	end
+	
 
 	def show
 		@user = current_user
