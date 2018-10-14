@@ -11,16 +11,15 @@
 		  	<td> <%= attachment_image_tag cart_item, :image %> </td>
 		  	<td> <%= cart_item.product.title %> <br>
 		  	     <%= cart_item.product.artist_id %> </td>
-            <td> <%= cart_item.product.quantity %> </td>
-            <td> <%= cart_item.product.price %> </td>
+            <td> <%= cart_item.quantity %> </td>
+            <td> <%= cart_item.product.price*cart_item.quantity %> </td>
             <td> <%= link_to "削除", delete_item_path, method: :delete %> </td>
-
           <tr>
     <% end %>
           	<td> </td>
           	<td> 合計 </td>
-          	<td> <%= quantity %> </td>
-          	<td> <%= product.price %> </td>
+          	<td> <%= Cart_item.sum(:quantity) %> </td>
+          	<td> <%= Cart_item.sum(:product.price) %> </td>
           	<td>  </td>
 </table>
 
