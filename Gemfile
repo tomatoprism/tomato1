@@ -73,5 +73,12 @@ gem 'jquery-rails'
 gem 'kaminari'
 # 複数の入力フォーム
 gem 'cocoon'
+<<<<<<< HEAD
 
 gem 'pry-byebug'
+=======
+#論理削除
+gem "paranoia", "~> 2.2"
+
+gem 'paranoia_uniqueness_validator', '3.1.0'
+>>>>>>> master
