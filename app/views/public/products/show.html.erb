@@ -40,19 +40,24 @@
         </tr>
         <tr>
           <td> 在庫数 </td>
-          <td> <%= @product.stock %> </td>
+          <td> <% if @product.stock == 0 then %>
+             在庫なし
+           <% else %>
+             在庫あり
+           <% end %>
+           </td>
         </tr>
     
         <tr>
           <td> 個数 </td>
-          <td> <%= form_for @product do |f| %>
+          <td> <%= form_for(@product, url: add_item_path(@product.id),html: {method: "post"} )do |f| %>
  				 <%= f.number_field :stock %>
 				 </td>
         </tr>
-        <tr>
+
+        <tr> <td><%= f.submit "カートに入れる" %>
             <% end %>
           </td>
-          <td></td>
         </tr>
     </table>
   </div>

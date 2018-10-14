@@ -6,16 +6,16 @@
 		    <th> 小計 </th>
 		    <th> </th>
 		  </tr>
-	<% @cart_item.each do |f| %>
+	
 		  <tr>
-		  	<td> <%= attachment_image_tag cart_item, :image %> </td>
-		  	<td> <%= cart_item.product.title %> <br>
-		  	     <%= cart_item.product.artist_name %> </td>
-            <td> <%= cart_item.quantity %> </td>
-            <td> <%= cart_item.product.price*cart_item.quantity %> </td>
+		  	<td> <%= attachment_image_tag @cart_item, :image %> </td>
+		  	<td> <%= @cart_item.product.title %> <br>
+		  	     <%= @cart_item.product.artist.artist_name %> </td>
+            <td> <%= @cart_item.quantity %> </td>
+            <td> <%= @cart_item.product.price*@cart_item.quantity %> </td>
             <td> <%= link_to "削除", delete_item_path, method: :delete %> </td>
           <tr>
-    <% end %>
+    
           	<td> </td>
           	<td> 合計 </td>
           	<td> <%= Cart_item.sum(:quantity) %> </td>
