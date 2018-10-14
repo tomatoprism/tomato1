@@ -14048,3 +14048,17 @@ Completed 200 OK in 403ms (Views: 381.9ms | ActiveRecord: 1.9ms)
 >>>>>>> master
 
 
+Started GET "/products" for 10.0.2.2 at 2018-10-14 03:13:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  Rendered public/products/index.html.erb within layouts/application (7.1ms)
+  [1m[36mAdmin Load (2.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 1851ms (Views: 1792.6ms | ActiveRecord: 9.7ms)
+
+
