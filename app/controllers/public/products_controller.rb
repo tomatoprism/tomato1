@@ -5,11 +5,15 @@ class Public::ProductsController < Public::ApplicationController
 
 	def show
 		@product = Product.find(params[:id])
-		if current_user
-			@product.add_item
-		else
-			redirect_to products_path
-		end
+		@discs = @product.discs
+	end
+
+    def add_item
+		@cart_item = Cart_item.new
+		@cart_item.max_stock(params[:stock])
+		@cart_item.quantity += params[:quantity].to_i
+        @cart_item.save
+        redirect_to cart_path(cart.id)
 	end
 
 	def product_params

@@ -1,3 +1,4 @@
+<% if @user == current_user %>
 <table class="table">
     <tr>
         <th> User情報</th>
@@ -38,19 +39,26 @@
 
     <%= link_to "編集", edit_user_path(@user) %>
 
-<h3>購入履歴</h3>
+<h3>購入履歴(仮)</h3>
+<% if cart.create %>
+<% @history.each do |history| %>
 <li class = "item" >
   <div class = "product-image" >
-    <%= attachment_image_tag @product, :image %>
+    <%= attachment_image_tag history, :image %>
   </div>
   <div class = "product-info" >
-    <li> <%= buy_date %> </li>
-    <li> <%= @product.title %> </li>
-    <li> <%= @product.artist_id %> </li>
-    <li> <%= @cart_item.quantity %> </li>
-    <li> <%= @product.price*product.quantity %> </li>
+    <li> <%= history.create_at %> </li>
+    <li> <%= history.product.title %> </li>
+    <li> <%= history.product.artist_id %> </li>
+    <li> <%= hisroty.cart_item.quantity %> </li>
+    <li> <%= history.price_history %> </li>
   </div>
 </li>
+<% end %>
+<% end %>
 
        <%= link_to "退会", root_path %>
+       <% end %>
+
+
        <%= link_to "戻る", :back %>

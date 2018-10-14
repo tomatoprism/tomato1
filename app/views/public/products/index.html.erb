@@ -7,12 +7,13 @@
   <div class = "product-image" >
       <%= link_to product_path(product.id) do %>
       <%= attachment_image_tag product, :image %>
+  </div>
+
+  <div class = "product-info" >
       <% end %>
   </div>
 
   <div class = "product-info" >
-      
-
       <li> <%= product.artist.artist_name %> </li>
       <li> <%= product.price %> </li>
       <li> <% if product.stock == 0 then %>
@@ -23,5 +24,6 @@
       </li>
 </div>
 </li>
+<% end %>
 
 <% end %>
