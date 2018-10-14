@@ -10,7 +10,7 @@
 		  <tr>
 		  	<td> <%= attachment_image_tag cart_item, :image %> </td>
 		  	<td> <%= cart_item.product.title %> <br>
-		  	     <%= cart_item.product.artist_id %> </td>
+		  	     <%= cart_item.product.artist_name %> </td>
             <td> <%= cart_item.quantity %> </td>
             <td> <%= cart_item.product.price*cart_item.quantity %> </td>
             <td> <%= link_to "削除", delete_item_path, method: :delete %> </td>

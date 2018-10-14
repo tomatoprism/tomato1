@@ -1,6 +1,6 @@
 <h1>CD詳細</h1>
 
-<li class = "item" >
+<div class = "item" >
   <div class = "product-image" >
     <%= attachment_image_tag @product, :image %>
   </div>
@@ -13,11 +13,11 @@
 
         <tr>
         	<td> カテゴリー </td>
-        	<td> <%= @product.category_id %> </td>
+        	<td> <%= @product.category.category_name %> </td>
       	 </tr>
         <tr>
           <td> アーティスト </td>
-          <td> <%= @product.artist_id %> </td>
+          <td> <%= @product.artist.artist_name %> </td>
         </tr>
 
         <tr>
@@ -40,14 +40,11 @@
           <td> 在庫数 </td>
           <td> <%= @product.stock %> </td>
         </tr>
-        <tr>
-          <td> お気に入り </td>
-          <td> <%= link_to "お気に入り", product_favorites_path, method: :post %> </td>
-        </tr>
+        
         <tr>
           <td> 個数 </td>
           <td> <%= form_for @product do |f| %>
- 				 <%= f.number_field :product, :stock %>
+ 				 <%= f.number_field :stock %>
 				 </td>
         </tr>
         <tr>
@@ -58,36 +55,37 @@
         </tr>
     </table>
   </div>
-</li>
+</div>
 
 
 <table class="table">
 　　　　　<tr>
-		    <th> 詳細 </th>
+		    <th> 商品詳細 </th>
 		    <th> 曲名一覧 </th>
 		    <th> アーティスト </th>
 		    <th> 商品説明 </th>
 	     </tr>
 
 	     <tr>
-		    <th> </th>
-		    <th> <%= @product.disc.track %> </th>
-		    <th> <%= @product.artist_id %> </th>
+        <th></th>
+        <th>
+        <p><% @discs.each do |disc| %>
+         <%= disc.disc_name %>
+         </p>
+
+        <p>
+          <% disc.tracks.each do |track| %>
+         <%= track.music %>
+       </p>
+
+         <% end %>
+         <br>
+         <% end %>
+         </th>
+		    <th> <%= @product.artist.artist_name %> </th>
 		    <th> <%= @product.introduction %> </th>
 	     </tr>
 </table>
-<!-- <h2>レビュー(仮)</h2>
 
-<%= form_for @review do |f| %>
-<%= f.text_field :text, rows:'5', class: "form-control", placeholder: "コメントをここに" %>
-    <%= f.submit "送信する" %>
-<% end %>
-
- <% product.product_id.review.each do |review| %>
- <%= product.review.created_at.strftime('%Y/%m/%d') %>
- <%= product.review %>
- <% end %>
-
- <h3>関連情報(仮)</h3> -->
 
  <%= link_to "戻る", :back, class: "back" %>

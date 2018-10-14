@@ -14062,6 +14062,7 @@ Processing by Public::ProductsController#index as HTML
 Completed 200 OK in 1851ms (Views: 1792.6ms | ActiveRecord: 9.7ms)
 
 
+<<<<<<< HEAD
 Started GET "/products" for 10.0.2.2 at 2018-10-14 04:42:53 +0000
 Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
   [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
@@ -14074,5 +14075,2460 @@ Processing by Public::ProductsController#index as HTML
   [1m[36mAdmin Load (1.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
   ↳ app/views/layouts/application.html.erb:19
 Completed 200 OK in 1584ms (Views: 1531.1ms | ActiveRecord: 7.4ms)
+=======
+Started GET "/admin/users/1" for 10.0.2.2 at 2018-10-14 04:00:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (1.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  Rendered admin/users/_track_fields.html.erb (4.5ms)
+  Rendered admin/users/_track_fields.html.erb (0.8ms)
+  Rendered admin/users/_disc_fields.html.erb (120.3ms)
+  Rendered admin/users/_track_fields.html.erb (0.6ms)
+  Rendered admin/users/_disc_fields.html.erb (21.5ms)
+  Rendered admin/users/_form.html.erb (387.2ms)
+  Rendered admin/users/show.html.erb within layouts/application (422.6ms)
+  [1m[36mAdmin Load (0.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 7047ms (Views: 6809.5ms | ActiveRecord: 36.4ms)
+
+
+Started POST "/admin/products" for 10.0.2.2 at 2018-10-14 04:01:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pad/IoiVddcQzNoxy4Ny3zHDTce2QigGgcreBCx/hsm84+sQBGf7Q3JYL6/UI7G8F89JraV3UyaInsjT3g9xzA==", "product"=>{"image"=>"{}", "title"=>"1", "artist_id"=>"1", "category_id"=>["1"], "discs_attributes"=>{"0"=>{"disc_name"=>"1", "_destroy"=>"false", "tracks_attributes"=>{"0"=>{"music"=>"1", "list_num"=>"1"}}}}, "label"=>"1", "release(1i)"=>"2018", "release(2i)"=>"10", "release(3i)"=>"14", "price"=>"1", "introduction"=>"1", "stock"=>"1"}, "commit"=>"追加"}
+Unpermitted parameter: :category_id
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mArtist Load (1.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mAdmin Load (1.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:31
+Redirected to http://localhost:3000/admin/users/1
+Completed 302 Found in 24ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/admin/users/1" for 10.0.2.2 at 2018-10-14 04:01:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  Rendered admin/users/_track_fields.html.erb (0.9ms)
+  Rendered admin/users/_track_fields.html.erb (0.8ms)
+  Rendered admin/users/_disc_fields.html.erb (47.4ms)
+  Rendered admin/users/_track_fields.html.erb (0.6ms)
+  Rendered admin/users/_disc_fields.html.erb (23.1ms)
+  Rendered admin/users/_form.html.erb (114.1ms)
+  Rendered admin/users/show.html.erb within layouts/application (129.1ms)
+  [1m[36mAdmin Load (0.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 587ms (Views: 526.4ms | ActiveRecord: 2.1ms)
+
+
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to ChangeDatatypeCategoryIdOfProducts (20181014041656)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181014041656_change_datatype_category_id_of_products.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproducts" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "image_id" text DEFAULT NULL, "price" integer DEFAULT NULL, "label" varchar DEFAULT NULL, "stock" integer DEFAULT NULL, "release" date DEFAULT NULL, "introduction" varchar DEFAULT NULL, "artist_id" integer DEFAULT NULL, "category_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181014041656_change_datatype_category_id_of_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aproducts" ("id","title","image_id","price","label","stock","release","introduction","artist_id","category_id","created_at","updated_at")
+                     SELECT "id","title","image_id","price","label","stock","release","introduction","artist_id","category_id","created_at","updated_at" FROM "products"[0m
+  ↳ db/migrate/20181014041656_change_datatype_category_id_of_products.rb:3
+  [1m[35m (2.9ms)[0m  [1m[35mDROP TABLE "products"[0m
+  ↳ db/migrate/20181014041656_change_datatype_category_id_of_products.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "image_id" text DEFAULT NULL, "price" integer DEFAULT NULL, "label" varchar DEFAULT NULL, "stock" integer DEFAULT NULL, "release" date DEFAULT NULL, "introduction" varchar DEFAULT NULL, "artist_id" integer DEFAULT NULL, "category_id" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181014041656_change_datatype_category_id_of_products.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "products" ("id","title","image_id","price","label","stock","release","introduction","artist_id","category_id","created_at","updated_at")
+                     SELECT "id","title","image_id","price","label","stock","release","introduction","artist_id","category_id","created_at","updated_at" FROM "aproducts"[0m
+  ↳ db/migrate/20181014041656_change_datatype_category_id_of_products.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aproducts"[0m
+  ↳ db/migrate/20181014041656_change_datatype_category_id_of_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181014041656"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Started POST "/admin/products" for 10.0.2.2 at 2018-10-14 04:19:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FuaLajgC7tlulrnf/ru+odcobtIydWFuiDG3gq/bLSkPoh9YtPBgTQwCTEHhG33C8SRquCFAGk6BZaFVXavaLA==", "product"=>{"image"=>"{}", "title"=>"1", "artist_id"=>"1", "category_id"=>["1"], "discs_attributes"=>{"0"=>{"disc_name"=>"1", "_destroy"=>"false", "tracks_attributes"=>{"0"=>{"music"=>"1", "list_num"=>"1"}}}}, "label"=>"1", "release(1i)"=>"2018", "release(2i)"=>"10", "release(3i)"=>"14", "price"=>"1", "introduction"=>"1", "stock"=>"1"}, "commit"=>"追加"}
+Unpermitted parameter: :category_id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mAdmin Load (1.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:31
+Redirected to http://localhost:3000/admin/users/1
+Completed 302 Found in 126ms (ActiveRecord: 22.3ms)
+
+
+Started GET "/admin/users/1" for 10.0.2.2 at 2018-10-14 04:19:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  Rendered admin/users/_track_fields.html.erb (2.1ms)
+  Rendered admin/users/_track_fields.html.erb (1.2ms)
+  Rendered admin/users/_disc_fields.html.erb (46.9ms)
+  Rendered admin/users/_track_fields.html.erb (0.9ms)
+  Rendered admin/users/_disc_fields.html.erb (25.7ms)
+  Rendered admin/users/_form.html.erb (209.3ms)
+  Rendered admin/users/show.html.erb within layouts/application (234.6ms)
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 1855ms (Views: 1828.4ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/admin/products" for 10.0.2.2 at 2018-10-14 04:35:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::ProductsController#index as HTML
+  Rendering admin/products/index.html.erb within layouts/application
+  Rendered admin/products/index.html.erb within layouts/application (42.2ms)
+Completed 500 Internal Server Error in 183ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>商品一覧</h1>
+    2: 
+    3: <% @products.each do |product| %>
+    4: 
+    5:  <li class = "item" >
+    6: 
+  
+app/views/admin/products/index.html.erb:3:in `_app_views_admin_products_index_html_erb___2321695044201290526_70278954156880'
+Started GET "/admin/users/1" for 10.0.2.2 at 2018-10-14 04:35:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (1.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  Rendered admin/users/_track_fields.html.erb (2.2ms)
+  Rendered admin/users/_track_fields.html.erb (0.9ms)
+  Rendered admin/users/_disc_fields.html.erb (70.5ms)
+  Rendered admin/users/_track_fields.html.erb (1.2ms)
+  Rendered admin/users/_disc_fields.html.erb (28.3ms)
+  Rendered admin/users/_form.html.erb (275.6ms)
+  Rendered admin/users/show.html.erb within layouts/application (301.5ms)
+  [1m[36mAdmin Load (1.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 2135ms (Views: 2015.0ms | ActiveRecord: 38.3ms)
+
+
+Started POST "/admin/products" for 10.0.2.2 at 2018-10-14 04:35:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ye3pZ7/yZqdcrUL3c0PovyOI/Nbnx7LkY41LFGbwcuPQqX1VMwDoMz45t2ls4yvcBYT4vPTyycRq2V3DlICF5g==", "product"=>{"image"=>"{}", "title"=>"1", "artist_id"=>"1", "category_id"=>["1"], "discs_attributes"=>{"0"=>{"disc_name"=>"1", "_destroy"=>"false", "tracks_attributes"=>{"0"=>{"music"=>"1", "list_num"=>"1"}}}}, "label"=>"1", "release(1i)"=>"2018", "release(2i)"=>"10", "release(3i)"=>"14", "price"=>"1", "introduction"=>"1", "stock"=>"1"}, "commit"=>"追加"}
+Completed 500 Internal Server Error in 271ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `arr' for #<Admin::ProductsController:0x00007fd61e74b868>
+Did you mean?  Array):
+  
+app/controllers/admin/products_controller.rb:35:in `product_params'
+app/controllers/admin/products_controller.rb:29:in `create'
+Started GET "/admin/users/1" for 10.0.2.2 at 2018-10-14 04:36:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (1.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  Rendered admin/users/_track_fields.html.erb (1.8ms)
+  Rendered admin/users/_track_fields.html.erb (0.8ms)
+  Rendered admin/users/_disc_fields.html.erb (59.3ms)
+  Rendered admin/users/_track_fields.html.erb (0.6ms)
+  Rendered admin/users/_disc_fields.html.erb (25.1ms)
+  Rendered admin/users/_form.html.erb (224.6ms)
+  Rendered admin/users/show.html.erb within layouts/application (248.4ms)
+  [1m[36mAdmin Load (1.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 2110ms (Views: 1996.5ms | ActiveRecord: 31.8ms)
+
+
+Started POST "/admin/products" for 10.0.2.2 at 2018-10-14 04:36:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QBOF657oe65iX2S53T7b0SIIJ0kAIXY7xD27Bm33BL5ZVxHZEhr1OgDLkSfCnhiyBAQjIxMUDRvNaa3Rn4fzuw==", "product"=>{"image"=>"{}", "title"=>"1", "artist_id"=>"1", "category_id"=>["1"], "discs_attributes"=>{"0"=>{"disc_name"=>"1", "_destroy"=>"false", "tracks_attributes"=>{"0"=>{"music"=>"1", "list_num"=>"1"}}}}, "label"=>"1", "release(1i)"=>"2018", "release(2i)"=>"10", "release(3i)"=>"14", "price"=>"1", "introduction"=>"1", "stock"=>"1"}, "commit"=>"追加"}
+Completed 500 Internal Server Error in 302ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `category_id' for #<Admin::ProductsController:0x00007f4930fc5410>
+Did you mean?  category_url):
+  
+app/controllers/admin/products_controller.rb:35:in `product_params'
+app/controllers/admin/products_controller.rb:29:in `create'
+Started GET "/admin/users/1" for 10.0.2.2 at 2018-10-14 04:40:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (2.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:13
+  Rendered admin/users/_form.html.erb (40.5ms)
+  Rendered admin/users/show.html.erb within layouts/application (66.6ms)
+Completed 500 Internal Server Error in 206ms (ActiveRecord: 4.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `category_name' for #<Artist:0x00007f491d0dcce0>):
+    10:      <!--  <%= f.collection_check_boxes(:category_id, Category.all, :id, :category_name, include_hidden: false) do |b| %>
+    11:       <%= b.label { b.check_box + b.text } %>
+    12:       <% end %> -->
+    13:       <%= f.select :category_id, Artist.all.map{|u| [u.category_name, u.id]}, include_blank: true %>
+    14:   </div>
+    15:   <p>ディスク</p>
+    16:   <div id="discs">
+  
+app/views/admin/users/_form.html.erb:13:in `block (2 levels) in _app_views_admin_users__form_html_erb__2252002058765528233_69975992950820'
+app/views/admin/users/_form.html.erb:13:in `map'
+app/views/admin/users/_form.html.erb:13:in `block in _app_views_admin_users__form_html_erb__2252002058765528233_69975992950820'
+app/views/admin/users/_form.html.erb:1:in `_app_views_admin_users__form_html_erb__2252002058765528233_69975992950820'
+app/views/admin/users/show.html.erb:3:in `_app_views_admin_users_show_html_erb___3084969977055307452_69976001526520'
+Started GET "/admin/users/1" for 10.0.2.2 at 2018-10-14 04:40:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:13
+  Rendered admin/users/_track_fields.html.erb (1.9ms)
+  Rendered admin/users/_track_fields.html.erb (2.0ms)
+  Rendered admin/users/_disc_fields.html.erb (76.7ms)
+  Rendered admin/users/_track_fields.html.erb (1.8ms)
+  Rendered admin/users/_disc_fields.html.erb (41.9ms)
+  Rendered admin/users/_form.html.erb (207.9ms)
+  Rendered admin/users/show.html.erb within layouts/application (240.1ms)
+  [1m[36mAdmin Load (1.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 860ms (Views: 805.5ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/admin/products" for 10.0.2.2 at 2018-10-14 04:41:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Sj6i1j/BvWFkt31sDsU7KG7qbfNFB4v6Y0eTtMciKGlTejbkszMz9QYjiPIRZfhLSOZpmVYy8NpqE4VjNVLfbA==", "product"=>{"image"=>"{}", "title"=>"1", "artist_id"=>"1", "category_id"=>"1", "discs_attributes"=>{"0"=>{"disc_name"=>"1", "_destroy"=>"false", "tracks_attributes"=>{"0"=>{"music"=>"1", "list_num"=>"1"}}}}, "label"=>"1", "release(1i)"=>"2018", "release(2i)"=>"10", "release(3i)"=>"14", "price"=>"1", "introduction"=>"1", "stock"=>"1"}, "commit"=>"追加"}
+Completed 500 Internal Server Error in 279ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `category_id' for #<Admin::ProductsController:0x00007f491cb93248>
+Did you mean?  category_url):
+  
+app/controllers/admin/products_controller.rb:35:in `product_params'
+app/controllers/admin/products_controller.rb:29:in `create'
+Started POST "/admin/products" for 10.0.2.2 at 2018-10-14 04:41:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Sj6i1j/BvWFkt31sDsU7KG7qbfNFB4v6Y0eTtMciKGlTejbkszMz9QYjiPIRZfhLSOZpmVYy8NpqE4VjNVLfbA==", "product"=>{"image"=>"{}", "title"=>"1", "artist_id"=>"1", "category_id"=>"1", "discs_attributes"=>{"0"=>{"disc_name"=>"1", "_destroy"=>"false", "tracks_attributes"=>{"0"=>{"music"=>"1", "list_num"=>"1"}}}}, "label"=>"1", "release(1i)"=>"2018", "release(2i)"=>"10", "release(3i)"=>"14", "price"=>"1", "introduction"=>"1", "stock"=>"1"}, "commit"=>"追加"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mProduct Create (4.0ms)[0m  [1m[32mINSERT INTO "products" ("title", "image_id", "price", "label", "stock", "release", "introduction", "artist_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "1"], ["image_id", nil], ["price", 1], ["label", "1"], ["stock", 1], ["release", "2018-10-14"], ["introduction", "1"], ["artist_id", 1], ["category_id", "1"], ["created_at", "2018-10-14 04:41:39.078950"], ["updated_at", "2018-10-14 04:41:39.078950"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mDisc Create (1.6ms)[0m  [1m[32mINSERT INTO "discs" ("product_id", "disc_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 1], ["disc_name", "1"], ["created_at", "2018-10-14 04:41:39.091618"], ["updated_at", "2018-10-14 04:41:39.091618"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mTrack Create (1.0ms)[0m  [1m[32mINSERT INTO "tracks" ("music", "list_num", "disc_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["music", "1"], ["list_num", 1], ["disc_id", 1], ["created_at", "2018-10-14 04:41:39.101802"], ["updated_at", "2018-10-14 04:41:39.101802"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mAdmin Load (2.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:31
+Redirected to http://localhost:3000/admin/users/1
+Completed 302 Found in 168ms (ActiveRecord: 41.9ms)
+
+
+Started GET "/admin/users/1" for 10.0.2.2 at 2018-10-14 04:41:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (1.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:13
+  Rendered admin/users/_track_fields.html.erb (2.2ms)
+  Rendered admin/users/_track_fields.html.erb (0.8ms)
+  Rendered admin/users/_disc_fields.html.erb (60.5ms)
+  Rendered admin/users/_track_fields.html.erb (0.8ms)
+  Rendered admin/users/_disc_fields.html.erb (20.9ms)
+  Rendered admin/users/_form.html.erb (226.2ms)
+  Rendered admin/users/show.html.erb within layouts/application (252.2ms)
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 1891ms (Views: 1849.9ms | ActiveRecord: 3.0ms)
+>>>>>>> master
+
+
+Started GET "/products" for 10.0.2.2 at 2018-10-14 04:46:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  Rendered public/products/index.html.erb within layouts/application (423.3ms)
+Completed 500 Internal Server Error in 564ms (ActiveRecord: 8.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `prodect' for #<#<Class:0x0000560ede804f60>:0x0000560ede869410>
+Did you mean?  product
+               @products):
+     6: 
+     7:   <div class = "product-image" >
+     8:       <%= link_to product_path(product.id) do %>
+     9:       <%= attachment_image_tag prodect, :image %>
+    10:       <% end %>
+    11:   </div>
+    12: 
+  
+app/views/public/products/index.html.erb:9:in `block (2 levels) in _app_views_public_products_index_html_erb___527421219953096515_47310931243760'
+app/views/public/products/index.html.erb:8:in `block in _app_views_public_products_index_html_erb___527421219953096515_47310931243760'
+app/views/public/products/index.html.erb:3:in `_app_views_public_products_index_html_erb___527421219953096515_47310931243760'
+Started GET "/products" for 10.0.2.2 at 2018-10-14 04:48:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:14
+  Rendered public/products/index.html.erb within layouts/application (85.4ms)
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 5.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `favorited_by?' for #<Product:0x00007f2bc13849f8>):
+    11:   </div>
+    12: 
+    13:   <div class = "product-info" >
+    14:       <li> <% if product.favorited_by?(current_user) %>
+    15:            <%= link_to "お気に入り", product_favorites_path, method: :post %>
+    16:            <% end %> </li>
+    17: 
+  
+app/views/public/products/index.html.erb:14:in `block in _app_views_public_products_index_html_erb___527421219953096515_69912974401060'
+app/views/public/products/index.html.erb:3:in `_app_views_public_products_index_html_erb___527421219953096515_69912974401060'
+Started GET "/products" for 10.0.2.2 at 2018-10-14 04:49:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:14
+  Rendered public/products/index.html.erb within layouts/application (30.9ms)
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `favorited_by?' for #<Product:0x0000560edd90ac30>):
+    11:   </div>
+    12: 
+    13:   <div class = "product-info" >
+    14:       <!-- <li> <% if product.favorited_by?(current_user) %>
+    15:            <%= link_to "お気に入り", product_favorites_path, method: :post %>
+    16:            <% end %> </li> -->
+    17: 
+  
+app/views/public/products/index.html.erb:14:in `block in _app_views_public_products_index_html_erb___527421219953096515_47310924391020'
+app/views/public/products/index.html.erb:3:in `_app_views_public_products_index_html_erb___527421219953096515_47310924391020'
+Started GET "/products" for 10.0.2.2 at 2018-10-14 04:49:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  Rendered public/products/index.html.erb within layouts/application (4.2ms)
+  [1m[36mAdmin Load (1.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 1901ms (Views: 1870.7ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/products" for 10.0.2.2 at 2018-10-14 04:50:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  [1m[36mArtist Load (1.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:16
+  Rendered public/products/index.html.erb within layouts/application (99.2ms)
+Completed 500 Internal Server Error in 202ms (ActiveRecord: 5.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Artist:0x00007f2bc8553db8>):
+    13:   <div class = "product-info" >
+    14: 
+    15: 
+    16:       <li> <%= product.artist.name %> </li>
+    17:       <li> <%= product.price %> </li>
+    18:       <li> <% if product.stock == 0 then %>
+    19:              在庫なし
+  
+app/views/public/products/index.html.erb:16:in `block in _app_views_public_products_index_html_erb___527421219953096515_69913010109440'
+app/views/public/products/index.html.erb:3:in `_app_views_public_products_index_html_erb___527421219953096515_69913010109440'
+Started GET "/products" for 10.0.2.2 at 2018-10-14 04:50:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  Rendered public/products/index.html.erb within layouts/application (28.2ms)
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `artist_name' for #<Product:0x00007f2bc07c6e68>
+Did you mean?  artist):
+    13:   <div class = "product-info" >
+    14: 
+    15: 
+    16:       <li> <%= product.artist_name %> </li>
+    17:       <li> <%= product.price %> </li>
+    18:       <li> <% if product.stock == 0 then %>
+    19:              在庫なし
+  
+app/views/public/products/index.html.erb:16:in `block in _app_views_public_products_index_html_erb___527421219953096515_69912958781800'
+app/views/public/products/index.html.erb:3:in `_app_views_public_products_index_html_erb___527421219953096515_69912958781800'
+Started GET "/products" for 10.0.2.2 at 2018-10-14 04:52:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (5.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  Rendered public/products/index.html.erb within layouts/application (46.8ms)
+Completed 500 Internal Server Error in 142ms (ActiveRecord: 5.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `artist_name' for #<Product:0x00007f2bc8700440>
+Did you mean?  artist):
+    12: 
+    13:   <div class = "product-info" >
+    14: 
+    15:       <li> <%= product.artist_name %> </li>
+    16:       <li> <%= product.price %> </li>
+    17:       <li> <% if product.stock == 0 then %>
+    18:              在庫なし
+  
+app/views/public/products/index.html.erb:15:in `block in _app_views_public_products_index_html_erb___527421219953096515_69913011582560'
+app/views/public/products/index.html.erb:3:in `_app_views_public_products_index_html_erb___527421219953096515_69913011582560'
+Started GET "/products" for 10.0.2.2 at 2018-10-14 04:53:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  Rendered public/products/index.html.erb within layouts/application (315.0ms)
+Completed 500 Internal Server Error in 424ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `artist_name' for #<#<Class:0x0000560ede804f60>:0x00007f2bc5966980>
+Did you mean?  artist_path):
+    12: 
+    13:   <div class = "product-info" >
+    14: 
+    15:       <li> <%= artist_name.product %> </li>
+    16:       <li> <%= product.price %> </li>
+    17:       <li> <% if product.stock == 0 then %>
+    18:              在庫なし
+  
+app/views/public/products/index.html.erb:15:in `block in _app_views_public_products_index_html_erb___527421219953096515_69912987646300'
+app/views/public/products/index.html.erb:3:in `_app_views_public_products_index_html_erb___527421219953096515_69912987646300'
+Started GET "/products" for 10.0.2.2 at 2018-10-14 04:54:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  Rendered public/products/index.html.erb within layouts/application (23.6ms)
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `artist_name' for 1:Integer):
+    12: 
+    13:   <div class = "product-info" >
+    14: 
+    15:       <li> <%= product.artist_id.artist_name %> </li>
+    16:       <li> <%= product.price %> </li>
+    17:       <li> <% if product.stock == 0 then %>
+    18:              在庫なし
+  
+app/views/public/products/index.html.erb:15:in `block in _app_views_public_products_index_html_erb___527421219953096515_69913011093280'
+app/views/public/products/index.html.erb:3:in `_app_views_public_products_index_html_erb___527421219953096515_69913011093280'
+Started GET "/products" for 10.0.2.2 at 2018-10-14 04:54:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  Rendered public/products/index.html.erb within layouts/application (20.6ms)
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `artist_name' for 1:Integer):
+    12: 
+    13:   <div class = "product-info" >
+    14: 
+    15:       <li> <%= product.artist_id.artist_name %> </li>
+    16:       <li> <%= product.price %> </li>
+    17:       <li> <% if product.stock == 0 then %>
+    18:              在庫なし
+  
+app/views/public/products/index.html.erb:15:in `block in _app_views_public_products_index_html_erb___527421219953096515_69913011112920'
+app/views/public/products/index.html.erb:3:in `_app_views_public_products_index_html_erb___527421219953096515_69913011112920'
+Started GET "/products" for 10.0.2.2 at 2018-10-14 04:55:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  Rendered public/products/index.html.erb within layouts/application (20.4ms)
+  [1m[36mAdmin Load (1.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 1720ms (Views: 1658.9ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/products" for 10.0.2.2 at 2018-10-14 04:55:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  Rendered public/products/index.html.erb within layouts/application (420.0ms)
+Completed 500 Internal Server Error in 501ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `artist_name' for #<#<Class:0x00007ff140352198>:0x00007ff142234908>
+Did you mean?  artist_path):
+    12: 
+    13:   <div class = "product-info" >
+    14: 
+    15:       <li> <%= artist_name %> </li>
+    16:       <li> <%= product.price %> </li>
+    17:       <li> <% if product.stock == 0 then %>
+    18:              在庫なし
+  
+app/views/public/products/index.html.erb:15:in `block in _app_views_public_products_index_html_erb___4001226692386739994_70337086728480'
+app/views/public/products/index.html.erb:3:in `_app_views_public_products_index_html_erb___4001226692386739994_70337086728480'
+Started GET "/products" for 10.0.2.2 at 2018-10-14 04:56:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  Rendered public/products/index.html.erb within layouts/application (286.9ms)
+Completed 500 Internal Server Error in 384ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `artist_name' for #<#<Class:0x00007ff140352198>:0x00007ff1406fbec0>
+Did you mean?  artist_path):
+    12: 
+    13:   <div class = "product-info" >
+    14: 
+    15:       <li> <%= artist_name.product %> </li>
+    16:       <li> <%= product.price %> </li>
+    17:       <li> <% if product.stock == 0 then %>
+    18:              在庫なし
+  
+app/views/public/products/index.html.erb:15:in `block in _app_views_public_products_index_html_erb___4001226692386739994_70337072485900'
+app/views/public/products/index.html.erb:3:in `_app_views_public_products_index_html_erb___4001226692386739994_70337072485900'
+Started GET "/products" for 10.0.2.2 at 2018-10-14 04:59:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#index as HTML
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `artist_name' for nil:NilClass):
+  
+app/controllers/public/products_controller.rb:4:in `index'
+Started GET "/products" for 10.0.2.2 at 2018-10-14 05:01:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#index as HTML
+Completed 404 Not Found in 30ms (ActiveRecord: 4.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Product without an ID):
+  
+app/controllers/public/products_controller.rb:4:in `index'
+Started GET "/products" for 10.0.2.2 at 2018-10-14 05:03:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  [1m[36mArtist Load (1.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:15
+  Rendered public/products/index.html.erb within layouts/application (49.9ms)
+  [1m[36mAdmin Load (1.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 1409ms (Views: 1365.7ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/products" for 10.0.2.2 at 2018-10-14 05:07:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:15
+  Rendered public/products/index.html.erb within layouts/application (6.4ms)
+  [1m[36mAdmin Load (1.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 402ms (Views: 382.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:08:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:8
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 6.8ms)
+
+
+  
+NoMethodError (undefined method `add_item' for #<Product:0x00007fbd0535ab00>):
+  
+app/controllers/public/products_controller.rb:9:in `show'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:08:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (25.0ms)
+Completed 500 Internal Server Error in 157ms (ActiveRecord: 5.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"destroy", :controller=>"public/favorites", :id=>"1"}, missing required keys: [:product_id]):
+    42:         </tr>
+    43:         <tr>
+    44:           <td> お気に入り </td>
+    45:           <td> <%= link_to "お気に入り", product_favorites_path, method: :post %> </td>
+    46:         </tr>
+    47:         <tr>
+    48:           <td> 個数 </td>
+  
+app/views/public/products/show.html.erb:45:in `_app_views_public_products_show_html_erb__2867386416443422318_70240937923660'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:09:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (18.4ms)
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for :stock:Symbol):
+    44:         <tr>
+    45:           <td> 個数 </td>
+    46:           <td> <%= form_for @product do |f| %>
+    47:  				 <%= f.number_field :product, :stock %>
+    48: 				 </td>
+    49:         </tr>
+    50:         <tr>
+  
+app/views/public/products/show.html.erb:47:in `block in _app_views_public_products_show_html_erb__2867386416443422318_70240767673820'
+app/views/public/products/show.html.erb:46:in `_app_views_public_products_show_html_erb__2867386416443422318_70240767673820'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:11:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (78.5ms)
+Completed 500 Internal Server Error in 153ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `disc' for #<Product:0x00007fc47c5db018>
+Did you mean?  discs):
+    68: 
+    69: 	     <tr>
+    70: 		    <th> </th>
+    71: 		    <th> <%= @product.disc.track %> </th>
+    72: 		    <th> <%= @product.artist_id %> </th>
+    73: 		    <th> <%= @product.introduction %> </th>
+    74: 	     </tr>
+  
+app/views/public/products/show.html.erb:71:in `_app_views_public_products_show_html_erb__2867386416443422318_70240938413900'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:14:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (31.4ms)
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `disc' for #<Product:0x00007fc47cab8360>
+Did you mean?  discs):
+    68: 
+    69: 	     <tr>
+    70: 		    <th> </th>
+    71: 		    <th> <%= @product.disc.disc_id.track.music %> </th>
+    72: 		    <th> <%= @product.artist.artist_id %> </th>
+    73: 		    <th> <%= @product.introduction %> </th>
+    74: 	     </tr>
+  
+app/views/public/products/show.html.erb:71:in `_app_views_public_products_show_html_erb__2867386416443422318_70240940947700'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:14:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (25.8ms)
+Completed 500 Internal Server Error in 109ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `disc' for #<Product:0x000055c79b4e00a8>
+Did you mean?  discs):
+    68: 
+    69: 	     <tr>
+    70: 		    <th> </th>
+    71: 		    <th> <%= @product.disc.track.music %> </th>
+    72: 		    <th> <%= @product.artist.artist_id %> </th>
+    73: 		    <th> <%= @product.introduction %> </th>
+    74: 	     </tr>
+  
+app/views/public/products/show.html.erb:71:in `_app_views_public_products_show_html_erb__2867386416443422318_47157896203560'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:15:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mDisc Load (2.1ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+  Rendered public/products/show.html.erb within layouts/application (92.2ms)
+Completed 500 Internal Server Error in 164ms (ActiveRecord: 6.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `track' for #<Disc::ActiveRecord_Associations_CollectionProxy:0x00007fc47c095540>):
+    68: 
+    69: 	     <tr>
+    70: 		    <th> </th>
+    71: 		    <th> <%= @product.discs.track.music %> </th>
+    72: 		    <th> <%= @product.artist.artist_id %> </th>
+    73: 		    <th> <%= @product.introduction %> </th>
+    74: 	     </tr>
+  
+app/views/public/products/show.html.erb:71:in `_app_views_public_products_show_html_erb__2867386416443422318_70240937738640'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:15:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (20.0ms)
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `disc' for #<Product:0x00007fc47c938d28>
+Did you mean?  discs):
+    68: 
+    69: 	     <tr>
+    70: 		    <th> </th>
+    71: 		    <th> <%= @product.disc.id.track.music %> </th>
+    72: 		    <th> <%= @product.artist.artist_id %> </th>
+    73: 		    <th> <%= @product.introduction %> </th>
+    74: 	     </tr>
+  
+app/views/public/products/show.html.erb:71:in `_app_views_public_products_show_html_erb__2867386416443422318_70240940162480'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:15:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mDisc Load (1.2ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+  Rendered public/products/show.html.erb within layouts/application (24.9ms)
+Completed 500 Internal Server Error in 109ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<Disc::ActiveRecord_Associations_CollectionProxy:0x00007fc468039c18>
+Did you mean?  ids):
+    68: 
+    69: 	     <tr>
+    70: 		    <th> </th>
+    71: 		    <th> <%= @product.discs.id.track.music %> </th>
+    72: 		    <th> <%= @product.artist.artist_id %> </th>
+    73: 		    <th> <%= @product.introduction %> </th>
+    74: 	     </tr>
+  
+app/views/public/products/show.html.erb:71:in `_app_views_public_products_show_html_erb__2867386416443422318_70240767821940'
+Started GET "/products" for 10.0.2.2 at 2018-10-14 05:17:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  [1m[36mArtist Load (2.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:15
+  Rendered public/products/index.html.erb within layouts/application (62.8ms)
+  [1m[36mAdmin Load (2.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 1779ms (Views: 1745.0ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:17:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (22.9ms)
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `disc' for #<Product:0x00007fc484031100>
+Did you mean?  discs):
+    68: 
+    69: 	     <tr>
+    70: 		    <th> </th>
+    71: 		    <th> <%= @product.disc.disc_name.track.music %> </th>
+    72: 		    <th> <%= @product.artist.artist_id %> </th>
+    73: 		    <th> <%= @product.introduction %> </th>
+    74: 	     </tr>
+  
+app/views/public/products/show.html.erb:71:in `_app_views_public_products_show_html_erb__2867386416443422318_47157900234580'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:19:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (28.0ms)
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `disc' for #<Product:0x00007fc484394428>
+Did you mean?  discs):
+    69: 
+    70: 	     <tr>
+    71: 		    <th> </th>
+    72:         <th> <%= @product.disc.disc_name %> </th>
+    73: 		    <th> <%= @product.track.music %> </th>
+    74: 		    <th> <%= @product.artist.artist_id %> </th>
+    75: 		    <th> <%= @product.introduction %> </th>
+  
+app/views/public/products/show.html.erb:72:in `_app_views_public_products_show_html_erb__2867386416443422318_70240870316340'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:20:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (23.5ms)
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `disc_name' for #<Product:0x00007fc489744de8>
+Did you mean?  disc_ids):
+    69: 
+    70: 	     <tr>
+    71: 		    <th> </th>
+    72:         <th> <%= @product.disc_name %> </th>
+    73: 		    <th> <%= @product.track.music %> </th>
+    74: 		    <th> <%= @product.artist.artist_id %> </th>
+    75: 		    <th> <%= @product.introduction %> </th>
+  
+app/views/public/products/show.html.erb:72:in `_app_views_public_products_show_html_erb__2867386416443422318_70241048198660'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:25:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (24.8ms)
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `disc' for #<Product:0x00007fc48451a5e0>
+Did you mean?  discs):
+    69: 
+    70: 	     <tr>
+    71: 		    <th> </th>
+    72:         <th> <%= @product.disc.disc_name %> </th>
+    73: 		    <th> <%= @product.track.music %> </th>
+    74: 		    <th> <%= @product.artist.artist_id %> </th>
+    75: 		    <th> <%= @product.introduction %> </th>
+  
+app/views/public/products/show.html.erb:72:in `_app_views_public_products_show_html_erb__2867386416443422318_70241005128240'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:27:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (21.6ms)
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `track' for #<Product:0x00007fc4898bb4b0>):
+    69: 
+    70: 	     <tr>
+    71: 		    <th> </th>
+    72: 		    <th> <%= @product.track.music %> </th>
+    73: 		    <th> <%= @product.artist.artist_id %> </th>
+    74: 		    <th> <%= @product.introduction %> </th>
+    75: 	     </tr>
+  
+app/views/public/products/show.html.erb:72:in `_app_views_public_products_show_html_erb__2867386416443422318_70241048973720'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:27:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mArtist Load (7.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:73
+  Rendered public/products/show.html.erb within layouts/application (33.0ms)
+Completed 500 Internal Server Error in 143ms (ActiveRecord: 8.2ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    76: </table>
+    77: <!-- <h2>レビュー(仮)</h2>
+    78: 
+    79: <%= form_for @review do |f| %>
+    80: <%= f.text_field :text, rows:'5', class: "form-control", placeholder: "コメントをここに" %>
+    81:     <%= f.submit "送信する" %>
+    82: <% end %>
+  
+app/views/public/products/show.html.erb:79:in `_app_views_public_products_show_html_erb__2867386416443422318_70241005704460'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:28:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.9ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:73
+  Rendered public/products/show.html.erb within layouts/application (4.2ms)
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 377ms (Views: 351.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:29:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (24.6ms)
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `disc' for #<Product:0x00007fc47cc2ca98>
+Did you mean?  discs):
+    69: 
+    70: 	     <tr>
+    71: 		    <th> </th>
+    72:         <th> <%= @product.disc %> </th>
+    73:         <th> <%= @product.track.music %> </th>
+    74: 		    <th> <%= @product.artist.artist_name %> </th>
+    75: 		    <th> <%= @product.introduction %> </th>
+  
+app/views/public/products/show.html.erb:72:in `_app_views_public_products_show_html_erb__2867386416443422318_70240941668680'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:29:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (25.3ms)
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `disc_name' for #<Product:0x00007fc48403fb10>
+Did you mean?  disc_ids):
+    69: 
+    70: 	     <tr>
+    71: 		    <th> </th>
+    72:         <th> <%= @product.disc_name %> </th>
+    73:         <th> <%= @product.track.music %> </th>
+    74: 		    <th> <%= @product.artist.artist_name %> </th>
+    75: 		    <th> <%= @product.introduction %> </th>
+  
+app/views/public/products/show.html.erb:72:in `_app_views_public_products_show_html_erb__2867386416443422318_70241002583200'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:34:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 5.6ms)
+
+
+  
+NoMethodError (undefined method `disc' for #<Product:0x00007fa2b0525cd8>
+Did you mean?  discs):
+  
+app/controllers/public/products_controller.rb:8:in `show'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:34:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `disc' for #<Product:0x00007fa2b801c798>
+Did you mean?  discs):
+  
+app/controllers/public/products_controller.rb:8:in `show'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:34:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mDisc Load (1.7ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+  Rendered public/products/show.html.erb within layouts/application (59.8ms)
+Completed 500 Internal Server Error in 213ms (ActiveRecord: 12.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `disc_name' for #<Disc::ActiveRecord_Associations_CollectionProxy:0x00007fc8c0264130>
+Did you mean?  distinct_value):
+    69: 
+    70: 	     <tr>
+    71: 		    <th> </th>
+    72:         <th> <%= @disc.disc_name %> </th>
+    73:         <th> <%= @product.track.music %> </th>
+    74: 		    <th> <%= @product.artist.artist_name %> </th>
+    75: 		    <th> <%= @product.introduction %> </th>
+  
+app/views/public/products/show.html.erb:72:in `_app_views_public_products_show_html_erb___2662901393488629605_70250098586280'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:35:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mDisc Load (0.7ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+  Rendered public/products/show.html.erb within layouts/application (22.4ms)
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 2.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `disc_names' for #<Disc::ActiveRecord_Associations_CollectionProxy:0x00007fc8c8033b88>):
+    69: 
+    70: 	     <tr>
+    71: 		    <th> </th>
+    72:         <th> <%= @disc.disc_names %> </th>
+    73:         <th> <%= @product.track.music %> </th>
+    74: 		    <th> <%= @product.artist.artist_name %> </th>
+    75: 		    <th> <%= @product.introduction %> </th>
+  
+app/views/public/products/show.html.erb:72:in `_app_views_public_products_show_html_erb___2662901393488629605_70250162918560'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:36:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 4.2ms)
+
+
+  
+NoMethodError (undefined method `disc' for #<Product:0x00007f4c342b02c8>
+Did you mean?  discs):
+  
+app/controllers/public/products_controller.rb:8:in `show'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:37:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 5.7ms)
+
+
+  
+NoMethodError (undefined method `disc_id' for #<Product:0x00007ffab8187c10>
+Did you mean?  disc_ids
+               disc_ids=):
+  
+app/controllers/public/products_controller.rb:8:in `show'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:38:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mDisc Load (2.1ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+  Rendered public/products/show.html.erb within layouts/application (64.1ms)
+Completed 500 Internal Server Error in 213ms (ActiveRecord: 11.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `disc_name' for #<Disc::ActiveRecord_Associations_CollectionProxy:0x00007fe2bc57f638>
+Did you mean?  distinct_value):
+    69: 
+    70: 	     <tr>
+    71: 		    <th> </th>
+    72:         <th> <%= @discs.disc_name %> </th>
+    73:         <th> <%= @product.track.music %> </th>
+    74: 		    <th> <%= @product.artist.artist_name %> </th>
+    75: 		    <th> <%= @product.introduction %> </th>
+  
+app/views/public/products/show.html.erb:72:in `_app_views_public_products_show_html_erb___4440885142317626034_70305899605320'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:38:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mDisc Load (0.8ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+  Rendered public/products/show.html.erb within layouts/application (30.6ms)
+Completed 500 Internal Server Error in 135ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `disc_names' for #<Disc::ActiveRecord_Associations_CollectionProxy:0x00007fe2c402d588>):
+    69: 
+    70: 	     <tr>
+    71: 		    <th> </th>
+    72:         <th> <%= @discs.disc_names %> </th>
+    73:         <th> <%= @product.track.music %> </th>
+    74: 		    <th> <%= @product.artist.artist_name %> </th>
+    75: 		    <th> <%= @product.introduction %> </th>
+  
+app/views/public/products/show.html.erb:72:in `_app_views_public_products_show_html_erb___4440885142317626034_70305963925920'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:39:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (26.4ms)
+Completed 500 Internal Server Error in 121ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `track' for #<Product:0x00007fe2bc733920>):
+    70: 	     <tr>
+    71: 		    <th> </th>
+    72:         <th> <%= @discs.name %> </th>
+    73:         <th> <%= @product.track.music %> </th>
+    74: 		    <th> <%= @product.artist.artist_name %> </th>
+    75: 		    <th> <%= @product.introduction %> </th>
+    76: 	     </tr>
+  
+app/views/public/products/show.html.erb:73:in `_app_views_public_products_show_html_erb___4440885142317626034_70305900499600'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:40:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mDisc Load (1.0ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 6.0ms)
+
+
+  
+  [1m[36mCACHE Disc Load (0.0ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `tracks' for #<Disc::ActiveRecord_Associations_CollectionProxy:0x00007feec857e748>):
+  
+app/controllers/public/products_controller.rb:9:in `show'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:42:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mDisc Load (1.2ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+  Rendered public/products/show.html.erb within layouts/application (51.2ms)
+Completed 500 Internal Server Error in 173ms (ActiveRecord: 10.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `track' for #<Disc::ActiveRecord_Associations_CollectionProxy:0x00007faa1412c418>):
+    70: 	     <tr>
+    71: 		    <th> </th>
+    72:         <th> <%= @discs.name %> </th>
+    73:         <th> <%= @discs.track.music %> </th>
+    74: 		    <th> <%= @product.artist.artist_name %> </th>
+    75: 		    <th> <%= @product.introduction %> </th>
+    76: 	     </tr>
+  
+app/views/public/products/show.html.erb:73:in `_app_views_public_products_show_html_erb__681543862539684609_70184231129980'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:43:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mDisc Load (1.0ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 7.5ms)
+
+
+  
+  [1m[36mCACHE Disc Load (0.0ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `music' for #<Disc::ActiveRecord_Associations_CollectionProxy:0x00007f9b00560700>):
+  
+app/controllers/public/products_controller.rb:9:in `show'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:44:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mDisc Load (0.8ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 6.5ms)
+
+
+  
+  [1m[36mCACHE Disc Load (0.0ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `track' for #<Disc::ActiveRecord_Associations_CollectionProxy:0x00007f0e70583ad8>):
+  
+app/controllers/public/products_controller.rb:9:in `show'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:44:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mDisc Load (1.3ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.2ms)
+
+
+  
+  [1m[36mCACHE Disc Load (0.0ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `track' for #<Disc::ActiveRecord_Associations_CollectionProxy:0x00007f0e6402f570>):
+  
+app/controllers/public/products_controller.rb:9:in `show'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:44:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mDisc Load (1.4ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 6.0ms)
+
+
+  
+  [1m[36mCACHE Disc Load (0.0ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `tracks' for #<Disc::ActiveRecord_Associations_CollectionProxy:0x00007f806453de00>):
+  
+app/controllers/public/products_controller.rb:9:in `show'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:44:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mDisc Load (1.2ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 10.3ms)
+
+
+  
+  [1m[36mCACHE Disc Load (0.0ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `track' for #<Disc::ActiveRecord_Associations_CollectionProxy:0x00007f42b4576180>):
+  
+app/controllers/public/products_controller.rb:9:in `show'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:45:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mDisc Load (0.8ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Disc Load (0.0ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:4
+Completed 500 Internal Server Error in 232ms (ActiveRecord: 5.0ms)
+
+
+  
+  [1m[36mCACHE Disc Load (0.0ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+NameError (undefined local variable or method `discs' for #<Public::ProductsController:0x0000559fd2bef538>
+Did you mean?  @discs):
+  
+app/controllers/public/products_controller.rb:9:in `show'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:46:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mDisc Load (0.8ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Disc Load (0.0ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:4
+Completed 500 Internal Server Error in 235ms (ActiveRecord: 4.2ms)
+
+
+  
+  [1m[36mCACHE Disc Load (0.0ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+NameError (undefined local variable or method `disc' for #<Public::ProductsController:0x00007f92c42c8ab8>
+Did you mean?  @discs):
+  
+app/controllers/public/products_controller.rb:9:in `show'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:47:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mDisc Load (1.2ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 5.9ms)
+
+
+  
+  [1m[36mCACHE Disc Load (0.0ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `tracks' for #<Disc::ActiveRecord_Associations_CollectionProxy:0x0000555c1ff42e98>):
+  
+app/controllers/public/products_controller.rb:9:in `show'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:48:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mDisc Load (1.1ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.4ms)
+
+
+  
+  [1m[36mCACHE Disc Load (0.0ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `tracks' for #<Disc::ActiveRecord_Associations_CollectionProxy:0x00007fda2c2af888>):
+  
+app/controllers/public/products_controller.rb:9:in `show'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:48:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mDisc Load (1.0ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.6ms)
+
+
+  
+  [1m[36mCACHE Disc Load (0.0ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `tracks' for #<Disc::ActiveRecord_Associations_CollectionProxy:0x0000555c1fb04f98>):
+  
+app/controllers/public/products_controller.rb:9:in `show'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:53:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 5.0ms)
+
+
+  
+NoMethodError (undefined method `disc' for #<Product:0x00007f47e453baa0>
+Did you mean?  discs):
+  
+app/controllers/public/products_controller.rb:8:in `show'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 05:55:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mDisc Load (1.0ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 9.5ms)
+
+
+  
+  [1m[36mCACHE Disc Load (0.0ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `tracks' for #<Disc::ActiveRecord_Associations_CollectionProxy:0x00005595f6cf2600>):
+  
+app/controllers/public/products_controller.rb:9:in `show'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 06:04:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mDisc Load (1.8ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.7ms)
+
+
+  
+  [1m[36mCACHE Disc Load (0.0ms)[0m  [1m[34mSELECT  "discs".* FROM "discs" WHERE "discs"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `tracks' for #<Disc::ActiveRecord_Associations_CollectionProxy:0x00007fa874217e28>):
+  
+app/controllers/public/products_controller.rb:9:in `show'
+Started GET "/products/1" for 10.0.2.2 at 2018-10-14 06:04:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mDisc Load (1.1ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/public/products/show.html.erb:73
+  [1m[36mTrack Load (2.0ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 1]]
+  ↳ app/views/public/products/show.html.erb:79
+  [1m[36mArtist Load (1.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:84
+  Rendered public/products/show.html.erb within layouts/application (69.0ms)
+  [1m[36mAdmin Load (1.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 1861ms (Views: 1758.2ms | ActiveRecord: 26.8ms)
+
+
+Started GET "/admin/users/4" for 10.0.2.2 at 2018-10-14 06:08:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:13
+  Rendered admin/users/_track_fields.html.erb (1.2ms)
+  Rendered admin/users/_track_fields.html.erb (1.0ms)
+  Rendered admin/users/_disc_fields.html.erb (79.9ms)
+  Rendered admin/users/_track_fields.html.erb (0.6ms)
+  Rendered admin/users/_disc_fields.html.erb (17.0ms)
+  Rendered admin/users/_form.html.erb (252.1ms)
+  Rendered admin/users/show.html.erb within layouts/application (269.7ms)
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 618ms (Views: 595.0ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/products" for 10.0.2.2 at 2018-10-14 06:09:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:14
+  Rendered public/products/index.html.erb within layouts/application (5.0ms)
+  [1m[36mAdmin Load (0.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 373ms (Views: 348.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/admin/users/4" for 10.0.2.2 at 2018-10-14 06:09:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (1.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:13
+  Rendered admin/users/_track_fields.html.erb (1.0ms)
+  Rendered admin/users/_track_fields.html.erb (1.0ms)
+  Rendered admin/users/_disc_fields.html.erb (45.7ms)
+  Rendered admin/users/_track_fields.html.erb (0.7ms)
+  Rendered admin/users/_disc_fields.html.erb (25.9ms)
+  Rendered admin/users/_form.html.erb (127.0ms)
+  Rendered admin/users/show.html.erb within layouts/application (148.2ms)
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 612ms (Views: 558.6ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/admin/products" for 10.0.2.2 at 2018-10-14 06:10:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cwmngSa/MiVaGVCkB4rglx+r2xw4+gi6wSxBlKJlVbDkEDXkjmwlTQDMensHIxcF92Sy/jpnfHocelBSZKPmTw==", "product"=>{"image"=>"{}", "title"=>"やまだ", "artist_id"=>"1", "category_id"=>"1", "discs_attributes"=>{"0"=>{"disc_name"=>"disc:1", "_destroy"=>"false", "tracks_attributes"=>{"0"=>{"music"=>"a", "list_num"=>"1"}, "1539497382895"=>{"music"=>"b", "list_num"=>"2"}}}, "1539497373932"=>{"disc_name"=>"disc:2", "_destroy"=>"false", "tracks_attributes"=>{"1539497405870"=>{"music"=>"c", "list_num"=>"1"}, "1539497423811"=>{"music"=>"d", "list_num"=>"2"}}}}, "label"=>"asd", "release(1i)"=>"2018", "release(2i)"=>"10", "release(3i)"=>"14", "price"=>"1500", "introduction"=>"test", "stock"=>"10"}, "commit"=>"追加"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mProduct Create (2.3ms)[0m  [1m[32mINSERT INTO "products" ("title", "image_id", "price", "label", "stock", "release", "introduction", "artist_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "やまだ"], ["image_id", nil], ["price", 1500], ["label", "asd"], ["stock", 10], ["release", "2018-10-14"], ["introduction", "test"], ["artist_id", 1], ["category_id", "1"], ["created_at", "2018-10-14 06:10:43.870843"], ["updated_at", "2018-10-14 06:10:43.870843"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mDisc Create (1.8ms)[0m  [1m[32mINSERT INTO "discs" ("product_id", "disc_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 2], ["disc_name", "disc:1"], ["created_at", "2018-10-14 06:10:43.875135"], ["updated_at", "2018-10-14 06:10:43.875135"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mTrack Create (0.6ms)[0m  [1m[32mINSERT INTO "tracks" ("music", "list_num", "disc_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["music", "a"], ["list_num", 1], ["disc_id", 2], ["created_at", "2018-10-14 06:10:43.878767"], ["updated_at", "2018-10-14 06:10:43.878767"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mTrack Create (0.2ms)[0m  [1m[32mINSERT INTO "tracks" ("music", "list_num", "disc_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["music", "b"], ["list_num", 2], ["disc_id", 2], ["created_at", "2018-10-14 06:10:43.880901"], ["updated_at", "2018-10-14 06:10:43.880901"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mDisc Create (0.1ms)[0m  [1m[32mINSERT INTO "discs" ("product_id", "disc_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 2], ["disc_name", "disc:2"], ["created_at", "2018-10-14 06:10:43.882822"], ["updated_at", "2018-10-14 06:10:43.882822"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mTrack Create (0.1ms)[0m  [1m[32mINSERT INTO "tracks" ("music", "list_num", "disc_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["music", "c"], ["list_num", 1], ["disc_id", 3], ["created_at", "2018-10-14 06:10:43.884430"], ["updated_at", "2018-10-14 06:10:43.884430"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mTrack Create (0.1ms)[0m  [1m[32mINSERT INTO "tracks" ("music", "list_num", "disc_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["music", "d"], ["list_num", 2], ["disc_id", 3], ["created_at", "2018-10-14 06:10:43.885860"], ["updated_at", "2018-10-14 06:10:43.885860"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:31
+Redirected to http://localhost:3000/admin/users/4
+Completed 302 Found in 35ms (ActiveRecord: 9.4ms)
+
+
+Started GET "/admin/users/4" for 10.0.2.2 at 2018-10-14 06:10:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (1.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:13
+  Rendered admin/users/_track_fields.html.erb (0.9ms)
+  Rendered admin/users/_track_fields.html.erb (0.9ms)
+  Rendered admin/users/_disc_fields.html.erb (32.6ms)
+  Rendered admin/users/_track_fields.html.erb (0.6ms)
+  Rendered admin/users/_disc_fields.html.erb (16.3ms)
+  Rendered admin/users/_form.html.erb (89.2ms)
+  Rendered admin/users/show.html.erb within layouts/application (103.8ms)
+  [1m[36mAdmin Load (0.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 429ms (Views: 410.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/products" for 10.0.2.2 at 2018-10-14 06:10:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:14
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:14
+  Rendered public/products/index.html.erb within layouts/application (6.6ms)
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 524ms (Views: 486.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/products/2" for 10.0.2.2 at 2018-10-14 06:11:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mDisc Load (0.9ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/public/products/show.html.erb:73
+  [1m[36mTrack Load (0.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 2]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mTrack Load (0.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 3]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:83
+  Rendered public/products/show.html.erb within layouts/application (11.7ms)
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 448ms (Views: 409.5ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/products/2" for 10.0.2.2 at 2018-10-14 06:12:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mDisc Load (1.0ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/public/products/show.html.erb:73
+  [1m[36mTrack Load (0.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 2]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:83
+  [1m[36mTrack Load (1.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 3]]
+  ↳ app/views/public/products/show.html.erb:78
+  Rendered public/products/show.html.erb within layouts/application (11.8ms)
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 366ms (Views: 341.9ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/products/2" for 10.0.2.2 at 2018-10-14 06:13:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mDisc Load (1.0ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/public/products/show.html.erb:71
+  [1m[36mTrack Load (1.0ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 2]]
+  ↳ app/views/public/products/show.html.erb:76
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:82
+  [1m[36mTrack Load (0.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 3]]
+  ↳ app/views/public/products/show.html.erb:76
+  Rendered public/products/show.html.erb within layouts/application (10.6ms)
+  [1m[36mAdmin Load (1.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 457ms (Views: 423.2ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/products/2" for 10.0.2.2 at 2018-10-14 06:15:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mDisc Load (1.1ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/public/products/show.html.erb:73
+  [1m[36mTrack Load (0.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 2]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:84
+  [1m[36mTrack Load (0.9ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 3]]
+  ↳ app/views/public/products/show.html.erb:78
+  Rendered public/products/show.html.erb within layouts/application (10.6ms)
+  [1m[36mAdmin Load (1.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 442ms (Views: 412.5ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/products/2" for 10.0.2.2 at 2018-10-14 06:16:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mDisc Load (0.8ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/public/products/show.html.erb:73
+  [1m[36mTrack Load (0.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 2]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mTrack Load (1.0ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 3]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:85
+  Rendered public/products/show.html.erb within layouts/application (11.4ms)
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 374ms (Views: 346.8ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/products/2" for 10.0.2.2 at 2018-10-14 06:16:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mDisc Load (1.0ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/public/products/show.html.erb:73
+  [1m[36mTrack Load (1.0ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 2]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mTrack Load (0.9ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 3]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:85
+  Rendered public/products/show.html.erb within layouts/application (13.6ms)
+  [1m[36mAdmin Load (1.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 476ms (Views: 447.4ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/products/2" for 10.0.2.2 at 2018-10-14 06:16:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mDisc Load (1.0ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/public/products/show.html.erb:73
+  [1m[36mTrack Load (0.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 2]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mTrack Load (1.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 3]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mArtist Load (0.9ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:86
+  Rendered public/products/show.html.erb within layouts/application (13.5ms)
+  [1m[36mAdmin Load (1.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 463ms (Views: 434.4ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/products/2" for 10.0.2.2 at 2018-10-14 06:17:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mDisc Load (1.5ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/public/products/show.html.erb:73
+  [1m[36mTrack Load (1.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 2]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mTrack Load (1.4ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 3]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mArtist Load (1.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:87
+  Rendered public/products/show.html.erb within layouts/application (15.2ms)
+  [1m[36mAdmin Load (0.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 474ms (Views: 441.8ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/products/2" for 10.0.2.2 at 2018-10-14 06:18:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mDisc Load (0.8ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/public/products/show.html.erb:73
+  [1m[36mTrack Load (1.0ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 2]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mTrack Load (0.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 3]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mArtist Load (0.9ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:87
+  Rendered public/products/show.html.erb within layouts/application (11.8ms)
+  [1m[36mAdmin Load (1.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 375ms (Views: 348.6ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/products" for 10.0.2.2 at 2018-10-14 06:18:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:14
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:14
+  Rendered public/products/index.html.erb within layouts/application (6.2ms)
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 356ms (Views: 326.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/products/2" for 10.0.2.2 at 2018-10-14 06:18:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (3.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mDisc Load (1.3ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/public/products/show.html.erb:73
+  [1m[36mTrack Load (1.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 2]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mTrack Load (1.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 3]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mArtist Load (1.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:87
+  Rendered public/products/show.html.erb within layouts/application (18.8ms)
+  [1m[36mAdmin Load (1.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 454ms (Views: 412.7ms | ActiveRecord: 9.4ms)
+
+
+Started DELETE "/admins/sign_out" for 10.0.2.2 at 2018-10-14 06:18:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FGgdK5AzFiPPPvO4+ic//yt5OdYUL9PS2Yevi/Ulj+ljPQjGOk0pjf2Za4HZcK4zdnnXm7hKFmxLdNRhydYmPw=="}
+  [1m[36mAdmin Load (1.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admins/sign_in
+Completed 302 Found in 61ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/admins/sign_in" for 10.0.2.2 at 2018-10-14 06:18:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (0.9ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (34.8ms)
+Completed 200 OK in 463ms (Views: 459.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2018-10-14 06:18:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 363ms (Views: 360.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 10.0.2.2 at 2018-10-14 06:19:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ciAgihMDZqx1LZ8qek8ttBr7vliE9sIeMFLmMD4nNmTlE5fwL/4KRIIKjiZaTDLoqE1Pr0qy5CrzmIXViFlB7Q==", "user"=>{"email"=>"a@a", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "a@a"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 202ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 10.0.2.2 at 2018-10-14 06:19:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TopController#top as HTML
+  Rendering top/top.html.erb within layouts/application
+  Rendered top/top.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+Completed 200 OK in 316ms (Views: 299.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/6" for 10.0.2.2 at 2018-10-14 06:19:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:9
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/public/users_controller.rb:10
+Completed 404 Not Found in 8ms (ActiveRecord: 2.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=6):
+  
+app/controllers/public/users_controller.rb:10:in `show'
+Started GET "/" for 10.0.2.2 at 2018-10-14 06:19:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TopController#top as HTML
+  Rendering top/top.html.erb within layouts/application
+  Rendered top/top.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+Completed 200 OK in 452ms (Views: 416.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/carts/6" for 10.0.2.2 at 2018-10-14 06:19:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"6"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant Cart_item, expected /vagrant/tomato/app/models/cart_item.rb to define it):
+  
+app/controllers/carts_controller.rb:3:in `show'
+Started GET "/" for 10.0.2.2 at 2018-10-14 06:19:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TopController#top as HTML
+  Rendering top/top.html.erb within layouts/application
+  Rendered top/top.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+Completed 200 OK in 348ms (Views: 323.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products" for 10.0.2.2 at 2018-10-14 06:19:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:14
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:14
+  Rendered public/products/index.html.erb within layouts/application (8.8ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+Completed 200 OK in 454ms (Views: 402.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/products/2" for 10.0.2.2 at 2018-10-14 06:19:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (2.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mDisc Load (1.0ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/public/products/show.html.erb:73
+  [1m[36mTrack Load (0.9ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 2]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mTrack Load (0.9ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 3]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:87
+  Rendered public/products/show.html.erb within layouts/application (13.5ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+Completed 200 OK in 414ms (Views: 379.6ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/carts/6" for 10.0.2.2 at 2018-10-14 06:19:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"6"}
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant Cart_item, expected /vagrant/tomato/app/models/cart_item.rb to define it):
+  
+app/controllers/carts_controller.rb:3:in `show'
+Started GET "/products/2" for 10.0.2.2 at 2018-10-14 06:23:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mDisc Load (1.8ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/public/products/show.html.erb:72
+  [1m[36mTrack Load (1.5ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 2]]
+  ↳ app/views/public/products/show.html.erb:77
+  [1m[36mTrack Load (1.4ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 3]]
+  ↳ app/views/public/products/show.html.erb:77
+  [1m[36mArtist Load (1.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:85
+  Rendered public/products/show.html.erb within layouts/application (18.1ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+Completed 200 OK in 513ms (Views: 473.5ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/products/2" for 10.0.2.2 at 2018-10-14 06:24:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mDisc Load (1.7ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/public/products/show.html.erb:72
+  [1m[36mTrack Load (1.7ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 2]]
+  ↳ app/views/public/products/show.html.erb:77
+  [1m[36mTrack Load (1.6ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 3]]
+  ↳ app/views/public/products/show.html.erb:77
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:85
+  Rendered public/products/show.html.erb within layouts/application (20.7ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+Completed 200 OK in 491ms (Views: 456.1ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/products/2" for 10.0.2.2 at 2018-10-14 06:24:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (28.8ms)
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `category_name' for #<Product:0x00007fbb7647a110>
+Did you mean?  category_id
+               category_id?
+               category_id=):
+    13: 
+    14:         <tr>
+    15:         	<td> カテゴリー </td>
+    16:         	<td> <%= @product.category_name %> </td>
+    17:       	 </tr>
+    18:         <tr>
+    19:           <td> アーティスト </td>
+  
+app/views/public/products/show.html.erb:16:in `_app_views_public_products_show_html_erb___3457446663431138217_70221560006260'
+Started GET "/products/2" for 10.0.2.2 at 2018-10-14 06:25:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:16
+  Rendered public/products/show.html.erb within layouts/application (34.7ms)
+Completed 500 Internal Server Error in 136ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Category:0x00007fbb70b26730>):
+    13: 
+    14:         <tr>
+    15:         	<td> カテゴリー </td>
+    16:         	<td> <%= @product.category.name %> </td>
+    17:       	 </tr>
+    18:         <tr>
+    19:           <td> アーティスト </td>
+  
+app/views/public/products/show.html.erb:16:in `_app_views_public_products_show_html_erb___3457446663431138217_70221513272000'
+Started GET "/products/2" for 10.0.2.2 at 2018-10-14 06:27:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:16
+  [1m[36mArtist Load (0.9ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:20
+  [1m[36mDisc Load (0.9ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/public/products/show.html.erb:72
+  [1m[36mTrack Load (1.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 2]]
+  ↳ app/views/public/products/show.html.erb:77
+  [1m[36mTrack Load (1.0ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 3]]
+  ↳ app/views/public/products/show.html.erb:77
+  Rendered public/products/show.html.erb within layouts/application (14.4ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+Completed 200 OK in 391ms (Views: 366.0ms | ActiveRecord: 6.7ms)
+
+
+Started PATCH "/products/2" for 10.0.2.2 at 2018-10-14 06:28:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+AbstractController::ActionNotFound (The action 'update' could not be found for Public::ProductsController):
+  
+actionpack (5.2.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/products/2" for 10.0.2.2 at 2018-10-14 06:33:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:16
+  [1m[36mArtist Load (1.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:20
+  [1m[36mDisc Load (1.0ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/public/products/show.html.erb:72
+  [1m[36mTrack Load (0.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 2]]
+  ↳ app/views/public/products/show.html.erb:77
+  [1m[36mTrack Load (1.5ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 3]]
+  ↳ app/views/public/products/show.html.erb:77
+  Rendered public/products/show.html.erb within layouts/application (84.3ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+Completed 200 OK in 1618ms (Views: 1515.0ms | ActiveRecord: 31.1ms)
+
+
+Started PATCH "/products/2" for 10.0.2.2 at 2018-10-14 06:33:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+AbstractController::ActionNotFound (The action 'update' could not be found for Public::ProductsController):
+  
+actionpack (5.2.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/carts/6" for 10.0.2.2 at 2018-10-14 06:34:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"6"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant Cart_item, expected /vagrant/tomato/app/models/cart_item.rb to define it):
+  
+app/controllers/carts_controller.rb:3:in `show'
+Started GET "/carts/6" for 10.0.2.2 at 2018-10-14 06:45:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"6"}
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant Cart_item, expected /vagrant/tomato/app/models/cart_item.rb to define it):
+  
+app/controllers/carts_controller.rb:3:in `show'
+Started GET "/carts/6" for 10.0.2.2 at 2018-10-14 06:51:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"6"}
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant Cart_item, expected /vagrant/tomato/app/models/cart_item.rb to define it):
+  
+app/controllers/carts_controller.rb:3:in `show'
+Started GET "/carts/6" for 10.0.2.2 at 2018-10-14 06:56:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"6"}
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant Cart_item, expected /vagrant/tomato/app/models/cart_item.rb to define it):
+  
+app/controllers/carts_controller.rb:3:in `show'
+Started GET "/carts/6" for 10.0.2.2 at 2018-10-14 06:57:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"6"}
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant Cart_item, expected /vagrant/tomato/app/models/cart_item.rb to define it):
+  
+app/controllers/carts_controller.rb:3:in `show'
+Started GET "/products" for 10.0.2.2 at 2018-10-14 06:58:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  [1m[36mArtist Load (1.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:14
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:14
+  Rendered public/products/index.html.erb within layouts/application (72.6ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+Completed 200 OK in 1470ms (Views: 1431.9ms | ActiveRecord: 17.7ms)
+
+
+Started GET "/products/2" for 10.0.2.2 at 2018-10-14 06:58:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:16
+  [1m[36mArtist Load (0.9ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:20
+  [1m[36mDisc Load (1.0ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/public/products/show.html.erb:72
+  [1m[36mTrack Load (1.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 2]]
+  ↳ app/views/public/products/show.html.erb:77
+  [1m[36mTrack Load (0.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 3]]
+  ↳ app/views/public/products/show.html.erb:77
+  Rendered public/products/show.html.erb within layouts/application (65.2ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+Completed 200 OK in 404ms (Views: 350.1ms | ActiveRecord: 17.9ms)
 
 
