@@ -1,3 +1,5 @@
+
+<h1>商品一覧</h1>
 <% @products.each do |product| %>
 
  <li class = "item" >
@@ -13,7 +15,6 @@
            <%= link_to "お気に入り", product_favorites_path, method: :post %>
            <% end %> </li>
 
-      <li> <%= product.category_id %> </li>
       <li> <%= product.artist_id %> </li>
       <li> <%= product.price %> </li>
       <li> <% if product.stock == 0 then %>
