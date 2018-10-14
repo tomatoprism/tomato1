@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_08_104724) do
+ActiveRecord::Schema.define(version: 2018_10_14_041656) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -126,7 +126,7 @@ ActiveRecord::Schema.define(version: 2018_10_08_104724) do
     t.date "release"
     t.string "introduction"
     t.integer "artist_id"
-    t.integer "category_id"
+    t.string "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
