@@ -13,7 +13,9 @@
 
         <tr>
         	<td> カテゴリー </td>
-        	<td> <%= @product.category.category_name %> </td>
+        	<td> <% @product.categories.each do |product| %>
+            <%= product.category_name %>
+            <% end %> </td>
       	 </tr>
         <tr>
           <td> アーティスト </td>
@@ -40,7 +42,7 @@
           <td> 在庫数 </td>
           <td> <%= @product.stock %> </td>
         </tr>
-        
+    
         <tr>
           <td> 個数 </td>
           <td> <%= form_for @product do |f| %>
@@ -48,7 +50,6 @@
 				 </td>
         </tr>
         <tr>
-          <td> <%= f.submit 'カートに入れる' %>
             <% end %>
           </td>
           <td></td>
