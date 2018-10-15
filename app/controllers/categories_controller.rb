@@ -1,13 +1,17 @@
 class CategoriesController < ApplicationController
   def new
-  	@category_new = Category.new
+    @category_new = Category.new
     @category = Category.all
   end
 
   def create
     @category_new = Category.new(category_params)
-  	@category_new.save(category_params)
+    @category_new.save(category_params)
     redirect_to new_category_path
+  end
+
+  def show
+    @category = Category.find(params[:id])
   end
 
   def edit

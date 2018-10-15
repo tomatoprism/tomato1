@@ -1,11 +1,28 @@
-<h1>y カテゴリー一覧</h1>
-
-<p>each do |product|</p>
 <div>
-	<p>画像 attachment_image_tag</p>
-	<p>お気に入り</p>
-	<p>カテゴリー</p>
-	<p>アーティスト</p>
-	<p>値段</p>
-	<p>在庫ありorなし</p>
+  <% @category.products.each do |product| %>
+  <div class = "item" >
+    <div class = "product-image" >
+        <%= link_to product_path(product.id) do %>
+          <%= attachment_image_tag product, :image %>
+        <% end %>
+    </div>
+    <div class = "product-info" >
+    </div>
+      <ul>
+        <li>
+          <%= product.artist.artist_name %>
+        </li>
+        <li>
+          ¥<%= product.price %>
+        </li>
+        <li>
+          <% if product.stock == 0 then %>
+          <p>在庫なし</p>
+          <% else %>
+          <p>在庫あり</p>
+          <% end %>
+        </li>
+      </ul>
+  </div>
+  <% end %>
 </div>
