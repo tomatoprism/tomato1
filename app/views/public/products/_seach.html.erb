@@ -1,0 +1,7 @@
+<div>
+	<%= form_tag seach_products_path, :method => 'get' do %>
+	<%= text_field_tag :search, params[:search] %>
+	<%= submit_tag "検索", :title => nil %>
+	<% end %>
+</div>
+
