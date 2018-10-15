@@ -1,22 +1,23 @@
 <h1>商品一覧</h1>
-
 <% @products.each do |product| %>
 
  <li class = "item" >
 
   <div class = "product-image" >
-      <%= link_to product_path(product.id) do %>
-      <%= attachment_image_tag prodect, :image %>
-      <% end %>
+      <%= attachment_image_tag product, :image %>
   </div>
+
 
   <div class = "product-info" >
       <li> <%= product.title %> </li>
-</div>
-</li>
+      <li> <%= product.artist.artist_name %> </li>
+      <li> <%= product.price %> </li>
+  </div>
 
-       <%= link_to "詳細", admin_product_path(admin_product.id) %>
-       <%= link_to "削除", admin_product_path(admin_product.id), method: :delete %>
+    <li><%= link_to "詳細", admin_product_path(product.id) %>
+        <%= link_to "削除", admin_product_path(product.id), method: :delete %>
+    </li>
+ </li>
 <% end %>
 
        <%= link_to "戻る", :back %>

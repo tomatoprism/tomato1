@@ -7,8 +7,6 @@ class Public::UsersController < Public::ApplicationController
 
 	def show
 		@user = current_user
-		@product = Product.find(params[:id])
-
 	end
 
 	def edit
@@ -20,6 +18,12 @@ class Public::UsersController < Public::ApplicationController
     	user.update(user_params)
     	redirect_to user_path(user)
 	end
+
+	def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to root_path
+  end
 
 	private
     def user_params
