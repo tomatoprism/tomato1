@@ -11,17 +11,15 @@ class User < ApplicationRecord
 
    acts_as_paranoid
 
-   def self.included(base)
-		base.class_eval do
-		  validates_presence_of   :email, if: :email_required?
+   
+		  validates_presence_of   :email
 		  #validates_uniqueness_of :email, allow_blank: true, if: :email_changed?
-		  validates_format_of     :email, with: email_regexp, allow_blank: true, if: :email_changed?
-
-		  validates_presence_of     :password, if: :password_required?
-		  validates_confirmation_of :password, if: :password_required?
-		  validates_length_of       :password, within: password_length, allow_blank: true
-		end
-	end
+		 # validates_format_of     :email, with: email_regexp
+		  validates_presence_of     :password
+		  validates_confirmation_of :password
+		  validates :password,
+		  length: { minimum: 6, maximum: 128 }
+		
 
 	validates :email, uniqueness_without_deleted: true, allow_blank: true, if: :email_changed?
 end
