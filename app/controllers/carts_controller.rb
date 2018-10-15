@@ -11,8 +11,8 @@ class CartsController < ApplicationController
 
 
   def show
-  	@cart_item = CartItem.find(params[:id])
-    @cart_item.cart_id = current_user.cart.id
+  	@cart_items = CartItem.find(params[:id])
+    @cart_items.cart_id = current_user.cart.id
 
   end
 
