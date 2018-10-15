@@ -1,12 +1,15 @@
 class Public::ProductsController < Public::ApplicationController
 	def index
-		@products = Product.all
+		@products = Product.all.order(release: "DESC")
 	end
 
 	def show
 		@product = Product.find(params[:id])
 		@discs = @product.discs
 		@user = current_user
+	end
+	def seach
+		@productfind = Product.search(params[:search]).order(release: "DESC")
 	end
 
 	def update

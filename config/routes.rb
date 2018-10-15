@@ -73,6 +73,8 @@ end
 
   get "/admins" => "admins#top"
 
+  get "/seach/products" => "public/products#seach"
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
