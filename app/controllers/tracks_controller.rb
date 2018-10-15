@@ -7,4 +7,5 @@ class TracksController < ApplicationController
 
   def destroy
   end
+
 end
