@@ -28,7 +28,6 @@ class Admin::ProductsController < Admin::ApplicationController
 
 	def create
 		@product_new = Product.new(product_params)
-		binding.pry
 		@product_new.save
 		redirect_to admin_user_path(current_admin)
 	end

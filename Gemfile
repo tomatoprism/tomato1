@@ -74,8 +74,6 @@ gem 'kaminari'
 # 複数の入力フォーム
 gem 'cocoon'
 
-gem 'pry-byebug'
-
 #論理削除
 gem "paranoia", "~> 2.2"
 

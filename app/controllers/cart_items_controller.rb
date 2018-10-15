@@ -1,6 +1,5 @@
 class CartItemsController < ApplicationController
 
-	
 
 	private
     def cart_item_params
