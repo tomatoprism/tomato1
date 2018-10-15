@@ -7,57 +7,77 @@
   <div class = "product-info" >
   	<table class="table">
     <tr>
-        <th></th>
-        <th></th>
+        <th>CD概要</th>
     </tr>
 
         <tr>
-        	<td> カテゴリー </td>
-        	<td> <% @product.categories.each do |product| %>
+        	<td><p>カテゴリー</p></td>
+        	<td>
+            <% @product.categories.each do |product| %>
             <%= product.category_name %>
-            <% end %> </td>
-      	 </tr>
-        <tr>
-          <td> アーティスト </td>
-          <td> <%= @product.artist.artist_name %> </td>
-        </tr>
-
-        <tr>
-          <td> シングル・アルバム名 </td>
-          <td> <%= @product.title %> </td>
-        </tr>
-        <tr>
-          <td> レーベル名 </td>
-          <td> <%= @product.label %> </td>
-        </tr>
-        <tr>
-          <td> 発売日 </td>
-          <td> <%= @product.release %> </td>
-        </tr>
-        <tr>
-          <td> 値段 </td>
-          <td> <%= @product.price %> </td>
-        </tr>
-        <tr>
-          <td> 在庫数 </td>
-          <td> <% if @product.stock == 0 then %>
-             在庫なし
-           <% else %>
-             在庫あり
-           <% end %>
-           </td>
-        </tr>
-
-        <tr>
-          <td> 個数 </td>
-          <td> <%= form_for(@product, url: add_item_path(@product.id), html: {method: "post"}) do |f| %>
- 				 <%= f.number_field :stock %>
-				 </td>
-        </tr>
-
-        <tr> <td><%= f.submit "カートに入れる" %>
             <% end %>
           </td>
+      	 </tr>
+        <tr>
+          <td><P>アーティスト</P></td>
+          <td>
+            <%= @product.artist.artist_name %>
+          </td>
+        </tr>
+
+        <tr>
+          <td><p>シングル・アルバム名</p></td>
+          <td>
+            <%= @product.title %>
+          </td>
+        </tr>
+        <tr>
+          <td><p>レーベル名</p></td>
+          <td>
+            <%= @product.label %>
+          </td>
+        </tr>
+        <tr>
+          <td><p>発売日</p></td>
+          <td>
+            <%= @product.release %>
+          </td>
+        </tr>
+        <tr>
+          <td><p>値段</p></td>
+          <td>
+            <%= @product.price %>
+          </td>
+        </tr>
+        <tr>
+          <td><p>在庫数</p></td>
+          <td>
+            <% if current_admin %>
+            <%= @product.stock %>
+            <% elsif @product.stock == 0 then %>
+             <p>在庫なし</p>
+            <% else %>
+             <p>在庫あり</p>
+            <% end %>
+          </td>
+        </tr>
+
+        <tr>
+          <% if current_user %>
+          <td>
+            <p>個数</p>
+          </td>
+          <td>
+            <%= form_for(@product, url: add_item_path(@product.id), html: {method: "post"}) do |f| %>
+			      <%= f.number_field :stock %>
+				  </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.submit "カートに入れる" %>
+            <% end %>
+          </td>
+          <% end %>
         </tr>
     </table>
   </div>
@@ -65,33 +85,42 @@
 
 
 <table class="table">
-　　　　　<tr>
-		    <th> 商品詳細 </th>
-		    <th> 曲名一覧 </th>
-		    <th> アーティスト </th>
-		    <th> 商品説明 </th>
-	     </tr>
-
-	     <tr>
-        <th></th>
-        <th>
-        <p><% @discs.each do |disc| %>
-         <%= disc.disc_name %>
-         </p>
-
-        <p>
-          <% disc.tracks.each do |track| %>
-         <%= track.music %>
-       </p>
-
-         <% end %>
-         <br>
-         <% end %>
-         </th>
-		    <th> <%= @product.artist.artist_name %> </th>
-		    <th> <%= @product.introduction %> </th>
-	     </tr>
+  <tr>
+    <th>
+      <p>商品詳細</p>
+    </th>
+    <th>
+      <p>曲名一覧</p>
+    </th>
+  </tr>
+  <tr>
+    <th></th>
+    <th>
+      <p>
+        <% @discs.each do |disc| %>
+        <%= disc.disc_name %>
+      </p>
+      <p>
+        <% disc.tracks.each do |track| %>
+        <%= track.music %>
+      </p>
+        <% end %>
+     <br>
+        <% end %>
+    </th>
 </table>
-
-
+<table class="table">
+  <tr>
+    <th>
+      <p>商品紹介</p>
+    </th>
+  <tr>
+    <td>
+      <%= @product.introduction %>
+    </td>
+  </tr>
+</table>
+<% if current_admin %>
+  <%= link_to"編集", edit_product_path %>
+<% end %>
  <%= link_to "戻る", :back, class: "back" %>
