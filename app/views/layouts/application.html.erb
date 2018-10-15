@@ -29,12 +29,15 @@
               <li>
                 <%=link_to "ログアウト",destroy_admin_session_path, method: :delete %>
               </li>
+              <li class="search_field">
+                <%= render 'public/products/searach' %>
+              </li>
             <% elsif user_signed_in? %>
               <li>
                 <%=link_to "マイページ",user_path(current_user) %>
               </li>
               <li>
-                <%=link_to "カート",cart_path(current_user) %>
+                <%=link_to "カート",cart_path(current_user.cart.id) %>
               </li>
               <li>
                 <%=link_to "お気に入り",root_path %>
@@ -42,8 +45,8 @@
               <li>
                 <%=link_to "ログアウト",destroy_user_session_path, method: :delete %>
               </li>
-              <li>
-                  <p>検索</p>
+              <li class="search_field">
+                <%= render 'public/products/search' %>
               </li>
             <% else %>
               <li>
@@ -52,8 +55,8 @@
               <li>
                 <%= link_to"ログイン", new_user_session_path %>
               </li>
-              <li>
-                <p>検索</p>
+              <li class="search_field">
+                <%= render 'public/products/search' %>
               </li>
             <% end %>
           </ul>

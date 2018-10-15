@@ -22,4 +22,8 @@ class User < ApplicationRecord
 		
 
 	validates :email, uniqueness_without_deleted: true, allow_blank: true, if: :email_changed?
+	validates :name,:name_kana, :email, :phone, :password, :post_code, :address presence: true
+	validates :name, length: { minimum:2, maximum: 20 }
+  validates :Introduction, length: { maximum: 50 }
+  
 end

@@ -69,11 +69,27 @@
         </tr>
     </table>
 
+<<<<<<< HEAD
          <% if current_user %>
             <%= form_for(@product, url: cart_add_item_path(@product.id), html: {method: "post"}) do |f| %>
               <p>購入個数:</p>
               <%= f.number_field :stock, required:true, min:'1', max:'product.stock' %>
               <%= f.submit "カートに入れる" %>
+=======
+        <tr>
+          <% if current_user %>
+          <td>
+            <p>個数</p>
+          </td>
+          <td>
+            <%= form_for(@product, url: add_item_path(@product.id), html: {method: "post"}) do |f| %>
+			      <%= f.number_field :stock %>
+				  </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.submit "カートに入れる" %>
+>>>>>>> cf7c7acbebf9b7aabad7484d8edbdf9f4cb45d82
             <% end %>
         <% end %>
   </div>
@@ -81,29 +97,32 @@
 
 
 <table class="table">
-  <tr>
-    <th>
-      <p>商品詳細</p>
-    </th>
-    <th>
-      <p>曲名一覧</p>
-    </th>
-  </tr>
-  <tr>
-    <th></th>
-    <th>
-      <p>
+  <thead>
+    <tr>
+      <th>
+        <p>収録曲</p>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
         <% @discs.each do |disc| %>
-        <%= disc.disc_name %>
-      </p>
-      <p>
+        <ul>
+          <li class="disc_name">
+              <%= disc.disc_name %>
+          </li>
+        </ul>
         <% disc.tracks.each do |track| %>
-        <%= track.music %>
-      </p>
+        <li>
+          <%= track.music %>
+        </li>
         <% end %>
-     <br>
+       <br>
         <% end %>
-    </th>
+      </td>
+    </tr>
+  </tbody>
 </table>
 <table class="table">
   <tr>
@@ -117,6 +136,6 @@
   </tr>
 </table>
 <% if current_admin %>
-  <%= link_to"編集", edit_product_path %>
+  <%= link_to"編集", edit_admin_product_path(@product) %>
 <% end %>
  <%= link_to "戻る", :back, class: "back" %>
