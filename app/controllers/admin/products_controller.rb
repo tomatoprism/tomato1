@@ -24,7 +24,6 @@ class Admin::ProductsController < Admin::ApplicationController
 	end
 
 	def new
-		
 
 	end
 
