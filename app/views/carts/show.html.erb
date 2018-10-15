@@ -14,7 +14,7 @@
 		  	     <%= cart_item.product.artist.artist_name %> </td>
             <td> <%= cart_item.quantity %> </td>
             <td> <%= cart_item.product.price * cart_item.quantity %> </td>
-            <td> <%= link_to "削除", delete_item_path, method: :delete %> </td>
+            <td> <%= link_to "削除", cart_delete_item_path(current_user.cart.id,cart_item.id), method: :delete %> </td>
             <% sum  = sum + cart_item.product.price * cart_item.quantity %>
           <tr>
     <% end %>
