@@ -63,7 +63,7 @@ end
   resources :artists, only:[:new, :create, :update, :destroy, :show, :edit]
 
 
-  
+
 
   resources :posts, only:[:create, :destroy]
 
@@ -73,7 +73,7 @@ end
 
   get "/admins" => "admins#top"
 
-  get "/seach/products" => "public/products#seach"
+  get "/search/products" => "public/products#search"
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

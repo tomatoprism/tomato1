@@ -29,8 +29,8 @@
               <li>
                 <%=link_to "ログアウト",destroy_admin_session_path, method: :delete %>
               </li>
-              <li class="seach_field">
-                <%= render 'public/products/seach' %>
+              <li class="search_field">
+                <%= render 'public/products/searach' %>
               </li>
             <% elsif user_signed_in? %>
               <li>
@@ -45,8 +45,8 @@
               <li>
                 <%=link_to "ログアウト",destroy_user_session_path, method: :delete %>
               </li>
-              <li class="seach_field">
-                <%= render 'public/products/seach' %>
+              <li class="search_field">
+                <%= render 'public/products/search' %>
               </li>
             <% else %>
               <li>
@@ -55,8 +55,8 @@
               <li>
                 <%= link_to"ログイン", new_user_session_path %>
               </li>
-              <li class="seach_field">
-                <%= render 'public/products/seach' %>
+              <li class="search_field">
+                <%= render 'public/products/search' %>
               </li>
             <% end %>
           </ul>
