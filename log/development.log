@@ -23994,3 +23994,1527 @@ Processing by Public::ProductsController#show as HTML
 Completed 200 OK in 1524ms (Views: 1399.4ms | ActiveRecord: 48.0ms)
 
 
+Started GET "/products/6" for 10.0.2.2 at 2018-10-14 15:40:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+  ↳ app/views/public/products/show.html.erb:16
+  [1m[36mArtist Load (1.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:22
+  [1m[36mDisc Load (0.8ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 6]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mTrack Load (1.4ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 7]]
+  ↳ app/views/public/products/show.html.erb:83
+  Rendered public/products/show.html.erb within layouts/application (86.6ms)
+  [1m[36mAdmin Load (1.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 1559ms (Views: 1448.3ms | ActiveRecord: 35.0ms)
+
+
+Started POST "/add_item" for 10.0.2.2 at 2018-10-14 15:40:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#add_item as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gJzwQONegPLCY5seWF+vb6/64VkmDFkbDwz6x9JW2rAmKPWah5ccryGnsRx2t0wMQriicfnBdKad19cPl3bffQ==", "product"=>{"stock"=>"4"}, "commit"=>"カートに入れる"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:5
+  [1m[36mCart Load (1.9ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:8
+  [1m[36mCart Load (2.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/carts_controller.rb:8
+Redirected to http://localhost:3000/carts/9
+Completed 302 Found in 106ms (ActiveRecord: 15.1ms)
+
+
+Started GET "/carts/9" for 10.0.2.2 at 2018-10-14 15:40:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCartItem Load (1.9ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" WHERE "cart_items"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:14
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:15
+  [1m[36mCart Load (1.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:15
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (24.3ms)
+Completed 500 Internal Server Error in 109ms (ActiveRecord: 4.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_id' for #<CartItem:0x00007f2190290c30>
+Did you mean?  image):
+     8: 		  </tr>
+     9: 	
+    10: 		  <tr>
+    11: 		  	<td> <%= attachment_image_tag @cart_item, :image %> </td>
+    12: 		  	<td> <%= @cart_item.product.title %> <br>
+    13: 		  	     <%= @cart_item.product.artist.artist_name %> </td>
+    14:             <td> <%= @cart_item.quantity %> </td>
+  
+app/views/carts/show.html.erb:11:in `_app_views_carts_show_html_erb___3023006965472473826_69891064688640'
+  [1m[36mCartItem Load (1.9ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/products/6" for 10.0.2.2 at 2018-10-14 15:41:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 177ms (ActiveRecord: 12.9ms)
+
+
+  
+SyntaxError (/vagrant/tomato/app/views/public/products/show.html.erb:59: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;             end 
+                      ^~~
+/vagrant/tomato/app/views/public/products/show.html.erb:100: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/vagrant/tomato/app/views/public/products/show.html.erb:102: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/public/products/show.html.erb:59: syntax error, unexpected keyword_end, expecting ')'
+app/views/public/products/show.html.erb:100: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/public/products/show.html.erb:102: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/products/6" for 10.0.2.2 at 2018-10-14 15:41:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 2.1ms)
+
+
+  
+SyntaxError (/vagrant/tomato/app/views/public/products/show.html.erb:100: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/vagrant/tomato/app/views/public/products/show.html.erb:102: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/public/products/show.html.erb:100: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/public/products/show.html.erb:102: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/products/6" for 10.0.2.2 at 2018-10-14 15:42:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 116ms (ActiveRecord: 2.9ms)
+
+
+  
+SyntaxError (/vagrant/tomato/app/views/public/products/show.html.erb:59: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;             end 
+                      ^~~
+/vagrant/tomato/app/views/public/products/show.html.erb:100: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/vagrant/tomato/app/views/public/products/show.html.erb:102: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/public/products/show.html.erb:59: syntax error, unexpected keyword_end, expecting ')'
+app/views/public/products/show.html.erb:100: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/public/products/show.html.erb:102: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/products/6" for 10.0.2.2 at 2018-10-14 15:43:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 3.5ms)
+
+
+  
+SyntaxError (/vagrant/tomato/app/views/public/products/show.html.erb:100: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/public/products/show.html.erb:100: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/products/6" for 10.0.2.2 at 2018-10-14 15:45:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 2.8ms)
+
+
+  
+SyntaxError (/vagrant/tomato/app/views/public/products/show.html.erb:100: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/public/products/show.html.erb:100: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/products/6" for 10.0.2.2 at 2018-10-14 15:45:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 1.8ms)
+
+
+  
+SyntaxError (/vagrant/tomato/app/views/public/products/show.html.erb:100: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/public/products/show.html.erb:100: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/products/6" for 10.0.2.2 at 2018-10-14 15:45:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 2.9ms)
+
+
+  
+SyntaxError (/vagrant/tomato/app/views/public/products/show.html.erb:53: syntax error, unexpected tLABEL
+...: cart_path(@product.id)),html: {method: "post"} do |f| @out...
+...                          ^~~~~
+/vagrant/tomato/app/views/public/products/show.html.erb:53: syntax error, unexpected keyword_do, expecting keyword_end
+....id)),html: {method: "post"} do |f| @output_buffer.safe_appe...
+...                             ^~
+/vagrant/tomato/app/views/public/products/show.html.erb:100: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/public/products/show.html.erb:53: syntax error, unexpected tLABEL
+app/views/public/products/show.html.erb:53: syntax error, unexpected keyword_do, expecting keyword_end
+app/views/public/products/show.html.erb:100: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/products/6" for 10.0.2.2 at 2018-10-14 15:46:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 2.9ms)
+
+
+  
+SyntaxError (/vagrant/tomato/app/views/public/products/show.html.erb:53: syntax error, unexpected tLABEL
+...d_item_path(@product.id)),html: {method: "post"} do |f| @out...
+...                          ^~~~~
+/vagrant/tomato/app/views/public/products/show.html.erb:53: syntax error, unexpected keyword_do, expecting keyword_end
+....id)),html: {method: "post"} do |f| @output_buffer.safe_appe...
+...                             ^~
+/vagrant/tomato/app/views/public/products/show.html.erb:100: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/public/products/show.html.erb:53: syntax error, unexpected tLABEL
+app/views/public/products/show.html.erb:53: syntax error, unexpected keyword_do, expecting keyword_end
+app/views/public/products/show.html.erb:100: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/products/6" for 10.0.2.2 at 2018-10-14 15:47:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 2.0ms)
+
+
+  
+SyntaxError (/vagrant/tomato/app/views/public/products/show.html.erb:53: syntax error, unexpected tLABEL
+...d_item_path(@product.id)),html: {method: "post"} do |f| @out...
+...                          ^~~~~
+/vagrant/tomato/app/views/public/products/show.html.erb:53: syntax error, unexpected keyword_do, expecting keyword_end
+....id)),html: {method: "post"} do |f| @output_buffer.safe_appe...
+...                             ^~
+/vagrant/tomato/app/views/public/products/show.html.erb:100: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/public/products/show.html.erb:53: syntax error, unexpected tLABEL
+app/views/public/products/show.html.erb:53: syntax error, unexpected keyword_do, expecting keyword_end
+app/views/public/products/show.html.erb:100: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/products/6" for 10.0.2.2 at 2018-10-14 15:47:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 2.3ms)
+
+
+  
+SyntaxError (/vagrant/tomato/app/views/public/products/show.html.erb:53: syntax error, unexpected tLABEL
+...d_item_path(@product.id)),html: {method: "post"} do |f| @out...
+...                          ^~~~~
+/vagrant/tomato/app/views/public/products/show.html.erb:53: syntax error, unexpected keyword_do, expecting keyword_end
+....id)),html: {method: "post"} do |f| @output_buffer.safe_appe...
+...                             ^~
+/vagrant/tomato/app/views/public/products/show.html.erb:100: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/public/products/show.html.erb:53: syntax error, unexpected tLABEL
+app/views/public/products/show.html.erb:53: syntax error, unexpected keyword_do, expecting keyword_end
+app/views/public/products/show.html.erb:100: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/products/6" for 10.0.2.2 at 2018-10-14 15:50:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mCategory Load (2.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+  ↳ app/views/public/products/show.html.erb:16
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:22
+  [1m[36mDisc Load (1.0ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 6]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mTrack Load (1.9ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 7]]
+  ↳ app/views/public/products/show.html.erb:83
+  Rendered public/products/show.html.erb within layouts/application (155.1ms)
+  [1m[36mAdmin Load (1.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 2051ms (Views: 1988.7ms | ActiveRecord: 38.1ms)
+
+
+Started POST "/add_item.6" for 10.0.2.2 at 2018-10-14 15:50:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#add_item as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rtJAFnyoWIkf/XTFnDRCPOZU8OAN6UP1CI4688vAnJsIZkXMGGHE1Pw5Xsey3KFfCxazyNIkbkiaVRc7juCZVg==", "product"=>{"stock"=>"4"}, "commit"=>"カートに入れる"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:5
+  [1m[36mCart Load (1.7ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:8
+  [1m[36mCart Load (1.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/carts_controller.rb:8
+Redirected to http://localhost:3000/carts/9
+Completed 302 Found in 100ms (ActiveRecord: 13.6ms)
+
+
+Started GET "/carts/9" for 10.0.2.2 at 2018-10-14 15:50:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCartItem Load (1.7ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" WHERE "cart_items"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:14
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:15
+  [1m[36mCart Load (1.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:15
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (24.0ms)
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 4.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_id' for #<CartItem:0x00007fcb68e1c428>
+Did you mean?  image):
+     8: 		  </tr>
+     9: 	
+    10: 		  <tr>
+    11: 		  	<td> <%= attachment_image_tag @cart_item, :image %> </td>
+    12: 		  	<td> <%= @cart_item.product.title %> <br>
+    13: 		  	     <%= @cart_item.product.artist.artist_name %> </td>
+    14:             <td> <%= @cart_item.quantity %> </td>
+  
+app/views/carts/show.html.erb:11:in `_app_views_carts_show_html_erb__1908784556284497471_70255804473960'
+Started GET "/products" for 10.0.2.2 at 2018-10-14 15:51:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:17
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:17
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:17
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:17
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:17
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:17
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:17
+  Rendered public/products/index.html.erb within layouts/application (12.2ms)
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 374ms (Views: 342.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/products/6" for 10.0.2.2 at 2018-10-14 15:51:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+  ↳ app/views/public/products/show.html.erb:16
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:22
+  [1m[36mDisc Load (0.8ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 6]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mTrack Load (0.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 7]]
+  ↳ app/views/public/products/show.html.erb:83
+  Rendered public/products/show.html.erb within layouts/application (12.7ms)
+  [1m[36mAdmin Load (1.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 462ms (Views: 412.7ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/products/4" for 10.0.2.2 at 2018-10-14 15:52:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/public/products/show.html.erb:16
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:22
+  [1m[36mDisc Load (0.9ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mTrack Load (1.0ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 5]]
+  ↳ app/views/public/products/show.html.erb:83
+  Rendered public/products/show.html.erb within layouts/application (13.1ms)
+  [1m[36mAdmin Load (1.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 463ms (Views: 422.9ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/products/2" for 10.0.2.2 at 2018-10-14 15:52:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/public/products/show.html.erb:16
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:22
+  [1m[36mDisc Load (0.8ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mTrack Load (0.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 2]]
+  ↳ app/views/public/products/show.html.erb:83
+  [1m[36mTrack Load (0.7ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 3]]
+  ↳ app/views/public/products/show.html.erb:83
+  Rendered public/products/show.html.erb within layouts/application (12.2ms)
+  [1m[36mAdmin Load (0.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 357ms (Views: 329.2ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/admin/users/6" for 10.0.2.2 at 2018-10-14 15:52:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.9ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  Rendered admin/users/_track_fields.html.erb (1.1ms)
+  Rendered admin/users/_track_fields.html.erb (0.9ms)
+  Rendered admin/users/_disc_fields.html.erb (47.3ms)
+  Rendered admin/users/_track_fields.html.erb (0.7ms)
+  Rendered admin/users/_disc_fields.html.erb (32.5ms)
+  Rendered admin/users/_form.html.erb (220.5ms)
+  Rendered admin/users/show.html.erb within layouts/application (247.4ms)
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 714ms (Views: 689.9ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/admin/products" for 10.0.2.2 at 2018-10-14 15:53:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PQMSij7pXon+OEuCMyegQMjIMBRv8T74UYbSSpk/4nj2Upox7b8Yr+zNSaY3MqiMyVcJzjn0vxzMm7AXm7L2QA==", "product"=>{"image"=>"{}", "title"=>"test", "artist_id"=>"1", "category_ids"=>["1", "2"], "discs_attributes"=>{"0"=>{"disc_name"=>"disc:1", "_destroy"=>"false", "tracks_attributes"=>{"0"=>{"music"=>"test", "list_num"=>"1"}}}}, "label"=>"test", "release(1i)"=>"2018", "release(2i)"=>"10", "release(3i)"=>"14", "price"=>"2000", "introduction"=>"test", "stock"=>"100"}, "commit"=>"追加"}
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[35m (1.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:32
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:32
+  [1m[36mProduct Create (3.5ms)[0m  [1m[32mINSERT INTO "products" ("title", "image_id", "price", "label", "stock", "release", "introduction", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "test"], ["image_id", nil], ["price", 2000], ["label", "test"], ["stock", 100], ["release", "2018-10-14"], ["introduction", "test"], ["artist_id", 1], ["created_at", "2018-10-14 15:55:12.583365"], ["updated_at", "2018-10-14 15:55:12.583365"]]
+  ↳ app/controllers/admin/products_controller.rb:32
+  [1m[36mProductCategory Create (2.1ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 8], ["category_id", 1], ["created_at", "2018-10-14 15:55:12.590481"], ["updated_at", "2018-10-14 15:55:12.590481"]]
+  ↳ app/controllers/admin/products_controller.rb:32
+  [1m[36mProductCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 8], ["category_id", 2], ["created_at", "2018-10-14 15:55:12.598157"], ["updated_at", "2018-10-14 15:55:12.598157"]]
+  ↳ app/controllers/admin/products_controller.rb:32
+  [1m[36mDisc Create (1.0ms)[0m  [1m[32mINSERT INTO "discs" ("product_id", "disc_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 8], ["disc_name", "disc:1"], ["created_at", "2018-10-14 15:55:12.604277"], ["updated_at", "2018-10-14 15:55:12.604277"]]
+  ↳ app/controllers/admin/products_controller.rb:32
+  [1m[36mTrack Create (1.3ms)[0m  [1m[32mINSERT INTO "tracks" ("music", "list_num", "disc_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["music", "test"], ["list_num", 1], ["disc_id", 9], ["created_at", "2018-10-14 15:55:12.610840"], ["updated_at", "2018-10-14 15:55:12.610840"]]
+  ↳ app/controllers/admin/products_controller.rb:32
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:32
+  [1m[36mAdmin Load (1.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:33
+Redirected to http://localhost:3000/admin/users/6
+Completed 302 Found in 114925ms (ActiveRecord: 18.7ms)
+
+
+Started GET "/admin/users/6" for 10.0.2.2 at 2018-10-14 15:55:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (2.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  Rendered admin/users/_track_fields.html.erb (2.3ms)
+  Rendered admin/users/_track_fields.html.erb (0.9ms)
+  Rendered admin/users/_disc_fields.html.erb (57.1ms)
+  Rendered admin/users/_track_fields.html.erb (1.0ms)
+  Rendered admin/users/_disc_fields.html.erb (27.3ms)
+  Rendered admin/users/_form.html.erb (261.9ms)
+  Rendered admin/users/show.html.erb within layouts/application (284.5ms)
+  [1m[36mAdmin Load (2.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 2107ms (Views: 1983.8ms | ActiveRecord: 34.2ms)
+
+
+Started POST "/admin/products" for 10.0.2.2 at 2018-10-14 15:56:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KcuK3SCsxoYZ3Iq40BSyRvg/9B7WrQePdcltHYIG5XaPf48HRGVa2/oYoLr+/FElFX23NglgKjLnEkDVxybguw==", "product"=>{"image"=>"{}", "title"=>"test", "artist_id"=>"1", "category_ids"=>["2", "3"], "discs_attributes"=>{"0"=>{"disc_name"=>"disc:1", "_destroy"=>"false", "tracks_attributes"=>{"0"=>{"music"=>"test", "list_num"=>"1"}}}}, "label"=>"test", "release(1i)"=>"2018", "release(2i)"=>"10", "release(3i)"=>"14", "price"=>"2000", "introduction"=>"test", "stock"=>"1000"}, "commit"=>"追加"}
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/controllers/admin/products_controller.rb:30
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 2.9ms)
+
+
+  
+NoMethodError (undefined method `pry' for #<Binding:0x00007f33ae096508>
+Did you mean?  try):
+  
+app/controllers/admin/products_controller.rb:31:in `create'
+Started POST "/admin/products" for 10.0.2.2 at 2018-10-14 15:56:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KcuK3SCsxoYZ3Iq40BSyRvg/9B7WrQePdcltHYIG5XaPf48HRGVa2/oYoLr+/FElFX23NglgKjLnEkDVxybguw==", "product"=>{"image"=>"{}", "title"=>"test", "artist_id"=>"1", "category_ids"=>["2", "3"], "discs_attributes"=>{"0"=>{"disc_name"=>"disc:1", "_destroy"=>"false", "tracks_attributes"=>{"0"=>{"music"=>"test", "list_num"=>"1"}}}}, "label"=>"test", "release(1i)"=>"2018", "release(2i)"=>"10", "release(3i)"=>"14", "price"=>"2000", "introduction"=>"test", "stock"=>"1000"}, "commit"=>"追加"}
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:31
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:31
+  [1m[36mProduct Create (3.0ms)[0m  [1m[32mINSERT INTO "products" ("title", "image_id", "price", "label", "stock", "release", "introduction", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "test"], ["image_id", nil], ["price", 2000], ["label", "test"], ["stock", 1000], ["release", "2018-10-14"], ["introduction", "test"], ["artist_id", 1], ["created_at", "2018-10-14 15:56:57.804652"], ["updated_at", "2018-10-14 15:56:57.804652"]]
+  ↳ app/controllers/admin/products_controller.rb:31
+  [1m[36mProductCategory Create (1.2ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 9], ["category_id", 2], ["created_at", "2018-10-14 15:56:57.809408"], ["updated_at", "2018-10-14 15:56:57.809408"]]
+  ↳ app/controllers/admin/products_controller.rb:31
+  [1m[36mProductCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 9], ["category_id", 3], ["created_at", "2018-10-14 15:56:57.811712"], ["updated_at", "2018-10-14 15:56:57.811712"]]
+  ↳ app/controllers/admin/products_controller.rb:31
+  [1m[36mDisc Create (0.5ms)[0m  [1m[32mINSERT INTO "discs" ("product_id", "disc_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 9], ["disc_name", "disc:1"], ["created_at", "2018-10-14 15:56:57.813124"], ["updated_at", "2018-10-14 15:56:57.813124"]]
+  ↳ app/controllers/admin/products_controller.rb:31
+  [1m[36mTrack Create (0.6ms)[0m  [1m[32mINSERT INTO "tracks" ("music", "list_num", "disc_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["music", "test"], ["list_num", 1], ["disc_id", 10], ["created_at", "2018-10-14 15:56:57.815038"], ["updated_at", "2018-10-14 15:56:57.815038"]]
+  ↳ app/controllers/admin/products_controller.rb:31
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:31
+  [1m[36mAdmin Load (1.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:32
+Redirected to http://localhost:3000/admin/users/6
+Completed 302 Found in 171ms (ActiveRecord: 34.2ms)
+
+
+Started GET "/admin/users/6" for 10.0.2.2 at 2018-10-14 15:56:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (1.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  Rendered admin/users/_track_fields.html.erb (2.2ms)
+  Rendered admin/users/_track_fields.html.erb (0.8ms)
+  Rendered admin/users/_disc_fields.html.erb (48.3ms)
+  Rendered admin/users/_track_fields.html.erb (0.8ms)
+  Rendered admin/users/_disc_fields.html.erb (18.0ms)
+  Rendered admin/users/_form.html.erb (189.5ms)
+  Rendered admin/users/show.html.erb within layouts/application (208.9ms)
+  [1m[36mAdmin Load (0.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 1711ms (Views: 1691.2ms | ActiveRecord: 2.6ms)
+
+
+Started DELETE "/admins/sign_out" for 10.0.2.2 at 2018-10-14 15:57:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YF7Y0dM7ATzxzuzy7c6gQSSh0x/ITZLnO1/8/WUg0UXG6t0Lt/KdYRIKxvDDJkMiyeOQNxeAv1qphNE1IADUiA=="}
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admins/sign_in
+Completed 302 Found in 60ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/admins/sign_in" for 10.0.2.2 at 2018-10-14 15:57:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (0.9ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (43.6ms)
+Completed 200 OK in 403ms (Views: 398.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2018-10-14 15:57:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 473ms (Views: 470.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 10.0.2.2 at 2018-10-14 15:57:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H2kOpeOUKJk1X9zzrKho+4VxtJrxWItblCTEiAFUGp6V+9+3dodvEWPDlEeyGsW3HdHwvqhI6MhyCyve49ZtJg==", "user"=>{"email"=>"b@b", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "b@b"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 45ms (ActiveRecord: 1.1ms)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H2kOpeOUKJk1X9zzrKho+4VxtJrxWItblCTEiAFUGp6V+9+3dodvEWPDlEeyGsW3HdHwvqhI6MhyCyve49ZtJg==", "user"=>{"email"=>"b@b", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (0.7ms)
+  Rendered users/sessions/new.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 504ms (Views: 358.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2018-10-14 15:57:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered users/registrations/new.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 370ms (Views: 367.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2018-10-14 15:57:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H82VLL1lmkH55I6Rq2MnYLjjidjEXCC3TcIOK+eYBo2VpmML55SnBr+FmarwjSsYTqBqvuqQSwgj3hL1b52mzQ==", "user"=>{"name_kana"=>"t", "name"=>"t", "post_code"=>"t", "address"=>"t", "phone"=>"t", "email"=>"t@t", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."deleted_at" IS NULL AND "users"."deleted_at" IS NULL LIMIT ?[0m  [["email", "t@t"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (4.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "name_kana", "phone", "post_code", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "t@t"], ["encrypted_password", "$2a$11$f/QOiFB4PTBV3/iG1GWnMeg5a4HQ15ZM95SA61A.qmZOBOmmPDcLG"], ["name", "t"], ["name_kana", "t"], ["phone", "t"], ["post_code", "t"], ["address", "t"], ["created_at", "2018-10-14 15:57:50.019062"], ["updated_at", "2018-10-14 15:57:50.019062"]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Create (1.2ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 11], ["created_at", "2018-10-14 15:57:50.035913"], ["updated_at", "2018-10-14 15:57:50.035913"]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 237ms (ActiveRecord: 11.5ms)
+
+
+Started GET "/" for 10.0.2.2 at 2018-10-14 15:57:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TopController#top as HTML
+  Rendering top/top.html.erb within layouts/application
+  Rendered top/top.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+Completed 200 OK in 397ms (Views: 378.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products" for 10.0.2.2 at 2018-10-14 15:57:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (3.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  [1m[36mArtist Load (1.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:17
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:17
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:17
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:17
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:17
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:17
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:17
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:17
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:17
+  Rendered public/products/index.html.erb within layouts/application (27.9ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+Completed 200 OK in 426ms (Views: 398.0ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/products/9" for 10.0.2.2 at 2018-10-14 15:58:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/public/products/show.html.erb:16
+  [1m[36mArtist Load (1.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:22
+  [1m[36mDisc Load (0.9ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mTrack Load (0.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 10]]
+  ↳ app/views/public/products/show.html.erb:83
+  Rendered public/products/show.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 356ms (Views: 319.9ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/products/9" for 10.0.2.2 at 2018-10-14 15:59:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/public/products/show.html.erb:16
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:22
+  [1m[36mDisc Load (2.7ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mTrack Load (1.7ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 10]]
+  ↳ app/views/public/products/show.html.erb:83
+  Rendered public/products/show.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 477ms (Views: 441.0ms | ActiveRecord: 10.6ms)
+
+
+Started PATCH "/products/9" for 10.0.2.2 at 2018-10-14 15:59:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+AbstractController::ActionNotFound (The action 'update' could not be found for Public::ProductsController):
+  
+actionpack (5.2.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/products/9" for 10.0.2.2 at 2018-10-14 16:00:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/public/products/show.html.erb:16
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:22
+  [1m[36mDisc Load (1.0ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mTrack Load (1.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 10]]
+  ↳ app/views/public/products/show.html.erb:83
+  Rendered public/products/show.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 413ms (Views: 383.4ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/add_item.9" for 10.0.2.2 at 2018-10-14 16:00:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#add_item as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qXrw0bZnnNmdD8XsLPEPRbnWKc2K8wri8cMEQ3UR7LEbRS2IY5ELsbITz1DPyrjKskpVenmGA2bdVKlrcUlfoQ==", "product"=>{"stock"=>"1000"}, "commit"=>"カートに入れる"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:5
+  [1m[36mCart Load (1.0ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:8
+  [1m[36mCart Load (0.9ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/carts_controller.rb:8
+Redirected to http://localhost:3000/carts/11
+Completed 302 Found in 27ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/carts/11" for 10.0.2.2 at 2018-10-14 16:00:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCartItem Load (0.9ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" WHERE "cart_items"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:14
+Completed 404 Not Found in 3ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find CartItem with 'id'=11):
+  
+app/controllers/carts_controller.rb:14:in `show'
+Started POST "/add_item.9" for 10.0.2.2 at 2018-10-14 16:00:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#add_item as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qXrw0bZnnNmdD8XsLPEPRbnWKc2K8wri8cMEQ3UR7LEbRS2IY5ELsbITz1DPyrjKskpVenmGA2bdVKlrcUlfoQ==", "product"=>{"stock"=>"2"}, "commit"=>"カートに入れる"}
+  [1m[36mUser Load (7.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:5
+  [1m[36mCart Load (1.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:8
+  [1m[36mCart Load (1.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/carts_controller.rb:8
+Redirected to http://localhost:3000/carts/11
+Completed 302 Found in 20ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/carts/11" for 10.0.2.2 at 2018-10-14 16:00:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCartItem Load (0.9ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" WHERE "cart_items"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:14
+Completed 404 Not Found in 3ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find CartItem with 'id'=11):
+  
+app/controllers/carts_controller.rb:14:in `show'
+Started POST "/add_item.9" for 10.0.2.2 at 2018-10-14 16:07:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#add_item as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qXrw0bZnnNmdD8XsLPEPRbnWKc2K8wri8cMEQ3UR7LEbRS2IY5ELsbITz1DPyrjKskpVenmGA2bdVKlrcUlfoQ==", "product"=>{"stock"=>"2"}, "commit"=>"カートに入れる"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:5
+  [1m[36mCart Load (1.8ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:8
+  [1m[36mCart Load (0.9ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/carts_controller.rb:8
+Redirected to http://localhost:3000/carts/11
+Completed 302 Found in 15ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/carts/11" for 10.0.2.2 at 2018-10-14 16:07:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCartItem Load (1.7ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" WHERE "cart_items"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:14
+Completed 404 Not Found in 4ms (ActiveRecord: 1.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find CartItem with 'id'=11):
+  
+app/controllers/carts_controller.rb:14:in `show'
+Started GET "/products/9" for 10.0.2.2 at 2018-10-15 02:59:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mProduct Load (2.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 4.6ms)
+
+
+  
+SyntaxError (/vagrant/tomato/app/views/public/products/show.html.erb:53: syntax error, unexpected keyword_do, expecting ')'
+...r.append=  form_for(@product do |f| @output_buffer.safe_appe...
+...                             ^~
+/vagrant/tomato/app/views/public/products/show.html.erb:100: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/public/products/show.html.erb:53: syntax error, unexpected keyword_do, expecting ')'
+app/views/public/products/show.html.erb:100: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/products/9" for 10.0.2.2 at 2018-10-15 02:59:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mCategory Load (4.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/public/products/show.html.erb:16
+  [1m[36mArtist Load (1.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:22
+  [1m[36mDisc Load (1.1ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mTrack Load (1.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 10]]
+  ↳ app/views/public/products/show.html.erb:83
+  Rendered public/products/show.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 430ms (Views: 396.0ms | ActiveRecord: 10.5ms)
+
+
+Started PATCH "/products/9" for 10.0.2.2 at 2018-10-15 03:00:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+AbstractController::ActionNotFound (The action 'update' could not be found for Public::ProductsController):
+  
+actionpack (5.2.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/products/9" for 10.0.2.2 at 2018-10-15 03:02:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/public/products/show.html.erb:16
+  [1m[36mArtist Load (1.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:22
+  [1m[36mDisc Load (0.8ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mTrack Load (0.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 10]]
+  ↳ app/views/public/products/show.html.erb:83
+  Rendered public/products/show.html.erb within layouts/application (87.5ms)
+Completed 200 OK in 1739ms (Views: 1625.8ms | ActiveRecord: 30.0ms)
+
+
+Started PATCH "/products/9" for 10.0.2.2 at 2018-10-15 03:02:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+AbstractController::ActionNotFound (The action 'update' could not be found for Public::ProductsController):
+  
+actionpack (5.2.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/products/9" for 10.0.2.2 at 2018-10-15 03:04:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/public/products/show.html.erb:16
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:22
+  [1m[36mDisc Load (0.8ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mTrack Load (0.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 10]]
+  ↳ app/views/public/products/show.html.erb:83
+  Rendered public/products/show.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 404ms (Views: 375.1ms | ActiveRecord: 6.4ms)
+
+
+Started POST "/add_item.9" for 10.0.2.2 at 2018-10-15 03:04:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#add_item as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3q0wh2XqkEsA5Kzd9TOJnOGisckfY2BA0oFmIjCszMRsku3esBwHIy/4pmEWCD4T6j7NfuwWacT+FssKNPR/1A==", "product"=>{"stock"=>"3"}, "commit"=>"カートに入れる"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:5
+  [1m[36mCart Load (1.6ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:8
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/carts_controller.rb:8
+Redirected to http://localhost:3000/carts/11
+Completed 302 Found in 100ms (ActiveRecord: 10.4ms)
+
+
+Started GET "/carts/11" for 10.0.2.2 at 2018-10-15 03:04:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCartItem Load (1.2ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" WHERE "cart_items"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:14
+Completed 404 Not Found in 3ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find CartItem with 'id'=11):
+  
+app/controllers/carts_controller.rb:14:in `show'
+Started GET "/products/9" for 10.0.2.2 at 2018-10-15 03:11:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/public/products/show.html.erb:16
+  [1m[36mArtist Load (1.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:22
+  [1m[36mDisc Load (1.1ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mTrack Load (0.9ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 10]]
+  ↳ app/views/public/products/show.html.erb:83
+  Rendered public/products/show.html.erb within layouts/application (97.0ms)
+Completed 200 OK in 1678ms (Views: 1552.2ms | ActiveRecord: 32.2ms)
+
+
+Started POST "/add_item.9" for 10.0.2.2 at 2018-10-15 03:11:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#add_item as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p/sz2OVnGZx5/ZNU8kWm0QpLyX0TWMdSSlow25ObT/wVxO6BMJGO9FbhmegRfhFeAde1yuAtztZmzZ3zl8P87A==", "product"=>{"stock"=>"3"}, "commit"=>"カートに入れる"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:5
+  [1m[36mCart Load (1.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:8
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/carts_controller.rb:8
+Redirected to http://localhost:3000/carts/3
+Completed 302 Found in 59ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/carts/3" for 10.0.2.2 at 2018-10-15 03:11:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCartItem Load (1.2ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" WHERE "cart_items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:14
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:15
+  [1m[36mCart Load (0.7ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:15
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/show.html.erb within layouts/application (26.8ms)
+Completed 500 Internal Server Error in 126ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_id' for #<CartItem:0x00007f8e4c2904c8>
+Did you mean?  image):
+     8: 		  </tr>
+     9: 	
+    10: 		  <tr>
+    11: 		  	<td> <%= attachment_image_tag @cart_item, :image %> </td>
+    12: 		  	<td> <%= @cart_item.product.title %> <br>
+    13: 		  	     <%= @cart_item.product.artist.artist_name %> </td>
+    14:             <td> <%= @cart_item.quantity %> </td>
+  
+app/views/carts/show.html.erb:11:in `_app_views_carts_show_html_erb__2613999929943759626_70124569980620'
+Started GET "/carts/3" for 10.0.2.2 at 2018-10-15 03:16:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCartItem Load (0.8ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" WHERE "cart_items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:14
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:15
+  [1m[36mCart Load (0.9ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:15
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/carts/show.html.erb:11
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/carts/show.html.erb:13
+  Rendered carts/show.html.erb within layouts/application (19.2ms)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 4.4ms)
+
+
+  
+LoadError (Unable to autoload constant Cart_item, expected /vagrant/tomato/app/models/cart_item.rb to define it):
+  
+app/views/carts/show.html.erb:21:in `_app_views_carts_show_html_erb__2613999929943759626_70124574781600'
+Started GET "/carts/3" for 10.0.2.2 at 2018-10-15 03:17:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCartItem Load (1.3ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" WHERE "cart_items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:14
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:15
+  [1m[36mCart Load (1.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:15
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/carts/show.html.erb:11
+  [1m[36mArtist Load (2.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/carts/show.html.erb:13
+  Rendered carts/show.html.erb within layouts/application (24.0ms)
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 7.9ms)
+
+
+  
+LoadError (Unable to autoload constant Cart_item, expected /vagrant/tomato/app/models/cart_item.rb to define it):
+  
+app/views/carts/show.html.erb:21:in `_app_views_carts_show_html_erb__2613999929943759626_70124689511460'
+Started GET "/products/9" for 10.0.2.2 at 2018-10-15 03:19:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:7
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:9
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/public/products/show.html.erb:16
+  [1m[36mArtist Load (1.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:22
+  [1m[36mDisc Load (0.8ms)[0m  [1m[34mSELECT "discs".* FROM "discs" WHERE "discs"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/public/products/show.html.erb:78
+  [1m[36mTrack Load (1.6ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."disc_id" = ?[0m  [["disc_id", 10]]
+  ↳ app/views/public/products/show.html.erb:83
+  Rendered public/products/show.html.erb within layouts/application (103.5ms)
+Completed 200 OK in 1659ms (Views: 1546.8ms | ActiveRecord: 29.8ms)
+
+
+Started POST "/add_item.9" for 10.0.2.2 at 2018-10-15 03:20:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#add_item as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EqnSHSYyFCXbMtusUvQktalqdSjMwUfNCfOjrLjzdx2glg9E88SDTfQu0RCxz5M6ovYJnz+0TkklZA6EvKvEDQ==", "product"=>{"stock"=>"3"}, "commit"=>"カートに入れる"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:5
+  [1m[36mCart Load (2.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:8
+  [1m[36mCart Load (1.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/carts_controller.rb:8
+Redirected to http://localhost:3000/carts/3
+Completed 302 Found in 75ms (ActiveRecord: 15.5ms)
+
+
+Started GET "/carts/3" for 10.0.2.2 at 2018-10-15 03:20:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCartItem Load (3.6ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" WHERE "cart_items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:14
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:15
+  [1m[36mCart Load (1.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:15
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/carts/show.html.erb:11
+  [1m[36mArtist Load (1.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/carts/show.html.erb:13
+  Rendered carts/show.html.erb within layouts/application (8.3ms)
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 9.4ms)
+
+
+  
+LoadError (Unable to autoload constant Cart_item, expected /vagrant/tomato/app/models/cart_item.rb to define it):
+  
+app/views/carts/show.html.erb:21:in `_app_views_carts_show_html_erb___1086452539057081664_69900795446500'
+Started POST "/add_item.9" for 10.0.2.2 at 2018-10-15 03:22:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#add_item as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EqnSHSYyFCXbMtusUvQktalqdSjMwUfNCfOjrLjzdx2glg9E88SDTfQu0RCxz5M6ovYJnz+0TkklZA6EvKvEDQ==", "product"=>{"stock"=>"3"}, "commit"=>"カートに入れる"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:5
+  [1m[36mCart Load (1.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:8
+  [1m[36mCart Load (0.7ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/carts_controller.rb:8
+Redirected to http://localhost:3000/carts/3
+Completed 302 Found in 16ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/carts/3" for 10.0.2.2 at 2018-10-15 03:22:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCartItem Load (0.8ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" WHERE "cart_items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:14
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:15
+  [1m[36mCart Load (0.9ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:15
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/carts/show.html.erb:11
+  [1m[36mArtist Load (0.9ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/carts/show.html.erb:13
+  Rendered carts/show.html.erb within layouts/application (15.8ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 4.2ms)
+
+
+  
+LoadError (Unable to autoload constant Cart_item, expected /vagrant/tomato/app/models/cart_item.rb to define it):
+  
+app/views/carts/show.html.erb:21:in `_app_views_carts_show_html_erb___1086452539057081664_69900799529080'
+Started GET "/carts/3" for 10.0.2.2 at 2018-10-15 03:23:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCartItem Load (1.3ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" WHERE "cart_items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:14
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:15
+  [1m[36mCart Load (1.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:15
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/carts/show.html.erb:11
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/carts/show.html.erb:13
+  Rendered carts/show.html.erb within layouts/application (9.1ms)
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 6.6ms)
+
+
+  
+LoadError (Unable to autoload constant Cart_item, expected /vagrant/tomato/app/models/cart_item.rb to define it):
+  
+app/views/carts/show.html.erb:21:in `_app_views_carts_show_html_erb___1086452539057081664_69900914127480'
+Started GET "/carts/3" for 10.0.2.2 at 2018-10-15 03:23:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCartItem Load (1.4ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" WHERE "cart_items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:14
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:15
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:15
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/carts/show.html.erb:11
+  [1m[36mArtist Load (0.9ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/carts/show.html.erb:13
+  Rendered carts/show.html.erb within layouts/application (19.9ms)
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 4.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_id' for nil:NilClass):
+    19: 
+    20: </table>
+    21: 
+    22: <% if @cart.user_id == current_user %>
+    23: <%= link_to "注文へ進む", payments_path %>
+    24: <% end %>
+  
+app/views/carts/show.html.erb:22:in `_app_views_carts_show_html_erb___1086452539057081664_69900799205000'
+Started GET "/carts/3" for 10.0.2.2 at 2018-10-15 03:24:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCartItem Load (1.4ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" WHERE "cart_items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:14
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:15
+  [1m[36mCart Load (1.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:15
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/carts/show.html.erb:11
+  [1m[36mArtist Load (1.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/carts/show.html.erb:13
+  Rendered carts/show.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 473ms (Views: 440.1ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/payments" for 10.0.2.2 at 2018-10-15 03:26:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PaymentsController#show as HTML
+  Rendering payments/show.html.erb within layouts/application
+  Rendered payments/show.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+Completed 200 OK in 428ms (Views: 407.3ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/delete_item" for 10.0.2.2 at 2018-10-15 03:26:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#delete_item as HTML
+  Parameters: {"authenticity_token"=>"uhHvHxH3NF6+IaqtvPwHCGo2r9fviYg3T2Iudb4FzZQILjJGxAGjNpE9oBFfx7CHYarTYBz8gbNj9YNdul1+hA=="}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find CartItem without an ID):
+  
+app/controllers/carts_controller.rb:20:in `delete_item'
+Started GET "/carts/3" for 10.0.2.2 at 2018-10-15 03:29:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCartItem Load (1.0ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" WHERE "cart_items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:14
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:15
+  [1m[36mCart Load (1.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:15
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/carts/show.html.erb:11
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/carts/show.html.erb:13
+  Rendered carts/show.html.erb within layouts/application (25.9ms)
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 5.9ms)
+
+
+  
+LoadError (Unable to autoload constant Cart_item, expected /vagrant/tomato/app/models/cart_item.rb to define it):
+  
+app/views/carts/show.html.erb:21:in `_app_views_carts_show_html_erb___1086452539057081664_69900795413920'

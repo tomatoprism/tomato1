@@ -6,7 +6,7 @@ class CartsController < ApplicationController
     @cart_item.product_id = params[:id]
     @cart_item.quantity = params[:product][:stock].to_i
     @cart_item.save
-    redirect_to cart_path(current_user)
+    redirect_to cart_path(current_user.cart.id)
   end
 
 

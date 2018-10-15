@@ -47,10 +47,10 @@
            <% end %>
            </td>
         </tr>
-    
+
         <tr>
           <td> 個数 </td>
-          <td> <%= form_for(@product, url: add_item_path(@product.id),html: {method: "post"} )do |f| %>
+          <td> <%= form_for(@product, url: add_item_path(@product.id), html: {method: "post"}) do |f| %>
  				 <%= f.number_field :stock %>
 				 </td>
         </tr>

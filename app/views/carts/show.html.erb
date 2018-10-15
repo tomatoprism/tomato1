@@ -8,7 +8,7 @@
 		  </tr>
 	
 		  <tr>
-		  	<td> <%= attachment_image_tag @cart_item, :image %> </td>
+		  	<td> <%= attachment_image_tag @cart_item.product, :image %> </td>
 		  	<td> <%= @cart_item.product.title %> <br>
 		  	     <%= @cart_item.product.artist.artist_name %> </td>
             <td> <%= @cart_item.quantity %> </td>
@@ -18,7 +18,7 @@
     
           	<td> </td>
           	<td> 合計 </td>
-          	<td> <%= Cart_item.sum(:quantity) %> </td>
+          	<td> <%= @cart_item.product.sum(:quantity) %> </td>
           	<td> <%= Cart_item.sum(:product.price) %> </td>
           	<td>  </td>
 </table>
