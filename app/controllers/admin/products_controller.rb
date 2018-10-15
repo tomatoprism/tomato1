@@ -1,19 +1,19 @@
 class Admin::ProductsController < Admin::ApplicationController
 	def index
 		@products = Product.all
-
 	end
 
 	def show
-
 	end
 
 	def edit
-
+		@product = Product.find(params[:id])
 	end
 
 	def update
-
+		@product = Product.find(params[:id])
+		@product.update(product_params)
+		redirect_to product_path(@product.id)
 	end
 
 	def destroy
@@ -24,7 +24,6 @@ class Admin::ProductsController < Admin::ApplicationController
 	end
 
 	def new
-
 	end
 
 
@@ -33,6 +32,7 @@ class Admin::ProductsController < Admin::ApplicationController
 		@product_new.save
 		redirect_to admin_user_path(current_admin)
 	end
+
 	private
 	def product_params
         params.require(:product).permit(:title, :image, :price, :label, :stock, :release, :introduction, :artist_id, category_ids: [], discs_attributes: [:id, :disc_name, :done, :_destroy,tracks_attributes: [:id, :music, :list_num]])
