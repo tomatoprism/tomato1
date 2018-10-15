@@ -63,14 +63,15 @@
         </tr>
 
         <tr>
-          <% if current_user %>
+         <% if current_user %>
+         <td> 
+          <p>個数</p>
+         </td>
           <td>
-            <p>個数</p>
-          </td>
-          <td>
-            <%= form_for(@product, url: add_item_path(@product.id), html: {method: "post"}) do |f| %>
-			      <%= f.number_field :stock %>
-				  </td>
+            <%= form_for(@product, url: cart_add_item_path(@product.id), html: {method: "post"}) do |f| %>
+ 				    <%= f.number_field :stock %>
+				 </td>
+
         </tr>
         <tr>
           <td>
