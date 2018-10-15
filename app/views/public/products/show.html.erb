@@ -1,3 +1,9 @@
+<% if flash[:alert] %>
+<div class="alert alert-danger">
+  <%= flash[:alert] %>
+</div>
+<% end %>
+
 <h1>CD詳細</h1>
 
 <div class = "item" >
@@ -61,7 +67,15 @@
             <% end %>
           </td>
         </tr>
+    </table>
 
+<<<<<<< HEAD
+         <% if current_user %>
+            <%= form_for(@product, url: cart_add_item_path(@product.id), html: {method: "post"}) do |f| %>
+              <p>購入個数:</p>
+              <%= f.number_field :stock, required:true, min:'1', max:'product.stock' %>
+              <%= f.submit "カートに入れる" %>
+=======
         <tr>
           <% if current_user %>
           <td>
@@ -75,11 +89,9 @@
         <tr>
           <td>
             <%= f.submit "カートに入れる" %>
+>>>>>>> cf7c7acbebf9b7aabad7484d8edbdf9f4cb45d82
             <% end %>
-          </td>
-          <% end %>
-        </tr>
-    </table>
+        <% end %>
   </div>
 </div>
 
