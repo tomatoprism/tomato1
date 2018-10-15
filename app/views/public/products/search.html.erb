@@ -1,24 +1,24 @@
-<% @productfind.each do |seach| %>
+<% @productfind.each do |search| %>
 <div class = "item" >
     <div class = "product-image" >
-        <%= link_to product_path(seach) do %>
-          <%= attachment_image_tag seach, :image %>
+        <%= link_to product_path(search) do %>
+          <%= attachment_image_tag search, :image %>
         <% end %>
     </div>
     <div class = "product-info" >
     </div>
       <ul>
         <li>
-          <%= seach.title%>
+          <%= search.title%>
         </li>
         <li>
-          <%= seach.artist.artist_name %>
+          <%= search.artist.artist_name %>
         </li>
         <li>
-          ¥<%= seach.price %>
+          ¥<%= search.price %>
         </li>
         <li>
-          <% if seach.stock == 0 then %>
+          <% if search.stock == 0 then %>
           <p>在庫なし</p>
             <% else %>
           <p>在庫あり</p>
