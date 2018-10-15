@@ -38,10 +38,12 @@ Rails.application.routes.draw do
   end
 
 
-  resources :carts, only:[:show]
+  resources :carts, only:[:show] do
   post '/add_item' => 'carts#add_item'
+end
   post '/update_item' => 'carts#update_item'
   delete '/delete_item' => 'carts#delete_item'
+
 
 
   resources :categories, only:[:new, :create, :update, :destroy, :show, :edit]

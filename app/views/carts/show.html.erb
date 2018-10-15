@@ -6,24 +6,25 @@
 		    <th> 小計 </th>
 		    <th> </th>
 		  </tr>
-	
+	<% @cart_item.each do |cart_item| %>
 		  <tr>
-		  	<td> <%= attachment_image_tag @cart_item.product, :image %> </td>
-		  	<td> <%= @cart_item.product.title %> <br>
-		  	     <%= @cart_item.product.artist.artist_name %> </td>
-            <td> <%= @cart_item.quantity %> </td>
-            <td> <%= @cart_item.product.price*@cart_item.quantity %> </td>
+		  	<td> <%= attachment_image_tag cart_item.product, :image %> </td>
+		  	<td> <%= cart_item.product.title %> <br>
+		  	     <%= cart_item.product.artist.artist_name %> </td>
+            <td> <%= cart_item.quantity %> </td>
+            <td> <%= cart_item.product.price*@cart_item.quantity %> </td>
             <td> <%= link_to "削除", delete_item_path, method: :delete %> </td>
           <tr>
+    <% end %>
     
           	<td> </td>
           	<td> 合計 </td>
-          	<td> <%= @cart_item.product.sum(:quantity) %> </td>
-          	<td> <%= Cart_item.sum(:product.price) %> </td>
+          	<td> <%= @cart_item.sum(:quantity) %> </td>
+          	<td> <%= @cart_item.product.price*@cart_item.quantity %> </td>
           	<td>  </td>
 </table>
 
-<% if @cart.user_id == current_user %>
+<% if @cart_item.cart_id == current_user.cart.id %>
 <%= link_to "注文へ進む", payments_path %>
 
 <% end %>
