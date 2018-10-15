@@ -19,10 +19,7 @@
 			<td><%= link_to "詳細", user_path(user), class:"btn-sm btn-success" %>
 				<%= link_to "削除", user_path(user), method: :delete, data: {confirm: "本当に消しますか?" }, class:"btn-sm btn-danger" %>
 			</td>
-			<% end %>
 		</tr>
 	</tbody>
+	<% end %>
 </table>
-
-<%= link_to "戻る" :back %>
-
