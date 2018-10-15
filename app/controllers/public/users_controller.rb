@@ -1,12 +1,12 @@
 class Public::UsersController < Public::ApplicationController
+   before_action :correct_user, only:[:edit, :update, :destroy, :show, :create_cart]
 
 	def create_cart
 		cart.create(User.id:self.id)
 	end
-	
 
 	def show
-		@user = current_user
+		@user = User.find(params[:id])
 	end
 
 	def edit
@@ -23,6 +23,17 @@ class Public::UsersController < Public::ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     redirect_to root_path
+  end
+
+  def correct_user
+    @user = User.find(params[:id])
+    if @user == current_user then
+    	elsif @admin = Admin.find(params[:id])
+    	       @admin = current_admin
+
+    else
+          redirect_to root_path
+    end
   end
 
 	private
