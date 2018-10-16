@@ -1,32 +1,38 @@
-<div>
-	<h2>カテゴリー</h2>
-</div>
-<div>
-	<nav>
-		<ul>
-		<% categories.each do |c|%>
-			<li>
-				<%= link_to category_path(c) do %>
-				<%= c.category_name %>
-				<% end %>
-			</li>
-		<% end %>
-		</ul>
-	</nav>
-</div>
-<div>
-	<h2>アーティスト</h2>
-</div>
-<div>
-	<nav>
-		<ul>
-		<% artists.each do |a|%>
-			<li>
-				<%= link_to artist_path(a) do %>
-				<%= a.artist_name %>
-				<% end %>
-			</li>
-		<% end %>
-		</ul>
-	</nav>
+<div class="col-xs-3">
+	<div>
+		<h2>カテゴリー</h2>
+	</div>
+	<div>
+		<nav>
+			<ul>
+			<% categories.each do |c|%>
+				<li>
+					<%= link_to category_path(c) do %>
+						<% if c.products.count > 0 %>
+							<%= c.category_name %>(<%= c.products.count %>)
+						<% end %>
+					<% end %>
+				</li>
+			<% end %>
+			</ul>
+		</nav>
+	</div>
+	<div>
+		<h2>アーティスト</h2>
+	</div>
+	<div>
+		<nav>
+			<ul>
+			<% artists.each do |a|%>
+				<li>
+					<%= link_to artist_path(a) do %>
+						<% if a.products.count > 0 %>
+							<%= a.artist_name %>(<%= a.products.count %>)
+						<% end %>
+					<% end %>
+				</li>
+			<% end %>
+			</ul>
+		</nav>
+	</div>
 </div>

@@ -1,0 +1,27 @@
+<div class="continer">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>お客様情報</th>
+				<th></th>
+			</tr>
+		</thead>
+		<% @messages.each do |m| %>
+		<tbody>
+			<tr>
+				<td>
+					<ul>
+						<li><%= m.name %></li>
+						<li><%= m.mail %></li>
+						<li><%= m.created_at.strftime('%Y年%m月%d日') %></li>
+					</ul>
+				</td>
+				<td><%= m.text %></td>
+				<td><%= link_to"詳細", admin_message_path(m) %></td>
+			</tr>
+		</tbody>
+		<% end %>
+	</table>
+</div>
+
+

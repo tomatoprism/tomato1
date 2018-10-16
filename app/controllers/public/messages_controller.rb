@@ -11,9 +11,8 @@ class Public::MessagesController < Public::ApplicationController
   end
 
   private
- 
     def message_params
-        params.require(:message).permit(:name, :email, :text)
+        params.require(:message).permit(:name, :mail, :text)
     end
 
 end
