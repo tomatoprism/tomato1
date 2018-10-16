@@ -1,5 +1,6 @@
+<h1>商品お気に入り一覧</h1>
 <div>
-  <% @category.products.each do |product| %>
+  <% @favariteproducts.each do |product| %>
   <div class = "item" >
     <div class = "product-image" >
         <%= link_to product_path(product.id) do %>
@@ -10,8 +11,9 @@
     </div>
       <ul>
         <li>
-          <%= product.title %>
+          <%= product.title%>
         </li>
+        <li>
           <%= product.artist.artist_name %>
         </li>
         <li>
@@ -20,9 +22,9 @@
         <li>
           <% if product.stock == 0 then %>
           <p>在庫なし</p>
-          <% else %>
+            <% else %>
           <p>在庫あり</p>
-          <% end %>
+            <% end %>
         </li>
       </ul>
   </div>

@@ -60,5 +60,7 @@ end
 
   get "/search/products" => "public/products#search"
 
+  get "/favorites" => "public/favorites#index"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
