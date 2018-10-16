@@ -3,7 +3,8 @@ class Product < ApplicationRecord
 
 	has_many :product_categories
 	has_many :categories, through: :product_categories
-	has_many :reviews
+	has_many :reviews, dependent: :destroy
+
 	has_many :cart_items
 	has_many :favorites, dependent: :destroy
 	has_many :reviews, dependent: :destroy

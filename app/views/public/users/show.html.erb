@@ -1,37 +1,37 @@
 
 <table class="table">
     <tr>
-        <th> User情報</th>
+        <th> <p>User情報</p></th>
         <th></th>
     </tr>
 
         <tr>
-        	<td> フリガナ </td>
+        	<td> <p>フリガナ</p> </td>
         	<td> <%= @user.name_kana %> </td>
       	 </tr>
 
         <tr>
-          <td> 名前 </td>
+          <td> <p>名前</p> </td>
           <td> <%= @user.name %> </td>
         </tr>
 
         <tr>
-          <td> 郵便番号 </td>
+          <td> <p>郵便番号</p> </td>
           <td> <%= @user.post_code %> </td>
         </tr>
 
         <tr>
-          <td> 住所 </td>
+          <td> <p>住所</p> </td>
           <td> <%= @user.address %> </td>
         </tr>
 
         <tr>
-          <td> 電話番号 </td>
+          <td> <p>電話番号</p> </td>
           <td> <%= @user.phone %> </td>
          </tr>
 
         <tr>
-          <td> メールアドレス </td>
+          <td> <p>メールアドレス</p> </td>
           <td> <%= @user.email %> </td>
         </tr>
 
@@ -39,24 +39,7 @@
 
     <%= link_to "編集", edit_user_path(@user) %>
 
-<!--  <h3>購入履歴(仮)</h3>
-< if cart.create %>
-< @history.each do |history| %>
-<li class = "item" >
-  <div class = "product-image" >
-    < attachment_image_tag history, :image %>
-  </div>
-  <div class = "product-info" >
-    <li> < history.create_at %> </li>
-    <li> < history.product.title %> </li>
-    <li> < history.product.artist_id %> </li>
-    <li> < hisroty.cart_item.quantity %> </li>
-    <li> < history.price_history %> </li>
-  </div>
-</li>
-< end %>
-< end %>     -->
-
+<h3>購入履歴</h3>
        <%= link_to "退会", user_path(@user), method: :delete %>
 
        <%= link_to "戻る", :back %>
