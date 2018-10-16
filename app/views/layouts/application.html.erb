@@ -30,7 +30,7 @@
                 <%=link_to "ログアウト",destroy_admin_session_path, method: :delete %>
               </li>
               <li class="search_field">
-                <%= render 'public/products/searach' %>
+                <%= render 'public/products/search' %>
               </li>
             <% elsif user_signed_in? %>
               <li>

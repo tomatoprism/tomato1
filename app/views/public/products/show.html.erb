@@ -8,7 +8,7 @@
 
 <div class = "item" >
   <div class = "product-image" >
-    <%= attachment_image_tag @product, :image %>
+    <%= attachment_image_tag @product, :image, fallback: "no-image.jpg", size: '300x300' %>
   </div>
   <div class = "product-info" >
   	<table class="table">
@@ -69,27 +69,12 @@
         </tr>
     </table>
 
-<<<<<<< HEAD
          <% if current_user %>
             <%= form_for(@product, url: cart_add_item_path(@product.id), html: {method: "post"}) do |f| %>
               <p>購入個数:</p>
               <%= f.number_field :stock, required:true, min:'1', max:'product.stock' %>
               <%= f.submit "カートに入れる" %>
-=======
-        <tr>
-          <% if current_user %>
-          <td>
-            <p>個数</p>
-          </td>
-          <td>
-            <%= form_for(@product, url: add_item_path(@product.id), html: {method: "post"}) do |f| %>
-			      <%= f.number_field :stock %>
-				  </td>
-        </tr>
-        <tr>
-          <td>
-            <%= f.submit "カートに入れる" %>
->>>>>>> cf7c7acbebf9b7aabad7484d8edbdf9f4cb45d82
+
             <% end %>
         <% end %>
   </div>
