@@ -1,5 +1,9 @@
 class Public::FavoritesController < ApplicationController
 	def index
+        @user = current_user
+        @userfavorites = @user.favorites
+        porducts = @userfavorites.pluck(:product_id)
+        @favariteproducts = Product.where(id: products)
 	end
 	def create
         product = Product.find(params[:product_id])

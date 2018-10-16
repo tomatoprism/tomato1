@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
 
-
-
   root to:'top#top'
-
 
   devise_for :admins, controllers: {
   sessions:      'admins/sessions',
@@ -23,7 +20,6 @@ Rails.application.routes.draw do
   	  resources :users, only:[:show, :edit, :update, :destroy]
   end
 
-
   namespace :admin do
       resources :products
   end
@@ -37,17 +33,13 @@ Rails.application.routes.draw do
     end
   end
 
-
   resources :carts, only:[:show] do
   post '/add_item' => 'carts#add_item'
 end
   post '/update_item' => 'carts#update_item'
   delete '/delete_item' => 'carts#delete_item'
 
-
-
   resources :categories, only:[:new, :create, :update, :destroy, :show, :edit]
-
 
   namespace :admin do
   	  resources :messages, only:[:index, :show]
@@ -56,27 +48,19 @@ end
       resources :messages, only:[:new, :create]
   end
 
-
   resources :historoies, only:[:index, :show]
-
 
   resources :artists, only:[:new, :create, :update, :destroy, :show, :edit]
 
-
-
-
   resources :posts, only:[:create, :destroy]
 
-
-  get "/payments" => "payments#show"
-
+  resources :payments, only:[:show]
 
   get "/admins" => "admins#top"
 
   get "/search/products" => "public/products#search"
 
   get "/favorites" => "public/favorites#index"
-
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

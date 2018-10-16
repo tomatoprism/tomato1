@@ -1,1 +1,32 @@
 <h1>商品お気に入り一覧</h1>
+<div>
+  <% @favariteproducts.each do |product| %>
+  <div class = "item" >
+    <div class = "product-image" >
+        <%= link_to product_path(product.id) do %>
+          <%= attachment_image_tag product, :image, fallback: "no_image.jpg", size: '200x200' %>
+        <% end %>
+    </div>
+    <div class = "product-info" >
+    </div>
+      <ul>
+        <li>
+          <%= product.title%>
+        </li>
+        <li>
+          <%= product.artist.artist_name %>
+        </li>
+        <li>
+          ¥<%= product.price %>
+        </li>
+        <li>
+          <% if product.stock == 0 then %>
+          <p>在庫なし</p>
+            <% else %>
+          <p>在庫あり</p>
+            <% end %>
+        </li>
+      </ul>
+  </div>
+  <% end %>
+</div>

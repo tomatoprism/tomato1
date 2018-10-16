@@ -19,7 +19,6 @@ end
   def show
   	@cart_items = CartItem.find(params[:id])
     @cart_items.cart_id = current_user.cart.id
-
   end
 
   def delete_item
