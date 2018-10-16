@@ -17,12 +17,12 @@ end
 
 
   def show
-  	@cart_items = CartItem.find(params[:id])
-    @cart_items.cart_id = current_user.cart.id
+
   end
 
   def delete_item
     cart_item = CartItem.find(params[:id])
+    cart_item.cart_id = current_user.cart.id
     cart_item.destroy
     redirect_to cart_path(current_user.cart.id)
   end

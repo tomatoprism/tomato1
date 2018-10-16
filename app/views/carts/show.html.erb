@@ -18,14 +18,12 @@
             <% sum  = sum + cart_item.product.price * cart_item.quantity %>
           <tr>
     <% end %>
-    
+
           	<td> </td>
           	<td> <p>合計</p></td>
           	<td> <%= current_user.cart.cart_items.sum(:quantity) %> </td>
           	<td> <%= sum %> </td>
 </table>
 
-<% if @cart_items.cart_id == current_user.cart.id %>
 <%= link_to "注文へ進む", payment_path %>
 
-<% end %>
