@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
          has_many :reviews, dependent: :destroy
          has_one :cart, dependent: :destroy
+         has_one :post
 
 
    acts_as_paranoid

@@ -52,8 +52,6 @@ end
 
   resources :artists, only:[:new, :create, :update, :destroy, :show, :edit]
 
-  resources :posts, only:[:create, :destroy]
-
   resources :payments, only:[:show]
 
   get "/admins" => "admins#top"
@@ -61,6 +59,8 @@ end
   get "/search/products" => "public/products#search"
 
   get "/favorites" => "public/favorites#index"
+
+  resources :posts, only:[ :new, :create, :edit, :update, :destroy]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

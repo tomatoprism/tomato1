@@ -39,6 +39,21 @@
 
     <%= link_to "編集", edit_user_path(@user) %>
 
+    <% unless Post.where(user_id: current_user.id).exists? %>
+    <h3>お届け先住所登録</h3>
+    <%= link_to "登録", new_post_path %>
+
+    <% else %>
+    <h3>お届け先住所</h3>
+    <p>郵便番号</p>
+    <%= @user.post.post_code %>
+    <p>住所</p>
+    <%= @user.post.post_address %>
+    <%= link_to "編集", edit_post_path(current_user.id) %>
+    <% end %>
+
+
+
 <h3>購入履歴</h3>
        <%= link_to "退会", user_path(@user), method: :delete %>
 
