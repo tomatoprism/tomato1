@@ -79,6 +79,7 @@
           </td>
         </tr>
     </table>
+
          <% if current_user %>
             <%= form_for(@product, url: cart_add_item_path(@product.id), html: {method: "post"}) do |f| %>
               <p>購入個数:</p>

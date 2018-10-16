@@ -1,29 +1,32 @@
 <h2>決済画面</h2>
 
-<table class ="table">
-		<thead>
-			<tr>
-				<th colspan="1"></th>
-				<th>title</th>
-				<th>artist</th>
-				<th>値段</th>
-				<th>数量</th>
-			</tr>
-   <p>each do</p>
-		<tbody>
-			<tr><p>attachment_image_tag</p></tr>
-
-			<tr><p>title</p></tr>
-
-			<tr><p>artist</p></tr>
-
-			<tr><p>price</p></tr>
-
-			<tr><p>stock</p></tr>
-
-<p>radio_button_tag</p>
-<p>user.post_code</p>
-<p>user.address</p>
-<p>user.name</p>
+<table class="table">
+		  <tr>
+		    <th> <p>商品情報</p> </th>
+		    <th> </th>
+		    <th> <p>個数</p> </th>
+		    <th> <p>小計</p> </th>
+		    <th> </th>
+		  </tr>
+    <% sum1 = 0 %>
+	<% current_user.cart.cart_items.each do |cart_item| %>
+		  <tr>
+		  	<td> <%= attachment_image_tag cart_item.product, :image %> </td>
+		  	<td> <%= cart_item.product.title %> <br>
+		  	     <%= cart_item.product.artist.artist_name %> </td>
+            <td> <%= cart_item.quantity %> </td>
+            <td> <%= cart_item.product.price * cart_item.quantity %> </td>
+            <% sum1  = sum1 + cart_item.product.price * cart_item.quantity %>
+          <tr>
+    <% end %>
+</table>
+     <% sum2 = 0 %>
+            <td>送料</td><br>
+            <td>300</td><br>
+            <td>手数料</td><br>
+            <td>100</td><br>
+          	<td> </td>
+          	<td>合計
+                <%= sum2 = sum2 + sum1 + 300 + 100 %></td>
 
 <div>購入</div>
