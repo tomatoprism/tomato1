@@ -6,6 +6,8 @@ class Product < ApplicationRecord
 	has_many :reviews, dependent: :destroy
 
 	has_many :cart_items
+	has_many :favorites, dependent: :destroy
+	has_many :reviews, dependent: :destroy
 	attachment :image
 
 	has_many :discs, inverse_of: :product
@@ -18,5 +20,9 @@ class Product < ApplicationRecord
 			Product.all
 		end
 	end
+
+	def favorited_by?(user)
+          favorites.where(user_id: user.id).exists?
+    end
 
 end

@@ -39,24 +39,8 @@
 
     <%= link_to "編集", edit_user_path(@user) %>
 
-<!-- <h3>購入履歴</h3>
-<% if cart.create %>
-< @history.each do |history| %>
-<li class = "item" >
-  <div class = "product-image" >
-    < attachment_image_tag history, :image %>
-  </div>
-  <div class = "product-info" >
-    <li> < history.create_at %> </li>
-    <li> < history.product.title %> </li>
-    <li> < history.product.artist_id %> </li>
-    <li> < hisroty.cart_item.quantity %> </li>
-    <li> < history.price_history %> </li>
-  </div>
-</li>
-<% end %>
-<% end %>
- -->
+<h3>購入履歴</h3>
+
        <%= link_to "退会", user_path(@user), method: :delete %>
 
        <%= link_to "戻る", :back %>

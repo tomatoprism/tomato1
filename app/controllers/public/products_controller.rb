@@ -7,7 +7,9 @@ class Public::ProductsController < Public::ApplicationController
 		@product = Product.find(params[:id])
 		@discs = @product.discs
 		@user = current_user
+        @review = Review.new
 	end
+
 	def search
 		@productfind = Product.search(params[:search]).order(release: "DESC")
 	end
