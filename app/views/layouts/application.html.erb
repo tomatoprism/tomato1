@@ -45,7 +45,7 @@
                   <%=link_to "カート",cart_path(current_user.cart.id) %>
                 </li>
                 <li>
-                  <%=link_to "お気に入り",root_path %>
+                  <%=link_to "お気に入り",favorites_path %>
                 </li>
                 <li>
                   <%=link_to "ログアウト",destroy_user_session_path, method: :delete %>
