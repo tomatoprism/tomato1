@@ -5,6 +5,18 @@
 <% end %>
 
 <h1>CD詳細</h1>
+<%if current_user %>
+  <% if @product.favorited_by?(current_user) %>
+      <%= link_to product_favorites_path(@product), method: :delete, class: "glyphicon btn btn-danger" do %>
+        <p>お気に入りしてます</p>
+      <% end %>
+  <% else %>
+      <%= link_to product_favorites_path(@product), method: :post, class: "glyphicon btn btn-default" do %>
+        <p>お気に入りしてね</p>
+      <% end %>
+  <% end %>
+<%end%>
+
 
 <div class = "item" >
   <div class = "product-image" >
@@ -15,7 +27,6 @@
     <tr>
         <th>CD概要</th>
     </tr>
-
         <tr>
         	<td><p>カテゴリー</p></td>
         	<td>
@@ -68,28 +79,11 @@
           </td>
         </tr>
     </table>
-
-<<<<<<< HEAD
          <% if current_user %>
             <%= form_for(@product, url: cart_add_item_path(@product.id), html: {method: "post"}) do |f| %>
               <p>購入個数:</p>
               <%= f.number_field :stock, required:true, min:'1', max:'product.stock' %>
               <%= f.submit "カートに入れる" %>
-=======
-        <tr>
-          <% if current_user %>
-          <td>
-            <p>個数</p>
-          </td>
-          <td>
-            <%= form_for(@product, url: add_item_path(@product.id), html: {method: "post"}) do |f| %>
-			      <%= f.number_field :stock %>
-				  </td>
-        </tr>
-        <tr>
-          <td>
-            <%= f.submit "カートに入れる" %>
->>>>>>> cf7c7acbebf9b7aabad7484d8edbdf9f4cb45d82
             <% end %>
         <% end %>
   </div>
