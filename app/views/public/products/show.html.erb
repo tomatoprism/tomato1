@@ -8,11 +8,11 @@
 <%if current_user %>
   <% if @product.favorited_by?(current_user) %>
       <%= link_to product_favorites_path(@product), method: :delete, class: "glyphicon btn btn-danger" do %>
-        <p>お気に入りしてます</p>
+      <span class="glyphicon-star"></span>
       <% end %>
   <% else %>
       <%= link_to product_favorites_path(@product), method: :post, class: "glyphicon btn btn-default" do %>
-        <p>お気に入りしてね</p>
+        <span class="glyphicon-star-empty"></span>
       <% end %>
   <% end %>
 <%end%>
@@ -23,7 +23,7 @@
     <%= attachment_image_tag @product, :image, fallback: "no_image.jpg", size: '300x300' %>
   </div>
   <div class = "product-info" >
-  	<table class="table">
+  	<table class="table table-condensed">
     <tr>
         <th>CD概要</th>
     </tr>
@@ -31,14 +31,18 @@
         	<td><p>カテゴリー</p></td>
         	<td>
             <% @product.categories.each do |product| %>
-            <%= product.category_name %>
+              <%= link_to category_path(@product.category_ids) do  %>
+                <%= product.category_name %>
+              <% end %>
             <% end %>
           </td>
       	 </tr>
         <tr>
           <td><P>アーティスト</P></td>
           <td>
+            <%= link_to artist_path do %>
             <%= @product.artist.artist_name %>
+            <% end %>
           </td>
         </tr>
 
@@ -92,7 +96,7 @@
 </div>
 
 
-<table class="table">
+<table class="table table-condensed">
   <thead>
     <tr>
       <th>
