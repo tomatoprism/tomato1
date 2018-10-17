@@ -3,6 +3,28 @@ class HistoriesController < ApplicationController
   end
 
   def show
+  	@history = History.find(params[:id])
+    @cart = Cart.find(params[:id])
+    @user = User.find(params[:id])
   end
+
+  def create
+  	@history = History.new
+  	cart = Cart.where(user_id: current_user.id).last
+  	@history.price_history = 400 #送料と手数料
+  	cart.cart_items.each do |c|
+  		@history.price_history += c.product.price * c.quantity
+  	end
+    @history.cart_id = cart.id
+  	@history.post_code_history = current_user.post_code
+  	@history.post_address_history = current_user.address
+  	@history.save
+  	cart = Cart.new(user_id: current_user.id)
+  	cart.save
+  	redirect_to root_path
+  end
+
+  
+
 end
 
