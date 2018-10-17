@@ -31,14 +31,18 @@
         	<td><p>カテゴリー</p></td>
         	<td>
             <% @product.categories.each do |product| %>
-            <%= product.category_name %>
+              <%= link_to category_path(@product.category_ids) do  %>
+                <%= product.category_name %>
+              <% end %>
             <% end %>
           </td>
       	 </tr>
         <tr>
           <td><P>アーティスト</P></td>
           <td>
+            <%= link_to artist_path do %>
             <%= @product.artist.artist_name %>
+            <% end %>
           </td>
         </tr>
 
