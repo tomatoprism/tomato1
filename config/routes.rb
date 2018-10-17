@@ -36,8 +36,8 @@ Rails.application.routes.draw do
   resources :carts, only:[:show] do
   post '/add_item' => 'carts#add_item'
   post '/update_item' => 'carts#update_item'
-  delete '/delete_item' => 'carts#delete_item'
-  end
+  delete '/cart_items/:id' => 'carts#delete_item',as: 'delete_item'
+end
 
   resources :categories, only:[:new, :create, :update, :destroy, :show, :edit]
 
@@ -52,8 +52,6 @@ Rails.application.routes.draw do
 
   resources :artists, only:[:new, :create, :update, :destroy, :show, :edit]
 
-  resources :posts, only:[:create, :destroy]
-
   resources :payments, only:[:show]
 
   get "/admins" => "admins#top"
@@ -61,6 +59,8 @@ Rails.application.routes.draw do
   get "/search/products" => "public/products#search"
 
   get "/favorites" => "public/favorites#index"
+
+  resources :posts, only:[ :new, :create, :edit, :update, :destroy]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
