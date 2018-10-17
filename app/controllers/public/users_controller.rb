@@ -1,9 +1,6 @@
 class Public::UsersController < Public::ApplicationController
    before_action :correct_user, only:[:edit, :update, :destroy, :show, :create_cart]
 
-	def create_cart
-		cart.create(User.id:self.id)
-	end
 
 	def show
 		@user = User.find(params[:id])

@@ -23,5 +23,9 @@ class User < ApplicationRecord
 	validates :email, uniqueness_without_deleted: true, allow_blank: true, if: :email_changed?
 	has_many :favorites, dependent: :destroy
 
+private
+def create_cart
+		carts.create(user_id: self.id)
+	end
 
 end
