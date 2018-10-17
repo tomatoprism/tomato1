@@ -1,10 +1,12 @@
 <h3>お届け先住所変更</h3>
-    <%= form_for(@post) do |f| %>
+    <%= form_for @post do |f| %>
     <p>郵便番号</p>
     <%= f.text_field :post_code %>
 
     <p>住所</p>
-    <%= f.text_area :post_address %>
+　　　<p>都道府県</p>
+      <%= f.select :prefecture_id, Prefecture.all.collect { |p| [ p.prefecture, p.id ] } %><br>
+    <%= f.text_area :post_address %><br>
 
     <%= f.submit "編集", class:"btn btn-primary" %>
 

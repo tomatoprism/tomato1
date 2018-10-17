@@ -14,7 +14,7 @@ class Public::UsersController < Public::ApplicationController
 
 	def update
 		user = User.find(params[:id])
-    
+      binding.pry
     	user.update(user_params)
     	redirect_to user_path(user)
 	end
@@ -38,7 +38,7 @@ class Public::UsersController < Public::ApplicationController
 
 	private
     def user_params
-        params.require(:user).permit(:name, :name_kana, :email, :phone, :post_code, :adddress)
+        params.require(:user).permit(:name, :name_kana, :email, :phone, :post_code, :address)
     end
 
 end

@@ -45,11 +45,10 @@
 
     <% else %>
     <h3>お届け先住所</h3>
-    <p>郵便番号</p>
-    <%= @user.post.post_code %>
-    <p>住所</p>
-    <%= @user.post.post_address %>
-    <%= link_to "編集", edit_post_path(current_user.id) %>
+    <p>〒<%= @user.post.post_code %></p>
+    <%= @user.prefecture.prefecture%>
+    <%= @user.post.post_address %><br>
+    <%= link_to "編集", edit_post_path(current_user.post.id) %>
     <% end %>
 
 

@@ -7,7 +7,10 @@ class User < ApplicationRecord
   after_create:create_cart
 
          has_many :reviews, dependent: :destroy
+
          has_one :post
+		 has_one :prefecture, through: :post
+
          has_many :carts, dependent: :destroy
 
 
@@ -18,8 +21,7 @@ class User < ApplicationRecord
 		 # validates_format_of     :email, with: email_regexp
 		  validates_presence_of     :password
 		  validates_confirmation_of :password
-		  validates :password,
-		  length: { minimum: 6, maximum: 128 }
+		  validates :password, length: { minimum: 6, maximum: 128 }
 
 	validates :email, uniqueness_without_deleted: true, allow_blank: true, if: :email_changed?
 	has_many :favorites, dependent: :destroy

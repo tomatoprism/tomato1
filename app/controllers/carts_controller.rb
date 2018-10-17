@@ -22,9 +22,9 @@ class CartsController < ApplicationController
 
   def delete_item
     cart_item = CartItem.find(params[:id])
-    cart_item.cart_id = current_user.cart.id
+    cart_item.cart_id = current_user.carts.where(user_id: current_user.id).last.id
     cart_item.destroy
-    redirect_to cart_path(current_user.cart.id)
+    redirect_to cart_path(current_user.carts.where(user_id: current_user.id).last.id)
   end
 
 private

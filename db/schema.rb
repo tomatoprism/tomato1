@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_14_080515) do
+ActiveRecord::Schema.define(version: 2018_10_17_123756) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 2018_10_14_080515) do
     t.integer "postage_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "prefecture_id"
   end
 
   create_table "prefectures", force: :cascade do |t|
@@ -166,9 +167,7 @@ ActiveRecord::Schema.define(version: 2018_10_14_080515) do
     t.string "last_sign_in_ip"
     t.string "name"
     t.string "name_kana"
-    t.string "mail"
     t.string "phone"
-    t.string "password"
     t.string "post_code"
     t.string "address"
     t.boolean "deleted_flag"
