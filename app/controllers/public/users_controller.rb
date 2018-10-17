@@ -1,7 +1,7 @@
 class Public::UsersController < Public::ApplicationController
    before_action :correct_user, only:[:edit, :update, :destroy, :show, :create_cart]
 
-	
+
 
 	def show
 		@user = User.find(params[:id])
