@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   post '/add_item' => 'carts#add_item'
   post '/update_item' => 'carts#update_item'
   delete '/cart_items/:id' => 'carts#delete_item',as: 'delete_item'
-end
+
 
   resources :categories, only:[:new, :create, :update, :destroy, :show, :edit]
 
@@ -48,7 +48,7 @@ end
       resources :messages, only:[:new, :create]
   end
 
-  resources :historoies, only:[:index, :show]
+  resources :histories, only:[:index, :show, :create, :update]
 
   resources :artists, only:[:new, :create, :update, :destroy, :show, :edit]
 

@@ -7,8 +7,8 @@ class User < ApplicationRecord
   after_create :create_cart
 
          has_many :reviews, dependent: :destroy
-         has_one :cart, dependent: :destroy
          has_one :post
+         has_many :carts, dependent: :destroy
 
 
    acts_as_paranoid
