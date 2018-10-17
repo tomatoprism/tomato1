@@ -42,7 +42,7 @@
                   <%=link_to "マイページ",user_path(current_user) %>
                 </li>
                 <li>
-                  <%=link_to "カート",cart_path(current_user.cart.id) %>
+                  <%=link_to "カート",cart_path(current_user.carts.where(user_id: current_user.id).last) %>
                 </li>
                 <li>
                   <%=link_to "お気に入り",favorites_path %>

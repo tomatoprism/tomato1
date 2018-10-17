@@ -9,7 +9,8 @@
 		    <th> </th>
 		  </tr>
     <% sum1 = 0 %>
-	<% current_user.cart.cart_items.each do |cart_item| %>
+  <% cart = Cart.where(user_id: current_user.id).last %>
+	<% cart.cart_items.each do |cart_item| %>
 		  <tr>
 		  	<td> <%= attachment_image_tag cart_item.product, :image %> </td>
 		  	<td> <%= cart_item.product.title %> <br>
@@ -21,12 +22,22 @@
     <% end %>
 </table>
      <% sum2 = 0 %>
-            <td>送料</td><br>
-            <td>300</td><br>
-            <td>手数料</td><br>
-            <td>100</td><br>
-          	<td> </td>
-          	<td>合計
-                <%= sum2 = sum2 + sum1 + 300 + 100 %></td>
+            <p>送料</p><br>
+            <p>300</p><br>
+            <p>手数料</p><br>
+            <p>100</p><br>
+          	<p> </p>
+          	<p>合計
+                <%= sum2 = sum2 + sum1 + 300 + 100 %></p><br><br>
 
-<div>購入</div>
+
+    <p>郵便番号
+        <%= current_user.post_code %></p><br>
+    <p>お届け先住所
+        <%= current_user.address %></p><br>
+   <p>名前
+       <%= current_user.name %></p>
+
+
+
+<%= link_to "購入する", histories_path(@history), method: :post %>

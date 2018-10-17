@@ -1,2 +1,32 @@
-<h1>Histories#show</h1>
-<p>Find me in app/views/histories/show.html.erb</p>
+<h1>購入履歴</h1>
+
+<% @user.carts.each do |cart| %>
+<% cart.histories.each do |history| %>
+<table class="table">
+	<tr>
+		<th>購入者</th>
+		<th>購入日</th>
+		<th>購入内容</th>
+		<th>購入価格総計</th>
+		<th>送付先</th>
+		<th>ステータス</th>
+	</tr>
+
+	<tr>
+		<td><%= history.cart.user.name %></td>
+		<td><%= history.created_at %></td>
+		<% history.cart.cart_items.each do |cart_item| %>
+		<td><%= cart_item.product.title %><br>
+			<%= cart_item.quantity %><br>
+			<%= cart_item.product.price * cart_item.quantity %>
+		</td>
+		<% end %>
+		<td><%= history.price_history %></td>
+		<td><%= history.post_address_history %>
+			<%= history.post_code_history %>
+		</td>
+		<th></th>
+	</tr>
+</table>
+<% end %>
+<% end %>
