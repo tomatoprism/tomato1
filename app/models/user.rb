@@ -30,5 +30,4 @@ private
 def create_cart
 		carts.create(user_id: self.id)
 	end
-
 end
