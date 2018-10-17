@@ -1,5 +1,9 @@
-<div>
+<div class="conteiner">
+<div class="row">
   <% @products.each do |product| %>
+<div class="col-xs-6 col-md-3">
+<div class="thumbnail">
+  <div class="productbox">
     <div class = "item" >
       <div class = "product-image" >
           <%= link_to product_path(product.id) do %>
@@ -89,5 +93,9 @@
         </li>
       </ul>
     </div>
-  <% end %>
+  </div>
+</div>
+</div>
+<% end %>
+</div>
 </div>

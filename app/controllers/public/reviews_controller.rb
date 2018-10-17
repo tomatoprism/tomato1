@@ -8,6 +8,11 @@ class Public::ReviewsController < ApplicationController
   end
 
   def destroy
+    product = Product.find(params[:product_id])
+    review = current_user.reviews.find_by(product_id: product.id)
+    review.destroy
+    redirect_to product_path(product.id)
+
   end
 
 

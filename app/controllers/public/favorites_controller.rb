@@ -2,8 +2,11 @@ class Public::FavoritesController < ApplicationController
 	def index
         @user = current_user
         @userfavorites = @user.favorites
+        if @userfavorites.count > 0
         porducts = @userfavorites.pluck(:product_id)
         @favariteproducts = Product.where(id: products)
+        else redirect_to root_path
+        end
 	end
 	def create
         product = Product.find(params[:product_id])
