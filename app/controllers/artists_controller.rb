@@ -12,6 +12,8 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
+    @categories = Category.all
+    @artists = Artist.all
   end
   def edit
     @artist_edit = Artist.find(params[:id])

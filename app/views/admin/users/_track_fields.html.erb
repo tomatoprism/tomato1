@@ -5,6 +5,13 @@
   </div>
   <div class="form-group">
     <%= f.label :ナンバー %>
-    <%= f.number_field :list_num %>
+    <%= f.number_field :list_num, :value => "1"%>
   </div>
 </div>
+<script>
+  $(function() {
+      $('.form-inline').each(function(i) {
+        $('.form-inline .form-group:last-child input').eq(i).val(i+1);
+      });
+    });
+</script>
