@@ -1,9 +1,11 @@
 class Public::FavoritesController < ApplicationController
 	def index
+        @categories = Category.all
+        @artists = Artist.all
         @user = current_user
         @userfavorites = @user.favorites
         if @userfavorites.count > 0
-        porducts = @userfavorites.pluck(:product_id)
+        products = @userfavorites.pluck(:product_id)
         @favariteproducts = Product.where(id: products)
         else redirect_to root_path
         end

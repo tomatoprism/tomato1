@@ -1,6 +1,8 @@
 class Public::ProductsController < Public::ApplicationController
 	def index
 		@products = Product.all.order(release: "DESC")
+		@categories = Category.all
+		@artists = Artist.all
 	end
 
 	def show
@@ -11,7 +13,8 @@ class Public::ProductsController < Public::ApplicationController
 	end
 
 	def search
-		@productfind = Product.search(params[:search]).order(release: "DESC")
+		@productfind = Product.search(params[:search])
+		# .order(release: "DESC")
 	end
 
 	def update

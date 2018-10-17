@@ -12,6 +12,8 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    @categories = Category.all
+    @artists = Artist.all
   end
 
   def edit
