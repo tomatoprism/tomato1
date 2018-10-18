@@ -1,10 +1,33 @@
 <h1>TOP</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-2">
+			<%= render 'category', categories: @categories, artists: @artists %>
+		</div>
 
-<p>reverse_each</p>
-<div class="newproduct">
-	<p>product.image_id</p>
-	<p>product.title</p>
-	<p>product.release</p>
-	<p>product.price</p>
-</div>
-<%= render 'category', categories: @categories, artists: @artists %>
+		<div class="col-lg-10 ">
+           <% @products.each do |product| %>
+              <div class = "item top">
+                 <div class = "product-image" >
+                   <%= link_to product_path(product.id) do %>
+                   <%= attachment_image_tag product, :image, fallback: "no_image.jpg", size: '200x200' %>
+                   <% end %>
+                 </div>
+
+
+                   <div class = "product-info" >
+                     <ul>
+                       <li> <%= product.title %> </li>
+                       <li>発売日<br>
+      	                   <%= product.release %></li>
+                       <li> <%= product.price %>円 </li>
+                        <li><%= link_to "詳細", product_path(product) %></li>
+                      </ul>
+                   </div>
+               </div>
+            <% end %>
+        </div>
+    </div>
+ </div>
+
+

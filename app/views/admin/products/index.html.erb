@@ -17,8 +17,8 @@
       <li> <%= product.price %> </li>
   
 
-    <li><%= link_to "詳細", product_path(product) %>
-        <%= link_to "削除", admin_product_path(product), method: :delete %>
+    <li><%= link_to "詳細", product_path(product), class:"btn-sm btn-success" %>
+        <%= link_to "削除", data: { confirm: "本当にけしますか?"},  admin_product_path(product), method: :delete, class:"btn-sm btn-danger" %>
     </li>
   </ul>
 </div>
