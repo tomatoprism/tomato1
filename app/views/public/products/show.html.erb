@@ -4,39 +4,29 @@
 </div>
 <% end %>
 
-<h1>CD詳細</h1>
-<%if current_user %>
-  <% if @product.favorited_by?(current_user) %>
-      <%= link_to product_favorites_path(@product), method: :delete, class: "glyphicon btn btn-danger" do %>
-      <span class="glyphicon-star"></span>
-      <% end %>
-  <% else %>
-      <%= link_to product_favorites_path(@product), method: :post, class: "glyphicon btn btn-default" do %>
-        <span class="glyphicon-star-empty"></span>
-      <% end %>
-  <% end %>
-<%end%>
 
+<div class = "container" >
+  <div class = "row" >
+    <div class="col-lg-4" >
+      <%= attachment_image_tag @product, :image, fallback: "no_image.jpg", size: '300x300' %>
+    </div>
 
-<div class = "item" >
-  <div class = "product-image" >
-    <%= attachment_image_tag @product, :image, fallback: "no_image.jpg", size: '300x300' %>
-  </div>
-  <div class = "product-info" >
-  	<table class="table table-condensed">
-    <tr>
-        <th>CD概要</th>
-    </tr>
+    <div class="col-lg-8">
+      <table class="table" >
+        <tr >
+          <th><p>商品概要</p></th>
+          <th></th>
+        </tr>
         <tr>
         	<td><p>カテゴリー</p></td>
         	<td>
             <% @product.categories.each do |product| %>
-              <%= link_to category_path(@product.category_ids) do  %>
-                <%= product.category_name %>
-              <% end %>
+            <%= link_to category_path(@product.category_ids) do  %>
+            <%= product.category_name %>
+            <% end %>
             <% end %>
           </td>
-      	 </tr>
+        </tr>
         <tr>
           <td><P>アーティスト</P></td>
           <td>
@@ -76,83 +66,103 @@
             <% if current_admin %>
             <%= @product.stock %>
             <% elsif @product.stock == 0 then %>
-             <p>在庫なし</p>
+            <p>在庫なし</p>
             <% else %>
-             <p>在庫あり</p>
+            <p>在庫あり</p>
             <% end %>
           </td>
         </tr>
-    </table>
-
-         <% if current_user %>
-            <%= form_for(@product, url: cart_add_item_path(@product.id), html: {method: "post"}) do |f| %>
-              <p>購入個数:</p>
-              <%= f.number_field :stock, required:true, min:'1', max:'product.stock', :value => "1"  %>
-              <%= f.submit "カートに入れる" %>
-
+        <tr>
+          <td><p>お気に入り</p></td>
+          <td>
+            <%if current_user %>
+            <% if @product.favorited_by?(current_user) %>
+            <%= link_to product_favorites_path(@product), method: :delete, class: "glyphicon btn btn-danger" do %>
+            <span class="glyphicon-star"></span>
             <% end %>
-        <% end %>
+            <% else %>
+            <%= link_to product_favorites_path(@product), method: :post, class: "glyphicon btn btn-default" do %>
+            <span class="glyphicon-star-empty"></span>
+            <% end %>
+            <% end %>
+            <%end%>
+          </td>
+        </tr>
+      </table>
+      <% if current_user %>
+      <%= form_for(@product, url: cart_add_item_path(@product.id), html: {method: "post"}) do |f| %>
+      <p>購入個数:</p>
+      <%= f.number_field :stock, required:true, min:'1', max:'product.stock', :value => "1"  %>
+      <%= f.submit "カートに入れる", class:"btn btn-info" %>
+
+      <% end %>
+      <% end %>
+
+    </div>
   </div>
-</div>
 
-
-<table class="table table-condensed">
-  <thead>
+  <table class="table" >
+    <thead>
+      <tr >
+        <th>
+          <p>収録曲</p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <% @discs.each do |disc| %>
+          <ul>
+            <li class="disc_name">
+              <%= disc.disc_name %>
+            </li>
+          </ul>
+          <% disc.tracks.each do |track| %>
+          <li>
+            <%= track.music %>
+          </li>
+          <% end %>
+          <br>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table" >
     <tr>
       <th>
-        <p>収録曲</p>
+        <p>商品紹介</p>
       </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <% @discs.each do |disc| %>
-        <ul>
-          <li class="disc_name">
-              <%= disc.disc_name %>
-          </li>
-        </ul>
-        <% disc.tracks.each do |track| %>
-        <li>
-          <%= track.music %>
+      <tr>
+        <td>
+          <%= @product.introduction %>
+        </td>
+      </tr>
+    </table>
+
+    <div class ="review" style = "padding-top: 30px;" >
+      <strong>レビュー</strong>
+      <%= form_for [@product, @review] do |f| %>
+      <%= f.text_area :text, rows:'5', :size=>"60" ,placeholder: "コメントをここに" %>
+      <%= f.submit "送信する", class:"btn btn-info" %>
+      <% end %>
+
+      <% @product.reviews.each do |review| %>
+      <ul>
+        <li><%= review.created_at.strftime('%Y/%m/%d') %>
+          <%= review.text %>
+          <% if @user == current_user %>
+          <%= link_to "削除", product_reviews_path(review.id), method: :delete %><br>
+          <% end %>
         </li>
-        <% end %>
-       <br>
-        <% end %>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<table class="table">
-  <tr>
-    <th>
-      <p>商品紹介</p>
-    </th>
-  <tr>
-    <td>
-      <%= @product.introduction %>
-    </td>
-  </tr>
-</table>
-
-<p>レビュー</p>
-<%= form_for [@product, @review] do |f| %>
-<%= f.text_field :text, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
-<%= f.submit "送信する" %>
-<% end %>
-
-<% @product.reviews.each do |review| %>
-<%= review.user.name %>
-<%= review.created_at.strftime('%Y/%m/%d') %>
-<%= review.text %>
-<% if @user == current_user %>
-<%= link_to "削除", product_reviews_path(review.id), method: :delete %>
-<% end %>
-<% end %><br>
+      </ul>
+      <% end %><br>
+    </div>
 
 
-<% if current_admin %>
-  <%= link_to"編集", edit_admin_product_path(@product) %>
-<% end %>
- <%= link_to "戻る", :back, class: "back" %>
+    <% if current_admin %>
+    <%= link_to"編集", edit_admin_product_path(@product) %>
+    <% end %>
+    <%= link_to "戻る", :back, class: "back" %>
+  </div>

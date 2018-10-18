@@ -1,5 +1,4 @@
 class Public::UsersController < Public::ApplicationController
-   before_action :correct_user, only:[:edit, :update, :destroy, :show, :create_cart]
 
 
 
@@ -22,15 +21,6 @@ class Public::UsersController < Public::ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     redirect_to root_path
-  end
-
-  
-   def correct_user
-    @user = User.find(params[:id])
-    unless @user == current_user
-      redirect_to user_path(current_user.id)
-    end
-  
   end
 
 	private
