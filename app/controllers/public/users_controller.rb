@@ -14,7 +14,6 @@ class Public::UsersController < Public::ApplicationController
 
 	def update
 		user = User.find(params[:id])
-      binding.pry
     	user.update(user_params)
     	redirect_to user_path(user)
 	end
@@ -25,15 +24,13 @@ class Public::UsersController < Public::ApplicationController
     redirect_to root_path
   end
 
-  def correct_user
+  
+   def correct_user
     @user = User.find(params[:id])
-    if @user == current_user then
-    	elsif @admin = Admin.find(params[:id])
-    	       @admin = current_admin
-
-    else
-          redirect_to root_path
+    unless @user == current_user
+      redirect_to user_path(current_user.id)
     end
+  
   end
 
 	private

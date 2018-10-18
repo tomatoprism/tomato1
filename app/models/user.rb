@@ -11,7 +11,7 @@ class User < ApplicationRecord
          has_one :post
 		 has_one :prefecture, through: :post
 
-         has_many :carts, dependent: :destroy
+         has_many :carts
 
 
    acts_as_paranoid
