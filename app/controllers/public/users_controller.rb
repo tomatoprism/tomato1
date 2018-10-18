@@ -13,7 +13,6 @@ class Public::UsersController < Public::ApplicationController
 
 	def update
 		user = User.find(params[:id])
-      binding.pry
     	user.update(user_params)
     	redirect_to user_path(user)
 	end
@@ -23,7 +22,6 @@ class Public::UsersController < Public::ApplicationController
     @user.destroy
     redirect_to root_path
   end
-
 
 	private
     def user_params
