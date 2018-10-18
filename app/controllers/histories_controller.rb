@@ -5,7 +5,7 @@ class HistoriesController < ApplicationController
 
   def update
     history = History.find(params[:id])
-    history.update(history_params)
+    history.update(historparams[:id])
     redirect_to histories_path
   end
 
@@ -20,7 +20,6 @@ class HistoriesController < ApplicationController
   	cart.cart_items.each do |c|
   		@history.price_history += c.product.price * c.quantity
   	end
-    cart.cart_items.each do |d|
     @history.cart_id = cart.id
   	@history.post_code_history = current_user.post_code
   	@history.post_address_history = current_user.address
