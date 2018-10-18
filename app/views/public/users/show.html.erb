@@ -43,7 +43,7 @@
       </table>
 
 
-  <%= link_to "お客様情報 編集", edit_user_path(@user), class:"btn btn-info" %>
+  <%= link_to "お客様情報 編集", edit_user_path(@user), class:"btn btn-primary" %>
 
 
   <% if Post.where(user_id: @user.id).exists? %>
@@ -51,7 +51,7 @@
   <p>〒<%= @user.post.post_code %></p>
   <%= @user.prefecture.prefecture%>
   <%= @user.post.post_address %><br>
-  <%= link_to "お届け先住所 編集", edit_post_path(@user.post.id), class:"btn btn-info" %>
+  <%= link_to "お届け先住所 編集", edit_post_path(@user.post.id), class:"btn btn-primary" %><br>
 
   <% elsif @user == current_user %>
   <h3>お届け先住所登録</h3>
@@ -61,10 +61,12 @@
   <% end %>
 
 
-
+  <h3>購入履歴</h3>
   <%= link_to "購入履歴を見る", history_path, class:"btn btn-info" %>
 
-  <%= link_to "退会する", user_path(@user), method: :delete, class:"btn btn-info" %>
+
+
+  <%= link_to "退会する", user_path(@user), method: :delete, class:"btn btn-danger" %>
 
   <%= link_to "戻る", :back, class:"btn btn-info" %>
 
