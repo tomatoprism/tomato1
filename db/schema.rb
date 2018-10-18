@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2018_10_17_123756) do
 
   create_table "admins", force: :cascade do |t|
@@ -47,6 +48,8 @@ ActiveRecord::Schema.define(version: 2018_10_17_123756) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_carts_on_deleted_at"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -78,12 +81,14 @@ ActiveRecord::Schema.define(version: 2018_10_17_123756) do
 
   create_table "histories", force: :cascade do |t|
     t.integer "cart_id"
-    t.string "status"
+    t.integer "status"
     t.integer "price_history"
     t.string "post_address_history"
     t.string "post_code_history"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_histories_on_deleted_at"
   end
 
   create_table "messages", force: :cascade do |t|
