@@ -3,5 +3,7 @@ class Cart < ApplicationRecord
 	belongs_to :user
 	has_many :cart_items, dependent: :destroy
 	has_many :histories
+
+	acts_as_paranoid
 end
 
