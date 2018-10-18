@@ -1,7 +1,5 @@
 class PaymentsController < ApplicationController
   def show
-  	@cart_items = CartItem.find(params[:id])
-    @cart_items.cart_id = current_user.carts.where(user_id: current_user.id).last.id
   end
 
   private
