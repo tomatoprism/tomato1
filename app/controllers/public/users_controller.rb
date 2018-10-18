@@ -1,5 +1,4 @@
 class Public::UsersController < Public::ApplicationController
-   before_action :correct_user, only:[:edit, :update, :destroy, :show, :create_cart]
 
 
 
@@ -25,16 +24,6 @@ class Public::UsersController < Public::ApplicationController
     redirect_to root_path
   end
 
-  def correct_user
-    @user = User.find(params[:id])
-    if @user == current_user then
-    	elsif @admin = Admin.find(params[:id])
-    	       @admin = current_admin
-
-    else
-          redirect_to root_path
-    end
-  end
 
 	private
     def user_params
