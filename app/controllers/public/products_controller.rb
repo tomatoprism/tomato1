@@ -12,6 +12,8 @@ class Public::ProductsController < Public::ApplicationController
 	end
 
 	def search
+		@categories = Category.all
+		@artists = Artist.all
 		@productfind = Product.search(params[:search])
 		# .order(release: "DESC")
 	end
