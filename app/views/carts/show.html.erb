@@ -30,11 +30,10 @@
           </tr>
 </table>
 
-
-<% if Post.where(user_id: current_user.id).exists? %>
-
+<% if cart.cart_items.count <= 0 %>
+<% elsif Post.where(user_id: current_user.id).exists? %>
 <%= link_to "注文へ進む", payment_path, class:"btn btn-primary" %>
-<% else %>
+<% elsif %>
 <%= link_to "お届け先住所を登録してください", new_post_path, class:"btn btn-danger" %><br>
 <% end %>
 <%= link_to "戻る", :back, class:"btn btn-info"%>
