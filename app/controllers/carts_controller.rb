@@ -15,7 +15,7 @@ class CartsController < ApplicationController
       redirect_to cart_path(cart.id)
       end
   end
-
+  
 
   def show
   end
