@@ -6,7 +6,7 @@ class HistoriesController < ApplicationController
 
   def update
     history = History.find(params[:id])
-    history.update(historparams[:id])
+    history.update(history_params)
     redirect_to histories_path
   end
 

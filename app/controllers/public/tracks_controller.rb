@@ -5,7 +5,7 @@ class Public::TracksController < ApplicationController
   def update
   	@track = Track.find(params[:id])
   	@track.update(track_params)
-  	redirect_to product_path
+  	redirect_to root_path
   end
 
   def destroy

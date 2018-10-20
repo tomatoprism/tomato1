@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   	post = Post.new(post_params)
     post.user_id = current_user.id
     if post.save
-       redirect_to user_path(current_user.id)
+       redirect_to user_path(current_user.id), success: 'お届け先が登録されました'
     else
        render :new
     end
@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   def update
   	post = Post.find(params[:id])
     post.update(post_params)
-    redirect_to user_path(current_user.id)
+    redirect_to user_path(current_user.id), success: 'お届け先が更新されました'
   end
 
   def destroy

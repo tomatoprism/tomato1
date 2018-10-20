@@ -13,13 +13,13 @@ class Public::UsersController < Public::ApplicationController
 	def update
 		user = User.find(params[:id])
     	user.update(user_params)
-    	redirect_to user_path(user)
+    	redirect_to user_path(user), success: 'お客様情報が更新されました'
 	end
 
 	def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to root_path
+    redirect_to root_path, danger: '退会しました'
   	end
   	def correct_user
 	    unless user_signed_in? || admin_signed_in?
