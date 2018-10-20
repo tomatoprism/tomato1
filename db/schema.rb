@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 2018_10_20_073223) do
     t.datetime "updated_at", null: false
     t.datetime "deleted_at"
     t.string "user_name"
+    t.string "prefecture_history"
     t.index ["deleted_at"], name: "index_histories_on_deleted_at"
   end
 

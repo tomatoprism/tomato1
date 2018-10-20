@@ -8,7 +8,6 @@ class Public::ProductsController < Public::ApplicationController
 	def show
 		@product = Product.find(params[:id])
 		@discs = @product.discs
-		@user = current_user
         @review = Review.new
 	end
 

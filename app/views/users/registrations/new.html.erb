@@ -1,4 +1,8 @@
-<h2>Sign up</h2>
+<div class = "container-fluid" >
+  <div class = "row" >
+    <div class="col-xs-offset-2 col-lg-6" >
+
+      <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -23,8 +27,6 @@
     <%= f.label :電話番号 %><br />
     <%= f.telephone_field :phone, autofocus: true, autocomplete: "phone" %>
   </div>
-
-
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -49,3 +51,7 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+</div>
+</div>
+

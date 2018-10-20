@@ -1,71 +1,61 @@
 <div class = "container" >
-
-        <div class="col-xs-offset-3 col-md-6" >
-
-  <table class="table" >
-
-    <div class="row" >
-
+  <div class="col-xs-offset-3 col-md-6" >
+    <table class="table" >
+      <div class="row" >
 
         <h3>お客様情報</h3>
-
         <tr>
           <td> <p>名前</p> </td>
           <td> <%= @user.name %> </td>
         </tr>
-
         <tr>
           <td> <p>フリガナ</p> </td>
           <td> <%= @user.name_kana %> </td>
         </tr>
-
         <tr>
           <td> <p>郵便番号</p> </td>
           <td> <%= @user.post_code %> </td>
         </tr>
-
         <tr>
           <td> <p>住所</p> </td>
           <td> <%= @user.address %> </td>
         </tr>
-
         <tr>
           <td> <p>電話番号</p> </td>
           <td> <%= @user.phone %> </td>
         </tr>
-
         <tr>
           <td> <p>メールアドレス</p> </td>
           <td> <%= @user.email %> </td>
         </tr>
-            </div>
-  </div>
-      </table>
-
-
-  <%= link_to "お客様情報 編集", edit_user_path(@user), class:"btn btn-info" %>
-
+      </div>
+    </div>
+  </table>
+  <%= link_to "お客様情報 編集", edit_user_path(@user), class:"btn btn-primary" %>
 
   <% if Post.where(user_id: @user.id).exists? %>
-  <h3>お届け先住所</h3>
-  <p>〒<%= @user.post.post_code %></p>
-  <%= @user.prefecture.prefecture%>
-  <%= @user.post.post_address %><br>
-  <%= link_to "お届け先住所 編集", edit_post_path(@user.post.id), class:"btn btn-info" %>
+        <h3>お届け先住所</h3>
+        <p>〒<%= @user.post.post_code %></p>
+        <%= @user.prefecture.prefecture%>
+        <%= @user.post.post_address %><br>
+        <%= link_to "お届け先住所 編集", edit_post_path(@user.post.id), class:"btn btn-primary" %><br>
 
   <% elsif @user == current_user %>
-  <h3>お届け先住所登録</h3>
-  <%= link_to "登録", new_post_path, class:"btn btn-info" %>
+        <h3>お届け先住所登録</h3>
+        <%= link_to "登録", new_post_path, class:"btn btn-info" %>
+
   <% else current_user == current_admin  %>
 
   <% end %>
 
+  <h3>購入履歴</h3>
+  <%= link_to "購入履歴を見る", history_path, class:"btn btn-info" %><br>
+
+  <div style = "padding-top: 30px;" >
+    <%= link_to "退会する", user_path(@user), method: :delete, class:"btn btn-danger"  %>
 
 
-  <%= link_to "購入履歴を見る", history_path, class:"btn btn-info" %>
-
-  <%= link_to "退会する", user_path(@user), method: :delete, class:"btn btn-info" %>
-
-  <%= link_to "戻る", :back, class:"btn btn-info" %>
+    <%= link_to "戻る", user_path(@user.id), class:"btn btn-info" %>
+  </div>
 
 </div>
