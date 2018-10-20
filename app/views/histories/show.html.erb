@@ -1,8 +1,7 @@
 <h1>購入履歴</h1>
 
-<% @user.carts.each do |cart| %>
-<% cart.histories.each do |history| %>
-<table class="table">
+
+<table class="table table-striped">
 	<tr>
 		<th>購入者</th>
 		<th>購入日</th>
@@ -10,9 +9,11 @@
 		<th>購入価格総計</th>
 		<th>送付先</th>
 	</tr>
+    <% @user.carts.each do |cart| %>
+    <% cart.histories.each do |history| %>
 	<tr>
 		<td><%= history.user_name %></td>
-		<td><%= history.created_at %></td>
+		<td><%= history.created_at.strftime('%Y年%m月%d日') %></td>
 
 		<td><% history.cart.cart_items.each do |cart_item| %>
 			<%= cart_item.product.title %><br>
@@ -27,8 +28,10 @@
 			<%= history.post_address_history %>
 		</td>
 	</tr>
+
 </table>
 <% end %>
 <% end %>
 
 <%= link_to "戻る", :back, class:"btn btn-info" %>
+
