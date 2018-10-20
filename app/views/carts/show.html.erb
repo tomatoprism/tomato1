@@ -1,4 +1,6 @@
-<table class="table">
+	<div class = "container" >
+    <table class="table" >
+      <div class="row" >
 		  <tr>
 		    <th> <p>商品情報</p> </th>
 		    <th> </th>
@@ -15,17 +17,27 @@
 		  	     <%= cart_item.product.artist.artist_name %> </td>
             <td> <%= cart_item.quantity %> </td>
             <td> <%= cart_item.product.price * cart_item.quantity %> </td>
-            <td> <%= link_to "削除", cart_delete_item_path(current_user.carts.where(user_id: current_user.id).last,cart_item.id), method: :delete %> </td>
+            <td> <%= link_to "削除", cart_delete_item_path(current_user.carts.where(user_id: current_user.id).last,cart_item.id), method: :delete,class: "btn btn-danger" %> </td>
             <% sum  = sum + cart_item.product.price * cart_item.quantity %>
-          <tr>
+          </tr>
     <% end %>
+    	<tr>
 
           	<td> </td>
           	<td> <p>合計</p></td>
           	<td> <%= cart.cart_items.sum(:quantity) %> </td>
           	<td> <%= sum %> </td>
+          </tr>
 </table>
 
 
-<%= link_to "注文へ進む", payment_path %>
+<% if Post.where(user_id: current_user.id).exists? %>
 
+<%= link_to "注文へ進む", payment_path, class:"btn btn-primary" %>
+<% else %>
+<%= link_to "お届け先住所を登録してください", new_post_path, class:"btn btn-danger" %><br>
+
+<% end %>
+
+</div>
+</table></div>

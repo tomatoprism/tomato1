@@ -23,8 +23,9 @@
 		</td>
 
 		<td><%= history.price_history %></td>
-		<td><%= history.post_address_history %>
-			<%= history.post_code_history %>
+		<td><%= history.post_code_history %>
+			<%= history.prefecture_history %>
+			<%= history.post_address_history %>
 		</td>
 		<th><%= form_for(history) do |f| %>
 			<%= f.select :status, [["受付","0"],["出荷準備中","1"],["出荷済","2"]], :selected=>history.status %>
