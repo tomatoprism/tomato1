@@ -4,20 +4,28 @@
 </div>
 <% end %>
 
-<h1>お問い合わせフォーム</h1>
+<div class = "container" >
+	<div class = "row" >
+		<div class="col-xs-offset-3 col-lg-6" >
 
-<%= form_for(@message) do |f| %>
+			<h3>お問い合わせフォーム</h3>
 
-<h4>名前</h4>
-<%= f.text_field :name %>
+			<%= form_for(@message) do |f| %>
 
-<h4>メールアドレス</h4>
-<%= f.email_field :mail %>
+			<h4>名前</h4>
+			<%= f.text_field :name %>
 
-<h4>お問い合わせ内容</h4>
-<%= f.text_area :text %><br>
+			<h4>メールアドレス</h4>
+			<%= f.email_field :mail %>
 
-<%= f.submit "送信", class:"btn btn-primary" %><br>
-<%= link_to "戻る", root_path, class: "back" %>
+			<h4>お問い合わせ内容</h4>
+			<%= f.text_area :text %><br>
 
-<% end %>
+			<div style = "padding-top: 30px;" >
+				<%= f.submit "送信", class:"btn btn-primary" %>
+				<% end %>
+				<%= link_to "戻る", root_path, class:"btn btn-info" %>
+			</div>
+		</div>
+	</div>
+</div>

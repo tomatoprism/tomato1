@@ -4,7 +4,6 @@
 </div>
 <% end %>
 
-
 <div class = "container" >
   <div class = "row" >
     <div class="col-lg-4" >
@@ -148,18 +147,23 @@
       <%= f.submit "送信する", class:"btn btn-info" %>
       <% end %>
 
-      <% @product.reviews.each do |review| %>
-      <ul>
-        <li><%= review.created_at.strftime('%Y/%m/%d') %>
-          <%= review.text %>
-          <% if @user == current_user %>
-          <%= link_to "削除", product_reviews_path(review.id), method: :delete %><br>
-          <% end %>
-        </li>
-      </ul>
-      <% end %><br>
-    </div>
+      <table class="table" >
+       <% @product.reviews.each do |review| %>
+        <tr>
+          <td>
+            <%= review.created_at.strftime('%Y/%m/%d') %>
+            <%= review.text %>
+          </td>
 
+          <td>
+            <% if review.user == current_user %>
+            <%= link_to "削除", product_review_path(@product,review.id), method: :delete %>
+            <% end %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
 
     <% if current_admin %>
     <%= link_to"編集", edit_admin_product_path(@product) %>
