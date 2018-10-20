@@ -19,6 +19,9 @@ class HistoriesController < ApplicationController
   	@history.price_history = 400 #送料と手数料
   	cart.cart_items.each do |c|
   		@history.price_history += c.product.price * c.quantity
+      stock = c.product.stock - c.quantity
+      stock_update = Product.find_by(id: c.product.id)
+      stock_update.update(stock: stock)
   	end
     @history.cart_id = cart.id
   	@history.post_code_history = current_user.post_code
