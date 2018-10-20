@@ -1,7 +1,5 @@
 class Public::UsersController < Public::ApplicationController
 
-
-
 	def show
 		@user = User.find(params[:id])
 	end

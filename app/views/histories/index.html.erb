@@ -12,16 +12,14 @@
 		<th>ステータス</th>
 	</tr>
 	<tr>
-		<td><%= history.cart.user.name %></td>
+		<td><%= history.user_name %></td>
 		<td><%= history.created_at %></td>
-
 		<td><% history.cart.cart_items.each do |cart_item| %>
 			<%= cart_item.product.title %><br>
 			<%= cart_item.quantity %>枚<br>
 			<%= cart_item.product.price * cart_item.quantity %>円<br>
 			<% end %>
 		</td>
-
 		<td><%= history.price_history %></td>
 		<td><%= history.post_address_history %>
 			<%= history.post_code_history %>

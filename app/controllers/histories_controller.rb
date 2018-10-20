@@ -1,6 +1,7 @@
 class HistoriesController < ApplicationController
   def index
     @histories = History.all
+    @users = User.with_deleted.all
   end
 
   def update
@@ -23,6 +24,7 @@ class HistoriesController < ApplicationController
     @history.cart_id = cart.id
   	@history.post_code_history = current_user.post_code
   	@history.post_address_history = current_user.address
+    @history.user_name = current_user.name
     @history.status = 0
   	@history.save
   	cart = Cart.new(user_id: current_user.id)
@@ -34,6 +36,5 @@ class HistoriesController < ApplicationController
   def history_params
     params.require(:history).permit(:status)
   end
-
 end
 
