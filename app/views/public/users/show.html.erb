@@ -12,15 +12,6 @@
           <td> <p>フリガナ</p> </td>
           <td> <%= @user.name_kana %> </td>
         </tr>
-        <tr>
-          <td> <p>郵便番号</p> </td>
-          <td> <%= @user.post_code %> </td>
-        </tr>
-        <tr>
-          <td> <p>住所</p> </td>
-          <td> <%= @user.address %> </td>
-        </tr>
-        <tr>
           <td> <p>電話番号</p> </td>
           <td> <%= @user.phone %> </td>
         </tr>
@@ -55,7 +46,7 @@
     <%= link_to "退会する", user_path(@user), method: :delete, class:"btn btn-danger"  %>
 
 
-    <%= link_to "戻る", user_path(@user.id), class:"btn btn-info" %>
+    <%= link_to "戻る", root_path, class:"btn btn-info" %>
   </div>
 
 </div>

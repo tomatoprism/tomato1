@@ -1,8 +1,4 @@
-<% if flash[:alert] %>
-<div class="alert alert-danger">
-  <%= flash[:alert] %>
-</div>
-<% end %>
+
 
 <div class = "container" >
   <div class = "row" >
@@ -156,7 +152,7 @@
           </td>
 
           <td>
-            <% if review.user == current_user %>
+            <% if review.user == current_user || current_admin %>
             <%= link_to "削除", product_review_path(@product,review.id), method: :delete %>
             <% end %>
           </td>

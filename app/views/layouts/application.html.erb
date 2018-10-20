@@ -72,6 +72,11 @@
       </div>
     </header>
     <main>
+      <% flash.each do |name, msg| %>
+  <div class="alert alert-<%= name %>">
+    <%= msg.html_safe %>
+  </div>
+<% end %>
       <%= yield %>
     </main>
     <footer>
