@@ -3,7 +3,7 @@ class TopController < ApplicationController
 		@categories = Category.all
 		@artists = Artist.all
 		@productfind = Product.search(params[:search])
-		@products = Product.all.order("release DESC")
+		@products = Product.page(params[:page]).reverse_order.order("release DESC")
 	end
 	def admin
 	end

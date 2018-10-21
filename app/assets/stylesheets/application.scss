@@ -55,6 +55,12 @@ header {
 body{
   padding-top: 50px;
 }
+
+.thumbnail {
+    float: left;
+    margin-left: 40px;
+}
+
 /* エラーメッセージ */
 .alert-notice {
   color: #3c763d;

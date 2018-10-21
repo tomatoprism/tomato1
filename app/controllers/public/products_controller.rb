@@ -8,7 +8,7 @@ class Public::ProductsController < Public::ApplicationController
   	end
 
 	def index
-		@products = Product.all.order(release: "DESC")
+		@products = Product.page(params[:page]).reverse_order.order(release: "DESC")
 		@categories = Category.all
 		@artists = Artist.all
 	end
