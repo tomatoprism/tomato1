@@ -1,4 +1,12 @@
 class Public::FavoritesController < ApplicationController
+    before_action :correct_user, only:[:index,:create,:destroy]
+
+    def correct_user
+      unless user_signed_in?
+        redirect_to root_path
+      end
+    end
+
 	def index
         @categories = Category.all
         @artists = Artist.all

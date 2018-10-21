@@ -1,4 +1,12 @@
 class PaymentsController < ApplicationController
+  before_action :correct_user
+
+  def correct_user
+      unless user_signed_in? || admin_signed_in?
+        redirect_to root_path
+      end
+  end
+  
   def show
   end
 
