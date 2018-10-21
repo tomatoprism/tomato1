@@ -1,4 +1,12 @@
 class CategoriesController < ApplicationController
+  before_action :correct_user, only:[:new, :create, :edit, :update, :destroy]
+
+  def correct_user
+      unless admin_signed_in?
+        redirect_to root_path
+      end
+  end
+
   def new
     @category_new = Category.new
     @category = Category.all

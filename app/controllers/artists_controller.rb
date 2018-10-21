@@ -1,4 +1,12 @@
 class ArtistsController < ApplicationController
+  before_action :correct_user, only:[:new, :create, :edit, :update, :destroy]
+
+  def correct_user
+      unless admin_signed_in?
+        redirect_to root_path
+      end
+  end
+
   def new
     @artist_new = Artist.new
     @artist = Artist.all
@@ -26,9 +34,9 @@ class ArtistsController < ApplicationController
   end
 
   def destroy
-    category = Category.find(params[:id])
-    category.destroy
-    redirect_to new_category_path
+    artist = Artist.find(params[:id])
+    artist.destroy
+    redirect_to new_artist_path
   end
 
   private

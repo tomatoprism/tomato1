@@ -1,9 +1,13 @@
 class Admin::ProductsController < Admin::ApplicationController
+	before_action :correct_user, only:[:index, :create, :edit, :update, :destroy]
+
+	def correct_user
+	    unless admin_signed_in?
+	      redirect_to root_path
+	    end
+  	end
 	def index
 		@products = Product.all
-	end
-
-	def show
 	end
 
 	def edit
@@ -21,9 +25,6 @@ class Admin::ProductsController < Admin::ApplicationController
 		@product.destroy
 		redirect_to admin_products_path
 
-	end
-
-	def new
 	end
 
 

@@ -32,7 +32,7 @@ class HistoriesController < ApplicationController
   	@history.post_code_history = current_user.post.post_code
     @history.prefecture_history = current_user.prefecture.prefecture
   	@history.post_address_history = current_user.post.post_address
-    
+
     @history.status = 0
   	@history.save
   	cart = Cart.new(user_id: current_user.id)

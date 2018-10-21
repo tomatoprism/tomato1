@@ -1,17 +1,16 @@
 class Public::DiscsController < ApplicationController
-  def edit
+  before_action :correct_user, only:[:update]
+
+  def correct_user
+      unless admin_signed_in?
+        redirect_to root_path
+      end
   end
 
   def update
   	@disc = Disc.find(params[:id])
   	@disc.update(disc_params)
   	redirect_to product_path(params[:produc_id])
-  end
-
-  def destroy
-  end
-
-  def create
   end
 
   private

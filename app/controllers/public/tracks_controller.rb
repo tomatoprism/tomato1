@@ -1,16 +1,16 @@
 class Public::TracksController < ApplicationController
-  def create
+  before_action :correct_user, only:[:update]
+
+  def correct_user
+      unless admin_signed_in?
+        redirect_to root_path
+      end
   end
 
   def update
   	@track = Track.find(params[:id])
   	@track.update(track_params)
-
   	redirect_to product_path(params[:product_id])
-
-  end
-
-  def destroy
   end
 
   private
