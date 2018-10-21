@@ -9,13 +9,17 @@ class CategoriesController < ApplicationController
 
   def new
     @category_new = Category.new
-    @category = Category.all
+    @categories = Category.all
   end
 
   def create
     @category_new = Category.new(category_params)
-    @category_new.save(category_params)
+    if @category_new.save(category_params)
     redirect_to new_category_path
+    else
+      @categories = Category.all
+      render 'new'
+    end
   end
 
   def show
@@ -30,8 +34,11 @@ class CategoriesController < ApplicationController
 
   def update
     @category_edit = Category.find(params[:id])
-    @category_edit.update(category_params)
-    redirect_to new_category_path
+    if @category_edit.update(category_params)
+       redirect_to new_category_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy

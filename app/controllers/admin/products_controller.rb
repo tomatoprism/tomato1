@@ -24,7 +24,6 @@ class Admin::ProductsController < Admin::ApplicationController
 		@product = Product.find(params[:id])
 		@product.destroy
 		redirect_to admin_products_path
-
 	end
 
 

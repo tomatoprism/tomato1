@@ -9,13 +9,17 @@ class ArtistsController < ApplicationController
 
   def new
     @artist_new = Artist.new
-    @artist = Artist.all
+    @artists = Artist.all
   end
 
   def create
     @artist_new = Artist.new(artist_params)
-    @artist_new.save(artist_params)
-    redirect_to new_artist_path
+    if @artist_new.save
+       redirect_to root_path
+    else
+      @artists = Artist.all
+      render "index"
+    end
   end
 
   def show
@@ -29,14 +33,22 @@ class ArtistsController < ApplicationController
 
   def update
     @artist_edit = Artist.find(params[:id])
-    @artist_edit.update(artist_params)
-    redirect_to new_artist_path
+    if @artist_edit.update(artist_params)
+       redirect_to artists_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
     artist = Artist.find(params[:id])
     artist.destroy
-    redirect_to new_artist_path
+    redirect_to artists_path
+  end
+
+  def index
+    @artist_new = Artist.new
+    @artists = Artist.all
   end
 
   private
