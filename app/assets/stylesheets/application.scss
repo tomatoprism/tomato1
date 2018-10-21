@@ -51,3 +51,16 @@ header {
 	float: left;
 	margin-left: 40px;
 }
+
+body{
+  padding-top: 50px;
+}
+/* エラーメッセージ */
+.alert-notice {
+  color: #3c763d;
+  background-color: #dff0d8;
+}
+.alert-alert {
+  background-color: #f2dede;
+  color: #a94442;
+}

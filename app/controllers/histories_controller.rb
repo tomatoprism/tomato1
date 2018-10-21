@@ -37,7 +37,7 @@ class HistoriesController < ApplicationController
   	@history.save
   	cart = Cart.new(user_id: current_user.id)
   	cart.save
-  	redirect_to root_path
+  	redirect_to root_path, success: 'ご購入ありがとうございました'
   end
 
   private
