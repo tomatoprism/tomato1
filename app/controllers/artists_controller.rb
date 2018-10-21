@@ -20,6 +20,7 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
+    @products = @artist.products.page(params[:page]).reverse_order
     @categories = Category.all
     @artists = Artist.all
   end
