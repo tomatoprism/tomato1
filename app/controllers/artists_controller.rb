@@ -16,7 +16,7 @@ class ArtistsController < ApplicationController
     @artist_new = Artist.new(artist_params)
 
     if @artist_new.save
-       redirect_to root_path, success: 'アーティストが追加されました'
+       redirect_to new_artist_path, success: 'アーティストが追加されました'
     else
       @artists = Artist.all
       render "index"
