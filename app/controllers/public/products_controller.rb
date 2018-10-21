@@ -1,4 +1,12 @@
 class Public::ProductsController < Public::ApplicationController
+	before_action :correct_user, only:[:update,:destroy]
+
+  	def correct_user
+      unless admin_signed_in?
+        redirect_to root_path
+      end
+  	end
+
 	def index
 		@products = Product.page(params[:page]).reverse_order.order(release: "DESC")
 		@categories = Category.all
