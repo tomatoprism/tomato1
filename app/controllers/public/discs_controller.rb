@@ -10,7 +10,7 @@ class Public::DiscsController < ApplicationController
   def update
   	@disc = Disc.find(params[:id])
   	@disc.update(disc_params)
-  	redirect_to product_path(params[:produc_id])
+  	redirect_to product_path(params[:product_id])
   end
 
   private
