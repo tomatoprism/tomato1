@@ -50,7 +50,7 @@ end
 
   resources :histories, only:[:index, :show, :create, :update]
 
-  resources :artists, only:[:new, :create, :update, :destroy, :show, :edit]
+  resources :artists, only:[:new, :create, :update, :destroy, :show, :edit, :index]
 
   resources :payments, only:[:show]
 

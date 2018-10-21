@@ -9,13 +9,19 @@ class ArtistsController < ApplicationController
 
   def new
     @artist_new = Artist.new
-    @artist = Artist.all
+    @artists = Artist.all
   end
 
   def create
     @artist_new = Artist.new(artist_params)
-    @artist_new.save(artist_params)
-    redirect_to new_artist_path, success: 'アーティストが追加されました'
+
+    if @artist_new.save
+       redirect_to root_path, success: 'アーティストが追加されました'
+    else
+      @artists = Artist.all
+      render "index"
+    end
+
   end
 
   def show
@@ -30,14 +36,26 @@ class ArtistsController < ApplicationController
 
   def update
     @artist_edit = Artist.find(params[:id])
-    @artist_edit.update(artist_params)
-    redirect_to new_artist_path, success: 'アーティストが編集されました'
+
+    if @artist_edit.update(artist_params)
+       redirect_to artists_path, success: 'アーティストが編集されました'
+    else
+      render 'edit'
+    end
   end
 
   def destroy
     artist = Artist.find(params[:id])
     artist.destroy
+
     redirect_to new_artist_path, success: 'アーティストが削除されました'
+
+  end
+
+  def index
+    @artist_new = Artist.new
+    @artists = Artist.all
+
   end
 
   private

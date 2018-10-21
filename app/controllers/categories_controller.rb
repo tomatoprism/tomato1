@@ -9,13 +9,19 @@ class CategoriesController < ApplicationController
 
   def new
     @category_new = Category.new
-    @category = Category.all
+    @categories = Category.all
   end
 
   def create
     @category_new = Category.new(category_params)
-    @category_new.save(category_params)
+
+    if @category_new.save(category_params)
     redirect_to new_category_path, success: 'カテゴリが追加されました'
+    else
+      @categories = Category.all
+      render 'new'
+    end
+
   end
 
   def show
@@ -31,8 +37,13 @@ class CategoriesController < ApplicationController
 
   def update
     @category_edit = Category.find(params[:id])
-    @category_edit.update(category_params)
-    redirect_to new_category_path, success: 'カテゴリが編集されました'
+
+    if @category_edit.update(category_params)
+       redirect_to new_category_path, success: 'カテゴリが編集されました'
+    else
+      render 'edit'
+    end
+
   end
 
   def destroy

@@ -25,6 +25,7 @@ class Admin::ProductsController < Admin::ApplicationController
 		@product.destroy
 		redirect_to admin_products_path, success: '商品が削除されました'
 
+
 	end
 
 

@@ -11,7 +11,9 @@ class Product < ApplicationRecord
 	attachment :image
 
 	has_many :discs, inverse_of: :product
+
 	accepts_nested_attributes_for :discs, reject_if: :all_blank, allow_destroy: true
+
 	default_scope -> { order(release: :desc) }
 	def self.search(search)
 		if search
@@ -24,5 +26,9 @@ class Product < ApplicationRecord
 	def favorited_by?(user)
           favorites.where(user_id: user.id).exists?
     end
+
+    validates_presence_of :stock
+    validates_presence_of :title
+    validates_presence_of :price
 
 end
