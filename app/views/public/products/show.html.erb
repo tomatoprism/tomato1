@@ -60,7 +60,7 @@
           <td>
             <% if current_admin %>
             <%= @product.stock %>
-            <% elsif @product.stock == 0 then %>
+            <% elsif @product.stock <= 0 then %>
             <p>在庫なし</p>
             <% else %>
             <p>在庫あり</p>

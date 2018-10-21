@@ -1,7 +1,4 @@
 <h1>受注一覧</h1>
-
-<% @histories.reverse_each do |history| %>
-
 <table class="table table-striped">
 	<tr>
 		<th>購入者</th>
@@ -31,6 +28,6 @@
 			<%= f.submit "変更" %>
 			<% end %>
 		</th>
+	<% end %>
 	</tr>
 </table>
-<% end %>

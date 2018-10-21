@@ -1,6 +1,16 @@
 <div>
 	<h2>カテゴリー新規登録</h2>
 	<%= form_for(@category_new) do |f| %>
+	<% if @category_new.errors.any? %>
+      <div id="error_explanation">
+       <h3><%= @category_new.errors.count %>件のエラーが発生しました。</h3>
+        <ul>
+         <% @category_new.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+         <% end %>
+        </ul>
+      </div>
+     <% end %>
 	<p>カテゴリー名</p>
 	<%= f.text_field :category_name %>
 	<p></p>
@@ -9,7 +19,7 @@
 </div>
 
 <%= link_to "商品追加", admin_user_path(current_admin.id) %>
-<%= link_to "アーティスト追加", new_artist_path%>
+<%= link_to "アーティスト追加", artists_path %>
 
 <table>
 	<thead>
@@ -20,7 +30,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<% @category.each do |category| %>
+		<% @categories.each do |category| %>
 		<tr>
 			<td><%= category.category_name %></td>
 			<td><%= link_to "編集", edit_category_path(category) %></td>

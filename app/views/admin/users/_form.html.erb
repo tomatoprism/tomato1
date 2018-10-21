@@ -1,4 +1,16 @@
 <%= form_for(product_new, url: admin_products_path)  do |f| %>
+
+<% if product_new.errors.any? %>
+      <div id="error_explanation">
+       <h3><%= product_new.errors.count %>件のエラーが発生しました。</h3>
+        <ul>
+         <% product_new.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+         <% end %>
+        </ul>
+      </div>
+     <% end %>
+
   <div class="field">
     <p>ジャケット画像</p>
       <%= f.attachment_field :image, placeholder: "ジャケット画像" %>
@@ -14,7 +26,7 @@
   <p>ディスク</p>
   <div id="discs">
     <%= f.fields_for :discs do |disc| %>
-      <%= render 'disc_fields', f: disc %>
+      <%= render 'admin/users/disc_fields', f: disc %>
     <% end %>
     <div id="links">
       <%= link_to_add_association 'ディスク追加',f, :discs %>
