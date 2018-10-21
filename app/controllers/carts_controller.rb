@@ -8,21 +8,30 @@ class CartsController < ApplicationController
     end
 
   def add_item
-
-    cart_item = CartItem.new
     cart = Cart.where(user_id: current_user.id).last
-    cart_item.cart_id = cart.id
-    cart_item.product_id = params[:cart_id]
-    cart_item.quantity = params[:product][:stock].to_i
-     if cart_item.quantity > cart_item.product.stock
-      @message = "在庫は" + cart_item.product.stock.to_s + "個です"
-      redirect_to product_path(cart_item.product.id), alert: @message
-      else
-      cart_item.save
-      redirect_to root_path, success: 'カートに商品が追加されました'
-      end
+    cart_item = cart.cart_items.find_by(product_id: params[:cart_id])
+    if cart_item.nil?
+      cart_item = CartItem.new
+      cart_item.cart_id = cart.id
+      cart_item.product_id = params[:cart_id]
+      quantity = params[:product][:stock].to_i
+      cart_item.quantity = quantity
+      product = Product.find(params[:cart_id])
+      stock = product.stock
+    else
+      quantity = cart_item.quantity + params[:product][:stock].to_i
+      cart_item.quantity = quantity
+      stock = cart_item.product.stock
+    end
+    if quantity < stock
+         cart_item.save
+         redirect_to root_path, success: 'カートに商品が追加されました'
+    else
+        @message = "在庫は" + cart_item.product.stock.to_s + "個です"
+        redirect_to product_path(cart_item.product.id), alert: @message
+    end
   end
-  
+
 
   def show
   end
