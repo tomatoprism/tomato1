@@ -19,6 +19,7 @@ class CartsController < ApplicationController
       redirect_to product_path(cart_item.product.id), alert: @message
       else
       cart_item.save
+
       redirect_to root_path, success: 'カートに商品が追加されました'
       end
   end

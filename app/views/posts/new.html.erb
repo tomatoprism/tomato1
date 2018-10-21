@@ -1,4 +1,6 @@
-<h3>お届け先住所登録</h3>
+<div class = "container" >
+	<div class = "row" >
+		<div class="col-xs-offset-3 col-lg-6" ><h3>お届け先住所登録</h3>
     <%= form_for(@post) do |f| %>
     <p>郵便番号</p>
     <%= f.text_field :post_code %>
@@ -9,9 +11,14 @@
       <%= f.select :prefecture_id, Prefecture.all.collect { |p| [ p.prefecture, p.id ] } %><br>
     <%= f.text_area :post_address %><br>
 
+    <div style = "padding-top: 30px;" >
+
     <%= f.submit "登録", class:"btn btn-primary" %>
 
     <% end %>
 
 <%= link_to "戻る", :back, class: "back" %>
-
+</div>
+</div>
+</div>
+</div>
