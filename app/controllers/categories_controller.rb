@@ -15,7 +15,7 @@ class CategoriesController < ApplicationController
   def create
     @category_new = Category.new(category_params)
     @category_new.save(category_params)
-    redirect_to new_category_path
+    redirect_to new_category_path, success: 'カテゴリが追加されました'
   end
 
   def show
@@ -31,13 +31,13 @@ class CategoriesController < ApplicationController
   def update
     @category_edit = Category.find(params[:id])
     @category_edit.update(category_params)
-    redirect_to new_category_path
+    redirect_to new_category_path, success: 'カテゴリが編集されました'
   end
 
   def destroy
     category = Category.find(params[:id])
     category.destroy
-    redirect_to new_category_path
+    redirect_to new_category_path, success: 'カテゴリが削除されました'
   end
 
   private

@@ -17,13 +17,13 @@ class Admin::ProductsController < Admin::ApplicationController
 	def update
 		@product = Product.find(params[:id])
 		@product.update(product_params)
-		redirect_to product_path(@product.id)
+		redirect_to product_path(@product.id), success: '商品が編集されました'
 	end
 
 	def destroy
 		@product = Product.find(params[:id])
 		@product.destroy
-		redirect_to admin_products_path
+		redirect_to admin_products_path, success: '商品が削除されました'
 
 	end
 
@@ -31,7 +31,7 @@ class Admin::ProductsController < Admin::ApplicationController
 	def create
 		@product_new = Product.new(product_params)
 		@product_new.save
-		redirect_to admin_user_path(current_admin)
+		redirect_to admin_user_path(current_admin), success: '商品が追加されました'
 	end
 
 	private

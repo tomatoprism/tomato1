@@ -15,7 +15,7 @@ class ArtistsController < ApplicationController
   def create
     @artist_new = Artist.new(artist_params)
     @artist_new.save(artist_params)
-    redirect_to new_artist_path
+    redirect_to new_artist_path, success: 'アーティストが追加されました'
   end
 
   def show
@@ -30,13 +30,13 @@ class ArtistsController < ApplicationController
   def update
     @artist_edit = Artist.find(params[:id])
     @artist_edit.update(artist_params)
-    redirect_to new_artist_path
+    redirect_to new_artist_path, success: 'アーティストが編集されました'
   end
 
   def destroy
     artist = Artist.find(params[:id])
     artist.destroy
-    redirect_to new_artist_path
+    redirect_to new_artist_path, success: 'アーティストが削除されました'
   end
 
   private
