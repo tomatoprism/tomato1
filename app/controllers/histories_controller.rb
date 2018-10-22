@@ -30,32 +30,22 @@ class HistoriesController < ApplicationController
   	cart.cart_items.each do |c|
   		@history.price_history += c.product.price * c.quantity
       stock = c.product.stock - c.quantity
-      if c.product.stock > c.quantity
         stock_update = Product.find_by(id: c.product.id)
         stock_update.update(stock: stock)
-      else
-        over_stock << c.product_id
-      end
   	end
-    if over_stock.nil?
 
     @history.cart_id = cart.id
-
   	@history.post_code_history = current_user.post_code
   	@history.post_address_history = current_user.address
     @history.user_name = current_user.name
   	@history.post_code_history = current_user.post.post_code
     @history.prefecture_history = current_user.prefecture.prefecture
   	@history.post_address_history = current_user.post.post_address
-
     @history.status = 0
   	@history.save
   	cart = Cart.new(user_id: current_user.id)
   	cart.save
   	redirect_to root_path, success: 'ご購入ありがとうございました'
-  else
-    render "root"
-  end
   end
 
   private

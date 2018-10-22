@@ -5,11 +5,11 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track':'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track':'reload' %>
   </head>
   <body>
-    <header class="navbar navbar-top">
+    <header class="navbar navbar-fixed-top">
       <div class="container">
         <div class="row">
           <nav class="nav navbar-nav navbar-left">
@@ -18,7 +18,7 @@
             <% end %>
           </nav>
           <nav class="header_nav nav-list">
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right" style="color: white;">
               <% if admin_signed_in? %>
                 <li>
                   <%=link_to "商品追加",admin_user_path(current_admin) %>
