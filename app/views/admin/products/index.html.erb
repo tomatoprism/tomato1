@@ -1,26 +1,38 @@
-<h1>商品一覧</h1>
-<% @products.each do |product| %>
+<div class="container">
+  <div class="row">
+      <% @products.each do |product| %>
+      <div class="col-xs-4 ">
+      <div class="thumbnail">
+            <%= link_to product_path(product.id) do %>
+            <%= attachment_image_tag product, :image, :fill, 100, 100, fallback: "no_image.jpg", size: '200x200' %>
+            <% end %>
+          <div class="caption" >
+             <p> <%= link_to product_path(product.id) do %>
+              <%= product.title %>
+              <% end %>
+            </p>
 
- <div class = "item" >
+            <p>
+              <%= link_to artist_path(product.artist.id) do  %>
+              <%= product.artist.artist_name %>
+              <% end %>
+            </p>
 
-  <div class = "product-image" >
-      <%= link_to product_path(product.id) do %>
-      <%= attachment_image_tag product, :image, fallback: "no_image.jpg", size: '200x200' %>
-      <% end %>
-  </div>
+            <p>
+             ¥<%= product.price %>
+           </p>
 
-
-  <div class = "product-info" >
-      <ul>
-      <li> <%= product.title %> </li>
-      <li> <%= product.artist.artist_name %> </li>
-      <li> <%= product.price %> </li>
-  
-
-    <li><%= link_to "詳細", product_path(product), class:"btn-sm btn-success" %>
+           <p>在庫
+            <%= product.stock %>
+          </p>
+          <p>
+            <%= link_to "詳細", product_path(product), class:"btn-sm btn-success" %>
         <%= link_to "削除", admin_product_path(product), method: :delete, data: { confirm: "本当に削除しますか?"}, class:"btn-sm btn-danger" %>
-    </li>
-  </ul>
+          </p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <%= paginate @products, class: "pagenate" %>
 </div>
- </div>
-<% end %>
+</div>

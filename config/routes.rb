@@ -48,7 +48,7 @@ end
       resources :messages, only:[:new, :create]
   end
 
-  resources :histories, only:[:index, :show, :create, :update]
+  resources :histories, only:[:index, :show, :create, :update, :new]
 
   resources :artists, only:[:new, :create, :update, :destroy, :show, :edit, :index]
 
