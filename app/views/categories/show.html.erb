@@ -1,64 +1,42 @@
 <div class="conteiner">
   <div class="row">
-    <div class="col-lg-2">
+    <div class="col-xs-6 col-md-3">
       <%= render 'top/category', categories: @categories, artists: @artists %>
     </div>
 
-    <div class="col-lg-10">
+    <div class="col-xs-6 col-md-7">
           <% @products.each do |product| %>
 
       <div class="thumbnail">
-        <div class="productbox">
-          <div class = "product-image" >
-            <%= link_to product_path(product.id) do %>
+        <%= link_to product_path(product.id) do %>
             <%= attachment_image_tag product, :image, :fill, 100, 100, fallback: "no_image.jpg", size: '200x200' %>
             <% end %>
-          </div>
-          <div class="product-info" >
-            <ul>
-             <li> <%= link_to product_path(product.id) do %>
+            <div class="caption">
+        <p>%= link_to product_path(product.id) do %>
               <%= product.title %>
-              <% end %>
-            </li>
-
-            <li>
-              <% product.categories.each do |cate| %>
+              <% end %></p>
+        <p><% product.categories.each do |cate| %>
               <%= link_to category_path(cate.id) do  %>
               <%= cate.category_name %>
               <% end %>
-              <% end %>
-            </li>
-
-            <li>
-              <%= link_to artist_path(product.artist.id) do  %>
+              <% end %></p>
+              <p><%= link_to artist_path(product.artist.id) do  %>
               <%= product.artist.artist_name %>
-              <% end %>
-            </li>
-
-            <li>
-             ¥<%= product.price %>
-           </li>
-
-           <li>
-            <% if product.stock == 0 then %>
+              <% end %></p>
+              <p>¥<%= product.price %></p>
+              <p><% if product.stock == 0 then %>
             <p>在庫なし</p>
             <% else %>
             <p>在庫あり</p>
-            <% end %>
-          </li>
-        </ul>
+            <% end %></p>
+          </div>
+        </div>
       </div>
-
-    </div>
-  </div>
-  <% end %>
-  </div>
-</div>
-<div class="conteiner">
-  <div class="row">
-    <div class="col-lg-offset-2 col-lg-10">
    <%= paginate @products, class: "pagenate" %>
 
   </div>
 </div>
-</div>
+
+
+
+
