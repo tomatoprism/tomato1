@@ -16,7 +16,7 @@
 		  	<td><ul>
                <li>タイトル</li>
                <li><%= cart_item.product.title %></li>
-		  	       <li>ア-ティスト</li>
+		  	       <li>アーティスト</li>
                <li><%= cart_item.product.artist.artist_name %></li>
              </ul>
         </td>
@@ -60,7 +60,7 @@
 </div>
 
 <div class="row">
-  <div class="col-xs-6">
+  <div class="col-xs-offset-3 col-md-6">
    <div class="user-info">
     <h3>購入者情報</h3>
      <p>お名前　　　　　<%= current_user.name %></p>
@@ -70,9 +70,11 @@
           <%= current_user.post.post_address %></p>
     </div>
   </div>
-      <div class="col-xs-6">
-        <div class="btn-wrapper">
-       <%= link_to "購入する", histories_path(@history), method: :post, class:"btn-lg btn-danger" %>
-        </div>
-      </div>
- </div>
+</div>
+<div class="row">
+  <div class="col-xs-offset-3 col-md-6">
+    <div class="btn-wrapper">
+      <%= link_to "購入する", histories_path(@history), method: :post, class:"btn-lg btn-danger" %>
+    </div>
+  </div>
+</div>
