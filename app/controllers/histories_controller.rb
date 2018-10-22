@@ -26,7 +26,6 @@ class HistoriesController < ApplicationController
   	@history = History.new
   	cart = Cart.where(user_id: current_user.id).last
   	@history.price_history = 400 #送料と手数料
-    over_stock = []
   	cart.cart_items.each do |c|
   		@history.price_history += c.product.price * c.quantity
       stock = c.product.stock - c.quantity
@@ -37,12 +36,16 @@ class HistoriesController < ApplicationController
         over_stock << c.product_id
       end
   	end
+
+
     if over_stock.nil?
 
     @history.cart_id = cart.id
 
   	@history.post_code_history = current_user.post_code
   	@history.post_address_history = current_user.address
+
+    
     @history.user_name = current_user.name
   	@history.post_code_history = current_user.post.post_code
     @history.prefecture_history = current_user.prefecture.prefecture
