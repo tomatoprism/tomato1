@@ -20,8 +20,18 @@
           <nav class="header_nav nav-list">
             <ul class="nav navbar-nav navbar-right" style="color: black;">
               <% if admin_signed_in? %>
-                <li>
-                  <%=link_to "商品追加",admin_user_path(current_admin) %>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">商品追加<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li role="presentation">
+                      <%=link_to "商品追加",admin_user_path(current_admin) %></li>
+                    <li role="presentation">
+                      <%= link_to "カテゴリー追加", new_category_path %>
+                    </li>
+                    <li role="presentation">
+                      <%= link_to "アーティスト追加", artists_path%>
+                    </li>
+                  </ul>
                 </li>
                 <li>
                   <%=link_to "User一覧",admin_users_path %>
@@ -34,7 +44,7 @@
                 <li>
                   <%=link_to "ログアウト",destroy_admin_session_path, method: :delete %>
                 </li>
-                <li class="search_field">
+                <li class="navbar-form navbar-left">
                   <%= render 'public/products/search' %>
                 </li>
               <% elsif user_signed_in? %>
@@ -52,7 +62,7 @@
                 <li>
                   <%=link_to "ログアウト",destroy_user_session_path, method: :delete %>
                 </li>
-                <li class="search_field">
+                <li class="navbar-form navbar-left">
                   <%= render 'public/products/search' %>
                 </li>
               <% else %>
@@ -62,7 +72,7 @@
                 <li>
                   <%= link_to"ログイン", new_user_session_path %>
                 </li>
-                <li class="search_field">
+                <li class="navbar-form navbar-left">
                   <%= render 'public/products/search' %>
                 </li>
               <% end %>

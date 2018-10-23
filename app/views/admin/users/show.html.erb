@@ -1,10 +1,12 @@
-<div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
 	<%= render 'admin/users/form', product_new: @product_new %>
-</div>
-
-<div>
-	<%= link_to "お問い合わせ一覧", admin_messages_path %>
-	<%= link_to "カテゴリー追加", new_category_path %>
-	<%= link_to "アーティスト追加", artists_path%>
+	<p></p>
+	<%= link_to "お問い合わせ一覧", admin_messages_path, class: "btn btn-danger" %>
+	<%= link_to "カテゴリー追加", new_category_path, class: "btn btn-danger" %>
+	<%= link_to "アーティスト追加", artists_path , class: "btn btn-danger" %>
+	</div>
+  </div>
 </div>
 
