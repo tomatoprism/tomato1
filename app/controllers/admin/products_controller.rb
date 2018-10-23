@@ -34,8 +34,10 @@ class Admin::ProductsController < Admin::ApplicationController
 
 	def create
 		@product_new = Product.new(product_params)
-		@product_new.save
+		if @product_new.save
 		redirect_to admin_user_path(current_admin), success: '商品が追加されました'
+		else redirect_to admin_user_path(current_admin), danger: '商品が登録できていません'
+		end
 	end
 
 	private
