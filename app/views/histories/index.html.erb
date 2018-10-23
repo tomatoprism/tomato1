@@ -9,20 +9,20 @@
 		<th>ステータス</th>
 	</tr>
 	<% @histories.reverse_each do |history| %>
-	<tr>
+	  <tr>
 		<td><%= history.user_name %></td>
 		<td><%= history.created_at.strftime('%Y年%m月%d日') %></td>
 		<td><% history.cart.cart_items.each do |cart_item| %>
-			<%= cart_item.product.title %><br>
-			<%= cart_item.quantity %>枚<br>
-			<%= cart_item.product.price * cart_item.quantity %>円<br>
+			 <%= history.title %><br>
+			 <%= history.quantity %>枚<br>
+			 <%= history.subtotal %>円<br><br>
 			<% end %>
 		</td>
 		<td><%= history.price_history %></td>
 		<td><%= history.post_code_history %>
 			<%= history.prefecture_history %>
 			<%= history.post_address_history %>
-		</td>
+	   </td>
 		<th><%= form_for(history) do |f| %>
 			<%= f.select :status, [["受付","0"],["出荷準備中","1"],["出荷済","2"]], :selected=>history.status %>
 			<%= f.submit "変更" %>
