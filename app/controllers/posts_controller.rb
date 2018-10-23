@@ -27,9 +27,10 @@ class PostsController < ApplicationController
   end
 
   def update
+
   	post = Post.find(params[:id])
     post.update(post_params)
-    redirect_to user_path(current_user.id), success: 'お届け先が更新されました'
+    redirect_to user_path(post.user_id), success: 'お届け先が更新されました'
   end
 
   def destroy

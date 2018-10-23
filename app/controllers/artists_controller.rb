@@ -49,7 +49,7 @@ class ArtistsController < ApplicationController
     artist = Artist.find(params[:id])
     artist.destroy
 
-    redirect_to new_artist_path, success: 'アーティストが削除されました'
+    redirect_to artists_path, success: 'アーティストが削除されました'
 
   end
 

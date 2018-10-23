@@ -16,7 +16,7 @@
              </div>
              <div class = "product-info" >
                <ul>
-                 <li> <%= product.title %> </li>
+                 <li> <%= truncate(product.title, length: 10) %> </li>
                  <li>発売日<br>
 	                   <%= product.release %></li>
                  <li> <%= product.price %>円 </li>
