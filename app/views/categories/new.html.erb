@@ -1,41 +1,45 @@
-<div>
-	<h2>カテゴリー新規登録</h2>
-	<%= form_for(@category_new) do |f| %>
-	<% if @category_new.errors.any? %>
-      <div id="error_explanation">
-       <h3><%= @category_new.errors.count %>件のエラーが発生しました。</h3>
-        <ul>
-         <% @category_new.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-         <% end %>
-        </ul>
-      </div>
-     <% end %>
-	<p>カテゴリー名</p>
-	<%= f.text_field :category_name %>
-	<p></p>
-	<%= f.submit '追加' %>
-	<% end %>
-</div>
-
-<%= link_to "商品追加", admin_user_path(current_admin.id) %>
-<%= link_to "アーティスト追加", artists_path %>
-
-<table>
-	<thead>
-		<tr>
-			<th>カテゴリー名</th>
-			<th>編集</th>
-			<th>削除</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @categories.each do |category| %>
-		<tr>
-			<td><%= category.category_name %></td>
-			<td><%= link_to "編集", edit_category_path(category) %></td>
-			<td><%= link_to "削除", category_path(category), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
-		</tr>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+		<h2>カテゴリー新規登録</h2>
+		<%= form_for(@category_new) do |f| %>
+		<% if @category_new.errors.any? %>
+	      <div id="error_explanation">
+	       <h3><%= @category_new.errors.count %>件のエラーが発生しました。</h3>
+	        <ul>
+	         <% @category_new.errors.full_messages.each do |message| %>
+	          <li><%= message %></li>
+	         <% end %>
+	        </ul>
+	      </div>
+	     <% end %>
+		<p>カテゴリー名</p>
+		<%= f.text_field :category_name %>
+		<p></p>
+		<%= f.submit '追加' %>
 		<% end %>
-	</tbody>
-</table>
+		<p></p>
+		<%= link_to "商品追加", admin_user_path(current_admin.id), class: "btn btn-danger" %>
+		<%= link_to "アーティスト追加", artists_path, class: "btn btn-danger" %>
+		<p></p>
+		<table>
+			<thead>
+				<tr>
+					<th>カテゴリー名</th>
+					<th>編集</th>
+					<th>削除</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @categories.each do |category| %>
+				<tr>
+					<td><%= category.category_name %></td>
+					<td><%= link_to "編集", edit_category_path(category) %></td>
+					<td><%= link_to "削除", category_path(category), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+  </div>
+</div>

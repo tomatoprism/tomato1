@@ -1,20 +1,31 @@
-<%= render 'new', artist_new: @artist_new %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+		<%= render 'new', artist_new: @artist_new %>
 
-<table>
-	<thead>
-		<tr>
-			<th>アーティスト名</th>
-			<th>編集</th>
-			<th>削除</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @artists.each do |artist| %>
-		<tr>
-			<td><%= artist.artist_name %></td>
-			<td><%= link_to "編集", edit_artist_path(artist) %></td>
-			<td><%= link_to "削除", artist_path(artist), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
-		</tr>
-		<% end %>
-	</tbody>
-</table>
+		<table>
+			<thead>
+				<tr>
+					<th>アーティスト名</th>
+					<th>編集</th>
+					<th>削除</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @artists.each do |artist| %>
+				<tr>
+					<td>
+						<%= artist.artist_name %>
+					</td>
+					<td>
+						<%= link_to "編集", edit_artist_path(artist) %>
+					</td>
+					<td>
+						<%= link_to "削除", artist_path(artist), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+						</td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>
