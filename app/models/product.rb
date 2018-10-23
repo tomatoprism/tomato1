@@ -14,7 +14,6 @@ class Product < ApplicationRecord
 
 	accepts_nested_attributes_for :discs, reject_if: :all_blank, allow_destroy: true
 
-	default_scope -> { order(release: :desc) }
 	def self.search(search)
 		if search
 			Product.where(['title LIKE ?', "%#{search}%"])

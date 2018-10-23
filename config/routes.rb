@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   end
   scope module: :public do
   	  resources :products do
-  	  	resources :favorites, only:[:index, :create, :destroy]
+  	  	resource :favorites, only:[:index, :create, :destroy]
   	    resources :reviews, only:[:create, :destroy]
   	    resources :discs, only:[:edit, :create, :update, :destroy] do
           resources :tracks, only:[:create, :update, :destroy]

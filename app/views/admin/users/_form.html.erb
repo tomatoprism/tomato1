@@ -1,47 +1,52 @@
-<%= form_for(product_new, url: admin_products_path)  do |f| %>
-
-<% if product_new.errors.any? %>
-      <div id="error_explanation">
-       <h3><%= product_new.errors.count %>件のエラーが発生しました。</h3>
-        <ul>
-         <% product_new.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+    <h2>新規追加</h2>
+    <%= form_for(product_new, url: admin_products_path)  do |f| %>
+    <% if product_new.errors.any? %>
+          <div id="error_explanation">
+           <h3><%= product_new.errors.count %>件のエラーが発生しました。</h3>
+            <ul>
+             <% product_new.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+             <% end %>
+            </ul>
+          </div>
          <% end %>
-        </ul>
+      <div class="field">
+        <p>ジャケット画像</p>
+          <%= f.attachment_field :image, placeholder: "ジャケット画像" %>
+        <p>シングル・アルバム名</p>
+          <%= f.text_field :title %>
+        <p>アーティスト名</p>
+          <%= f.select :artist_id, Artist.all.map{|u| [u.artist_name, u.id]}, include_blank: true %>
+        <p>カテゴリー</p>
+          <%= f.collection_check_boxes(:category_ids, Category.all, :id, :category_name, include_hidden: false) do |b| %>
+          <%= b.label { b.check_box + b.text } %>
+          <% end %>
       </div>
-     <% end %>
-
-  <div class="field">
-    <p>ジャケット画像</p>
-      <%= f.attachment_field :image, placeholder: "ジャケット画像" %>
-    <p>シングル・アルバム名</p>
-      <%= f.text_field :title %>
-    <p>アーティスト名</p>
-      <%= f.select :artist_id, Artist.all.map{|u| [u.artist_name, u.id]}, include_blank: true %>
-    <p>カテゴリー</p>
-      <%= f.collection_check_boxes(:category_ids, Category.all, :id, :category_name, include_hidden: false) do |b| %>
-      <%= b.label { b.check_box + b.text } %>
-      <% end %>
-  </div>
-  <p>ディスク</p>
-  <div id="discs">
-    <%= f.fields_for :discs do |disc| %>
-      <%= render 'admin/users/disc_fields', f: disc %>
+      <p>ディスク</p>
+      <div id="discs">
+        <%= f.fields_for :discs do |disc| %>
+          <%= render 'admin/users/disc_fields', f: disc %>
+        <% end %>
+        <div id="links">
+          <%= link_to_add_association 'ディスク追加',f, :discs %>
+        </div>
+      </div>
+      <p>レーベル名</p>
+        <%= f.text_field :label %>
+      <p>発売日</p>
+        <%= f.date_select :release,:start_year => 1900 %>
+      <p>値段</p>
+        <%= f.number_field :price %>
+      <p>商品説明</p>
+        <%= f.text_area :introduction %>
+      <p>在庫数</p>
+        <%= f.number_field :stock %>
+      <p></p>
+        <%= f.submit '追加' %>
     <% end %>
-    <div id="links">
-      <%= link_to_add_association 'ディスク追加',f, :discs %>
-    </div>
   </div>
-  <p>レーベル名</p>
-    <%= f.text_field :label %>
-  <p>発売日</p>
-    <%= f.date_select :release %>
-  <p>値段</p>
-    <%= f.number_field :price %>
-  <p>商品説明</p>
-    <%= f.text_area :introduction %>
-  <p>在庫数</p>
-    <%= f.number_field :stock %>
-  <p></p>
-    <%= f.submit '追加' %>
-<% end %>
+  </div>
+</div>

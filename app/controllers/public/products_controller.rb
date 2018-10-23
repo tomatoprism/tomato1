@@ -8,7 +8,7 @@ class Public::ProductsController < Public::ApplicationController
   	end
 
 	def index
-		@products = Product.page(params[:page]).reverse_order.order(release: "DESC")
+		@products = Product.page(params[:page]).order(release: "DESC")
 		@categories = Category.all
 		@artists = Artist.all
 	end
@@ -22,7 +22,8 @@ class Public::ProductsController < Public::ApplicationController
 	def search
 		@categories = Category.all
 		@artists = Artist.all
-		@productfind = Product.search(params[:search])
+		@productsearch = Product.search(params[:search]).order(release: "DESC")
+		@artistsearch = Artist.search(params[:search])
 		# .order(release: "DESC")
 	end
 
