@@ -7,7 +7,7 @@ class Admin::ProductsController < Admin::ApplicationController
 	    end
   	end
 	def index
-		@products = Product.all
+		@products = Product.all.order(stock: "ASC")
 	end
 
 	def edit
