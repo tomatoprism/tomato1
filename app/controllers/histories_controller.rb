@@ -29,9 +29,9 @@ class HistoriesController < ApplicationController
     @history.price_history = 400 #送料と手数料
     over_stock = []
     cart.cart_items.each do |c|
-      @history.price_history += c.product.price * c.quantity
+    @history.price_history += c.product.price * c.quantity
       if c.quantity > c.product.stock
-            over_stock << c.product_id
+            over_stock << c.product.title
       else
             stock = c.product.stock - c.quantity
             stock_update = Product.find_by(id: c.product.id)
@@ -57,6 +57,8 @@ class HistoriesController < ApplicationController
       cart.save
       redirect_to root_path, success: 'ご購入ありがとうございました'
     else
+      over_stock1 = over_stock.join(",")
+      flash.now[:alert] = "在庫切れの商品があります。\n" + over_stock1
       render "new"
     end
  end
@@ -66,4 +68,3 @@ class HistoriesController < ApplicationController
     params.require(:history).permit(:status, :post_code_history, :prefecture_history, :post_address_history)
   end
 end
-
