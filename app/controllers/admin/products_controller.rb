@@ -7,7 +7,9 @@ class Admin::ProductsController < Admin::ApplicationController
 	    end
   	end
 	def index
-		@products = Product.all.order(stock: "ASC")
+
+		@products = Product.page(params[:page]).reverse_order.order(stock: "ASC")
+
 	end
 
 	def edit

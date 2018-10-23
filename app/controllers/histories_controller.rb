@@ -22,6 +22,7 @@ class HistoriesController < ApplicationController
     @user = User.find(params[:id])
   end
 
+
  def create
     @history = History.new
     cart = Cart.where(user_id: current_user.id).last
@@ -37,6 +38,8 @@ class HistoriesController < ApplicationController
             stock_update = Product.find_by(id: c.product.id)
             stock_update.update(stock: stock)
       end
+
+
     end
 
     if over_stock.empty?
@@ -56,6 +59,7 @@ class HistoriesController < ApplicationController
       render "new"
     end
  end
+
 
   private
   def history_params

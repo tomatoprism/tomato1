@@ -1,55 +1,60 @@
-<div class="conteiner">
+<div class="container">
   <div class="row">
-    <div class="col-lg-2">
+
+    <div class="col-xs-3">
       <%= render 'top/category', categories: @categories, artists: @artists %>
     </div>
 
-    <div class="col-lg-10">
+    <div class="col-xs-9">
       <% @products.each do |product| %>
+      <div class="col-xs-4 ">
       <div class="thumbnail">
-        <div class="productbox">
-          <div class = "product-image" >
             <%= link_to product_path(product.id) do %>
             <%= attachment_image_tag product, :image, :fill, 100, 100, fallback: "no_image.jpg", size: '200x200' %>
             <% end %>
-          </div>
-          <div class="product-info" >
-            <ul>
-             <li> <%= link_to product_path(product.id) do %>
+          <div class="caption" >
+             <p> <%= link_to product_path(product.id) do %>
               <%= product.title %>
               <% end %>
-            </li>
+            </p>
 
-            <li>
+            <p>
               <% product.categories.each do |cate| %>
               <%= link_to category_path(cate.id) do  %>
               <%= cate.category_name %>
               <% end %>
               <% end %>
-            </li>
+            </p>
 
-            <li>
+            <p>
               <%= link_to artist_path(product.artist.id) do  %>
               <%= product.artist.artist_name %>
               <% end %>
-            </li>
+            </p>
 
-            <li>
+            <p>
              ¥<%= product.price %>
-           </li>
+           </p>
 
-           <li>
+           <p>
             <% if product.stock == 0 then %>
             <p>在庫なし</p>
             <% else %>
             <p>在庫あり</p>
             <% end %>
-          </li>
-        </ul>
+          </p>
       </div>
     </div>
   </div>
   <% end %>
-  <%= paginate @products, class: "pagenate" %><
 </div>
 </div>
+</div>
+
+<div class="container">
+  <div class="row" style= "text-align: center;" >
+  <%= paginate @products, class: "pagenate" %>
+  
+</div>
+</div>
+

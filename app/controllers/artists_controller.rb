@@ -14,12 +14,14 @@ class ArtistsController < ApplicationController
   def create
     @artist_new = Artist.new(artist_params)
 
+
     if @artist_new.save
        redirect_to artists_path, success: 'アーティストが追加されました'
     else
       @artists = Artist.all
       render "index"
     end
+
 
   end
 

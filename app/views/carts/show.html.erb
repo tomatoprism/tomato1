@@ -1,42 +1,42 @@
 	<div class = "container" >
     <table class="table" >
       <div class="row" >
-		  <tr>
-		    <th> <p>商品情報</p> </th>
-		    <th> </th>
-		    <th> <p>個数</p> </th>
-		    <th> <p>小計</p> </th>
-		    <th> </th>
-		  </tr>
-    <% sum = 0 %>
-    <% cart = Cart.where(user_id: current_user.id).last %>
-	<% cart.cart_items.each do |cart_item| %>
-		  <tr>
-		  	<td> <%= attachment_image_tag cart_item.product, :image, fallback: "no_image.jpg", size: '200x200' %> </td>
-		  	<td> <%= cart_item.product.title %> <br>
-		  	     <%= cart_item.product.artist.artist_name %> </td>
-            <td> <%= cart_item.quantity %> </td>
-            <td> <%= cart_item.product.price * cart_item.quantity %> </td>
-            <td> <%= link_to "削除", cart_delete_item_path(current_user.carts.where(user_id: current_user.id).last,cart_item.id), method: :delete,class: "btn btn-danger" %> </td>
-            <% sum  = sum + cart_item.product.price * cart_item.quantity %>
-          </tr>
-    <% end %>
-    	<tr>
+        <tr>
+          <th> <p>商品情報</p> </th>
+          <th> </th>
+          <th> <p>個数</p> </th>
+          <th> <p>小計</p> </th>
+          <th> </th>
+        </tr>
+        <% sum = 0 %>
+        <% cart = Cart.where(user_id: current_user.id).last %>
+        <% cart.cart_items.each do |cart_item| %>
+        <tr>
+         <td> <%= attachment_image_tag cart_item.product, :image, fallback: "no_image.jpg", size: '200x200' %> </td>
+         <td> <%= cart_item.product.title %> <br>
+          <%= cart_item.product.artist.artist_name %> </td>
+          <td> <%= cart_item.quantity %> </td>
+          <td> <%= cart_item.product.price * cart_item.quantity %> </td>
+          <td> <%= link_to "削除", cart_delete_item_path(current_user.carts.where(user_id: current_user.id).last,cart_item.id), method: :delete,class: "btn btn-danger" %> </td>
+          <% sum  = sum + cart_item.product.price * cart_item.quantity %>
+        </tr>
+        <% end %>
+        <tr>
 
-          	<td> </td>
-          	<td> <p>合計</p></td>
-          	<td> <%= cart.cart_items.sum(:quantity) %> </td>
-          	<td> <%= sum %> </td>
-          </tr>
-</table>
+         <td> </td>
+         <td> <p>合計</p></td>
+         <td> <%= cart.cart_items.sum(:quantity) %> </td>
+         <td> <%= sum %> </td>
+       </tr>
+     </table>
 
-<% if cart.cart_items.count <= 0 %>
-<% elsif Post.where(user_id: current_user.id).exists? %>
-<%= link_to "注文へ進む", new_history_path, class:"btn btn-primary" %>
-<% elsif %>
-<%= link_to "お届け先住所を登録してください", new_post_path, class:"btn btn-danger" %><br>
-<% end %>
-<%= link_to "トップへ戻る", root_path, class:"btn btn-info"%>
-</div>
-</table>
+     <% if cart.cart_items.count <= 0 %>
+     <% elsif Post.where(user_id: current_user.id).exists? %>
+     <%= link_to "注文へ進む", new_history_path, class:"btn btn-primary" %>
+     <% elsif %>
+     <%= link_to "お届け先住所を登録してください", new_post_path, class:"btn btn-danger" %><br>
+     <% end %>
+     <%= link_to "トップへ戻る", root_path, class:"btn btn-info"%>
+   </div>
+ </table>
 </div>
