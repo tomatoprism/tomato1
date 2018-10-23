@@ -1,5 +1,5 @@
-<h2>決済画面</h2>
 
+ <h2>決済画面</h2>
 <table class="table">
 		  <tr>
 		    <th> <p>商品情報</p> </th>
@@ -16,7 +16,7 @@
 		  	<td><ul>
                <li>タイトル</li>
                <li><%= cart_item.product.title %></li>
-		  	       <li>ア-ティスト</li>
+		  	       <li>アーティスト</li>
                <li><%= cart_item.product.artist.artist_name %></li>
              </ul>
         </td>
@@ -41,26 +41,19 @@
 <table class="table">
      <tr>
       <th>送料</th>
-    </tr>
-    <tr>
-      <td>300 円</td>
-    </tr>
+      <th>300 円</th>
 </table>
 <table class="table">
      <tr>
       <th>手数料</th>
-    </tr>
-    <tr>
-      <td>100 円</td>
+      <th>100 円</th>
     </tr>
 </table>
 <table class="table">
      <tr>
       <th><h4>合計</h4></th>
-    </tr>
-    <tr>
-      <td><% sum2 = 0 %>
-          <h3><%= sum2 = sum2 + sum1 + 300 + 100 %> 円</h3></td>
+      <th><% sum2 = 0 %>
+        <h4><%= sum2 = sum2 + sum1 + 300 + 100 %> 円</h4></th>
     </tr>
 </table>
 </div>
@@ -68,40 +61,20 @@
 
 <div class="row">
   <div class="col-xs-offset-3 col-md-6">
-     <table class="table">
-       <tr>
-        <th>名前</th>
-       </tr>
-       <tr>
-         <td><%= current_user.name %></td>
-       </tr>
-    </table>
-    <table class="table">
-     <tr>
-      <th>郵便番号</th>
-    </tr>
-    <tr>
-      <td><%= current_user.post.post_code %></td>
-    </tr>
-   </table>
-   <table class="table">
-     <tr>
-      <th>お届け先住所</th>
-     </tr>
-     <tr>
-      <td><%= current_user.prefecture.prefecture %>
-         <%= current_user.post.post_address %>
-      </td>
-    </tr>
-</table>
-</div>
-</div>
-
-   <div class="btn-wrapper">
-    <div class="row">
-      <div class="col-xs-offset-3 col-md-6">
-       <%= link_to "購入する", histories_path(@history), method: :post, class:"btn-sm btn-danger col-xs-4 col-xs-offset-4" %>
-      </div>
+   <div class="user-info">
+    <h3>購入者情報</h3>
+     <p>お名前　　　　　<%= current_user.name %></p>
+     <p>郵便番号　　　　　〒<%= current_user.post.post_code %></p>
+     <p>お届け先住所　　
+          <%= current_user.prefecture.prefecture %>
+          <%= current_user.post.post_address %></p>
     </div>
-   </div>
- </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-offset-3 col-md-6">
+    <div class="btn-wrapper">
+      <%= link_to "購入する", histories_path(@history), method: :post, class:"btn-lg btn-danger" %>
+    </div>
+  </div>
+</div>

@@ -52,8 +52,6 @@ end
 
   resources :artists, only:[:new, :create, :update, :destroy, :show, :edit, :index]
 
-  resources :payments, only:[:show]
-
   get "/admins" => "admins#top"
 
   get "/search/products" => "public/products#search"

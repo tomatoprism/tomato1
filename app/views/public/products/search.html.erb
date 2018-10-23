@@ -1,10 +1,12 @@
-<div class="conteiner">
+<div class="container">
   <div class="row">
-    <div class="col-xs-4 col-md-2">
+    <div class="col-xs-3">
       <%= render 'top/category', categories: @categories, artists: @artists %>
     </div>
-    <% @productfind.each do |product| %>
-      <div class="col-xs-6 col-md-3">
+    <div class="col-xs-9">
+      <h3>商品検索一覧</h3>
+      <% @productsearch.each do |product| %>
+      <div class="col-xs-4">
         <div class="thumbnail">
           <div class="productbox">
             <div class = "product-image" >
@@ -98,5 +100,18 @@
         </div>
       </div>
     <% end %>
+      <div class="col-xs-9">
+        <h3>アーティスト検索一覧</h3>
+          <% @artistsearch.each do |a| %>
+          <ul>
+            <li>
+              <%= link_to artist_path(a) do %>
+              <%= a.artist_name %>
+              <% end %>
+            </li>
+          </ul>
+          <% end %>
+      </div>
+    </div>
   </div>
 </div>

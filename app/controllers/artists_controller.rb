@@ -9,14 +9,14 @@ class ArtistsController < ApplicationController
 
   def new
     @artist_new = Artist.new
-    @artists = Artist.all
   end
 
   def create
     @artist_new = Artist.new(artist_params)
 
-    if @artist_new.save(artist_params)
-       redirect_to new_artist_path, success: 'アーティストが追加されました'
+
+    if @artist_new.save
+       redirect_to artists_path, success: 'アーティストが追加されました'
     else
       @artists = Artist.all
       render "index"
@@ -27,7 +27,7 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
-    @products = @artist.products.page(params[:page]).reverse_order
+    @products = @artist.products.page(params[:page]).order(release: "DESC")
     @categories = Category.all
     @artists = Artist.all
   end

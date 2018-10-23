@@ -1,7 +1,5 @@
 <h1>購入履歴</h1>
-
-
-<table class="table table-striped">
+<table class="table table-hover table-inverse">
 	<tr>
 		<th>購入者</th>
 		<th>購入日</th>
@@ -9,16 +7,16 @@
 		<th>購入価格総計</th>
 		<th>送付先</th>
 	</tr>
+	<tr>
     <% @user.carts.each do |cart| %>
     <% cart.histories.each do |history| %>
-	<tr>
 		<td><%= history.user_name %></td>
 		<td><%= history.created_at.strftime('%Y年%m月%d日') %></td>
 
 		<td><% history.cart.cart_items.each do |cart_item| %>
-			<%= cart_item.product.title %><br>
-			<%= cart_item.quantity %>枚<br>
-			<%= cart_item.product.price * cart_item.quantity %>円<br>
+			   <%= cart_item.product.title %><br>
+			   <%= cart_item.quantity %>枚<br>
+			   <%= cart_item.product.price * cart_item.quantity %>円<br>
 			<% end %>
 		</td>
 
@@ -28,10 +26,8 @@
 			<%= history.post_address_history %>
 		</td>
 	</tr>
-
+<% end %>
+<% end %>
 </table>
-<% end %>
-<% end %>
-
 <%= link_to "戻る", :back, class:"btn btn-info" %>
 

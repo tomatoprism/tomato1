@@ -7,7 +7,7 @@ class Admin::ProductsController < Admin::ApplicationController
 	    end
   	end
 	def index
-		@products = Product.page(params[:page]).reverse_order
+		@products = Product.page(params[:page]).reverse_order.order(stock: "ASC")
 		@less = Product.where("stock < 10", nil)
 		@a = @less.page(params[:page]).reverse_order
 
