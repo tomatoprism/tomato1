@@ -6,7 +6,7 @@ class HistoriesController < ApplicationController
         redirect_to root_path
       end
   end
-  
+
   def index
     @histories = History.all
     @users = User.with_deleted.all
@@ -28,7 +28,6 @@ class HistoriesController < ApplicationController
     cart = Cart.where(user_id: current_user.id).last
     @history.price_history = 400 #送料と手数料
     over_stock = []
-    
     cart.cart_items.each do |c|
       @history.price_history += c.product.price * c.quantity
       if c.quantity > c.product.stock
@@ -37,9 +36,11 @@ class HistoriesController < ApplicationController
             stock = c.product.stock - c.quantity
             stock_update = Product.find_by(id: c.product.id)
             stock_update.update(stock: stock)
+            @history.title = c.product.title
+            @history.quantity = c.quantity
+            @history.subtotal = 0
+            @history.subtotal = c.product.price * c.quantity
       end
-
-
     end
 
     if over_stock.empty?
@@ -59,7 +60,6 @@ class HistoriesController < ApplicationController
       render "new"
     end
  end
-
 
   private
   def history_params

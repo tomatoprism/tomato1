@@ -8,16 +8,15 @@
 		<th>送付先</th>
 	</tr>
 	<tr>
-    <% @user.carts.each do |cart| %>
+    <% @user.carts.reverse_each do |cart| %>
     <% cart.histories.each do |history| %>
 		<td><%= history.user_name %></td>
 		<td><%= history.created_at.strftime('%Y年%m月%d日') %></td>
 
-		<td><% history.cart.cart_items.each do |cart_item| %>
-			   <%= cart_item.product.title %><br>
-			   <%= cart_item.quantity %>枚<br>
-			   <%= cart_item.product.price * cart_item.quantity %>円<br>
-			<% end %>
+		<td>
+			<%= history.title %><br>
+			<%= history.quantity %>枚<br>
+			<%= history.subtotal %>円<br><br>
 		</td>
 
 		<td><%= history.price_history %></td>
