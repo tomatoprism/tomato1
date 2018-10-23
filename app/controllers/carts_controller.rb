@@ -23,7 +23,7 @@ class CartsController < ApplicationController
       cart_item.quantity = quantity
       stock = cart_item.product.stock
     end
-    if quantity < stock
+    if quantity <= stock
          cart_item.save
          redirect_to root_path, success: 'カートに商品が追加されました'
     else
