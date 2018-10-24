@@ -3,7 +3,7 @@ class TopController < ApplicationController
 		@categories = Category.all
 		@artists = Artist.all
 		@productfind = Product.search(params[:search])
-		@products = Product.limit(6).order("release DESC")
+		@products = Product.limit(6).order('release DESC')
 		@ranking = Product.find(Favorite.group(:product_id).order('count(product_id) desc').limit(3).pluck(:product_id))
 
 
