@@ -10,7 +10,7 @@ class Product < ApplicationRecord
 	has_many :reviews, dependent: :destroy
 	attachment :image
 
-	has_many :discs, inverse_of: :product
+	has_many :discs, inverse_of: :product, dependent: :destroy
 
 	accepts_nested_attributes_for :discs, reject_if: :all_blank, allow_destroy: true
 
