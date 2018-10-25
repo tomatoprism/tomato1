@@ -1,14 +1,13 @@
 class Public::UsersController < Public::ApplicationController
 	before_action :correct_user, only:[:edit, :update, :destroy, :show]
 
-	 def correct_user
-      @user = User.find(params[:id])
-      if    @user == current_user
-      elsif admin_signed_in?
-      else
-            redirect_to root_path
-      end
-     end
+	def correct_user
+		@user = User.find(params[:id])
+		if @user == current_user
+	    elsif admin_signed_in?
+	    else  redirect_to root_path
+	    end
+  end
 
 	def show
 		@user = User.find(params[:id])
