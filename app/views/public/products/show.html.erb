@@ -3,7 +3,7 @@
 <div class = "container" >
   <div class = "row" >
     <div class="col-lg-4" >
-      <%= attachment_image_tag @product, :image %>
+      <%= attachment_image_tag @product, :image, size: '300x300' %>
     </div>
 
     <div class="col-lg-8">
@@ -136,11 +136,13 @@
       </tr>
     </table>
 
+<% if current_user %>
     <div class ="review" style = "padding-top: 30px;" >
       <strong>レビュー</strong>
       <%= form_for [@product, @review] do |f| %>
       <%= f.text_area :text, rows:'5', :size=>"60" ,placeholder: "コメントをここに" %>
       <%= f.submit "送信する", class:"btn btn-info" %>
+      <% end %>
       <% end %>
 
       <table class="table" >
