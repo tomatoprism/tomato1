@@ -13,10 +13,11 @@
 		<td><%= history.user_name %></td>
 		<td><%= history.created_at.strftime('%Y年%m月%d日') %></td>
 		<td>
+		  <% history.history_products.each do |history| %>
 			 <%= history.title %><br>
 			 <%= history.quantity %>枚<br>
 			 <%= history.subtotal %>円<br><br>
-
+          <% end %>
 		</td>
 		<td><%= history.price_history %></td>
 		<td><%= history.post_code_history %>

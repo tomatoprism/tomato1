@@ -21,7 +21,6 @@ class CategoriesController < ApplicationController
       @categories = Category.all
       render 'new'
     end
-
   end
 
   def show
@@ -43,7 +42,6 @@ class CategoriesController < ApplicationController
     else
       render 'edit'
     end
-
   end
 
   def destroy

@@ -21,5 +21,3 @@ class Public::DiscsController < ApplicationController
         params.require(:product).permit(:title, :image, :price, :label, :stock, :release, :introduction, :artist_id, category_ids: [], discs_attributes: [:id, :disc_name, :done, :_destroy,tracks_attributes: [:id, :music, :list_num]])
     end
 end
-
-# binding.pry

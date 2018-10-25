@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_23_043310) do
+ActiveRecord::Schema.define(version: 2018_10_25_054943) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -89,10 +89,16 @@ ActiveRecord::Schema.define(version: 2018_10_23_043310) do
     t.datetime "deleted_at"
     t.string "prefecture_history"
     t.string "user_name"
+    t.index ["deleted_at"], name: "index_histories_on_deleted_at"
+  end
+
+  create_table "history_products", force: :cascade do |t|
     t.string "title"
     t.integer "quantity"
     t.integer "subtotal"
-    t.index ["deleted_at"], name: "index_histories_on_deleted_at"
+    t.integer "history_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "messages", force: :cascade do |t|

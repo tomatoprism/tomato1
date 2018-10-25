@@ -13,16 +13,12 @@ class ArtistsController < ApplicationController
 
   def create
     @artist_new = Artist.new(artist_params)
-
-
     if @artist_new.save
        redirect_to artists_path, success: 'アーティストが追加されました'
     else
       @artists = Artist.all
       render "index"
     end
-
-
   end
 
   def show
@@ -31,13 +27,13 @@ class ArtistsController < ApplicationController
     @categories = Category.all
     @artists = Artist.all
   end
+
   def edit
     @artist_edit = Artist.find(params[:id])
   end
 
   def update
     @artist_edit = Artist.find(params[:id])
-
     if @artist_edit.update(artist_params)
        redirect_to artists_path, success: 'アーティストが編集されました'
     else
@@ -48,15 +44,12 @@ class ArtistsController < ApplicationController
   def destroy
     artist = Artist.find(params[:id])
     artist.destroy
-
     redirect_to artists_path, success: 'アーティストが削除されました'
-
   end
 
   def index
     @artist_new = Artist.new
     @artists = Artist.all
-
   end
 
   private

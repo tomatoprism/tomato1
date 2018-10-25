@@ -9,16 +9,16 @@
 	</tr>
 	<tr>
     <% @user.carts.reverse_each do |cart| %>
-    <% cart.histories.each do |history| %>
+      <% cart.histories.each do |history| %>
 		<td><%= history.user_name %></td>
 		<td><%= history.created_at.strftime('%Y年%m月%d日') %></td>
-
 		<td>
-			<%= history.title %><br>
-			<%= history.quantity %>枚<br>
-			<%= history.subtotal %>円<br><br>
+		  <% history.history_products.each do |product| %>
+			<%= product.title %><br>
+			<%= product.quantity %>枚<br>
+			<%= product.subtotal %>円<br><br>
+		  <% end %>
 		</td>
-
 		<td><%= history.price_history %></td>
 		<td><%= history.post_code_history %>
 			<%= history.prefecture_history %>

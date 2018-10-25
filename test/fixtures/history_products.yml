@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  quantity: 1
+  subtotal: 1
+  history_id: 1
+
+two:
+  title: MyString
+  quantity: 1
+  subtotal: 1
+  history_id: 1
