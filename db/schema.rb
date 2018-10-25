@@ -89,6 +89,9 @@ ActiveRecord::Schema.define(version: 2018_10_25_054943) do
     t.datetime "deleted_at"
     t.string "prefecture_history"
     t.string "user_name"
+    t.string "title"
+    t.integer "quantity"
+    t.integer "subtotal"
     t.index ["deleted_at"], name: "index_histories_on_deleted_at"
   end
 
@@ -190,7 +193,7 @@ ActiveRecord::Schema.define(version: 2018_10_25_054943) do
     t.datetime "updated_at", null: false
     t.datetime "deleted_at"
     t.index ["deleted_at"], name: "index_users_on_deleted_at"
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["email"], name: "unique_index_on_users_email", unique: true, where: "deleted_at IS NULL"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

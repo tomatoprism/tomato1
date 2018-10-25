@@ -163,8 +163,11 @@
       </table>
     </div>
 
+<div class = "container" >
+  <div class = "row" >
     <% if current_admin %>
-    <%= link_to"編集", edit_admin_product_path(@product) %>
+    <%= link_to"編集", edit_admin_product_path(@product), class:"btn btn-primary" %>
     <% end %>
     <%= link_to "戻る", root_path, class:"btn btn-info" %>
   </div>
+</div>
