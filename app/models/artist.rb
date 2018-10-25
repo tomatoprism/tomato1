@@ -1,5 +1,5 @@
 class Artist < ApplicationRecord
-	has_many :products
+	has_many :products, dependent: :destroy
 
 	validates_uniqueness_of :artist_name
     validates_presence_of :artist_name

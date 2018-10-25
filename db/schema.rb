@@ -184,7 +184,7 @@ ActiveRecord::Schema.define(version: 2018_10_23_043310) do
     t.datetime "updated_at", null: false
     t.datetime "deleted_at"
     t.index ["deleted_at"], name: "index_users_on_deleted_at"
-    t.index ["email"], name: "unique_index_on_users_email", unique: true, where: "deleted_at IS NULL"
+    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

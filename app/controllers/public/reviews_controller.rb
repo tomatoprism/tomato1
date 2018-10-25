@@ -2,7 +2,7 @@ class Public::ReviewsController < ApplicationController
   before_action :correct_user, only:[:destroy]
 
   def correct_user
-    unless user_signed_in?
+    unless user_signed_in? || admin_signed_in?
       redirect_to root_path
     end
   end
