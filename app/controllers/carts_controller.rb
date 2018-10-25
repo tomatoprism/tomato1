@@ -5,7 +5,7 @@ class CartsController < ApplicationController
       unless user_signed_in? || admin_signed_in?
         redirect_to root_path
       end
-    end
+  end
 
   def add_item
     cart = Cart.where(user_id: current_user.id).last

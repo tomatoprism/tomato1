@@ -22,10 +22,10 @@ class HistoriesController < ApplicationController
     @user = User.find(params[:id])
   end
 
-
- def create
-    @history = History.new
+def create
     cart = Cart.where(user_id: current_user.id).last
+    @history = History.new(cart_id: cart.id)
+    @history.save
     @history.price_history = 400 #送料と手数料
     over_stock = []
     cart.cart_items.each do |c|
@@ -33,18 +33,20 @@ class HistoriesController < ApplicationController
       if c.quantity > c.product.stock
             over_stock << c.product.title
       else
-            stock = c.product.stock - c.quantity
-            stock_update = Product.find_by(id: c.product.id)
-            stock_update.update(stock: stock)
-            @history.title = c.product.title
-            @history.quantity = c.quantity
-            @history.subtotal = 0
-            @history.subtotal = c.product.price * c.quantity
+        @history_product = HistoryProduct.new
+        @history_product.history_id = @history.id
+        @history_product.title = c.product.title
+        @history_product.quantity = c.quantity
+        @history_product.subtotal = 0
+        @history_product.subtotal = c.product.price * c.quantity
+        @history_product.save
+        stock = c.product.stock - c.quantity
+        stock_update = Product.find_by(id: c.product.id)
+        stock_update.update(stock: stock)
       end
     end
 
     if over_stock.empty?
-      @history.cart_id = cart.id
       @history.post_code_history = current_user.post_code
       @history.post_address_history = current_user.address
       @history.user_name = current_user.name
