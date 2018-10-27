@@ -50,9 +50,9 @@ def create
       @history.post_code_history = current_user.post_code
       @history.post_address_history = current_user.address
       @history.user_name = current_user.name
-      @history.post_code_history = current_user.post.post_code
-      @history.prefecture_history = current_user.prefecture.prefecture
-      @history.post_address_history = current_user.post.post_address
+      @history.post_code_history = current_user.post_code
+      #@history.prefecture_history = current_user.prefecture.prefecture
+      @history.post_address_history = current_user.address
       @history.status = 0
       @history.save
       cart = Cart.new(user_id: current_user.id)

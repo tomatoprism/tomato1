@@ -32,7 +32,15 @@
 
      <% if cart.cart_items.count <= 0 %>
      <% elsif Post.where(user_id: current_user.id).exists? %>
-     <%= link_to "注文へ進む", new_history_path, class:"btn btn-primary" %>
+      <h3>お届け先選択</h3>
+       <%= form_tag post_update_path do %>
+        <% current_user.posts.each do |post| %>
+           <%= radio_button 'user', 'address', post.id, {} %>
+           <%= post.post_code %>
+           <%= post.post_address %>
+        <% end %>
+      <%= submit_tag "注文へ進む", class:"btn btn-primary" %>
+      <% end %>
      <% elsif %>
      <%= link_to "お届け先住所を登録してください", new_post_path, class:"btn btn-danger" %><br>
      <% end %>

@@ -30,6 +30,13 @@ class Public::UsersController < Public::ApplicationController
     redirect_to root_path, danger: '退会しました'
   	end
 
+  	def post_update
+		@post_save = Post.find(params[:user][:address])
+		@user = current_user
+		@user.update(address:@post_save.post_address, post_code:@post_save.post_code)
+		redirect_to new_history_path
+	end
+
 	private
     def user_params
         params.require(:user).permit(:name, :name_kana, :email, :phone, :post_code, :address)

@@ -8,8 +8,8 @@ class User < ApplicationRecord
 
          has_many :reviews, dependent: :destroy
 
-         has_one :post
-		 has_one :prefecture, through: :post
+         has_many :posts
+		 has_many :prefectures, through: :post
 
          has_many :carts
 
