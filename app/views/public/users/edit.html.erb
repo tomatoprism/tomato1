@@ -1,8 +1,10 @@
-<div class = "container" >
+<div class="bg-image">
+  <div class = "bg-mask" >
+<div class = "container">
 	<div class = "row" >
-		<div class="col-xs-offset-3 col-lg-6" >
+		<div class = "edit">
 
-			<h2>User情報の編集</h2>
+			<h3>User情報の編集</h3>
 
 			<%= form_for(@user) do |f| %>
 
@@ -32,7 +34,9 @@
 
 				<%= link_to "戻る", user_path, class: "btn btn-info" %>
 			</div>
-
 		</div>
+
 	</div>
+</div>
+</div>
 </div>

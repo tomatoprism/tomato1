@@ -1,54 +1,51 @@
-<div class="container">
-  <div class="row">
-
-    <div class="col-xs-3">
-      <%= render 'top/category', categories: @categories, artists: @artists %>
-    </div>
+<div class="bg-image2">
+  <div class = "bg-mask2" >
+    <div class="container" style="background-color: white; ">
 
 
-    <div class="col-xs-9 ">
-      <% @products.each do |product| %>
-      <div class="col-xs-4 ">
-        <div class="thumbnail">
-          <%= link_to product_path(product.id) do %>
-          <%= attachment_image_tag product, :image, :fill, 100, 100 %>
-          <% end %>
-          <div class="caption">
-            <p><%= link_to product_path(product.id) do %>
-              <%= truncate(product.title, length: 10) %>
-              <% end %>
-            </p>
-            <p><% product.categories.each do |cate| %>
+      <h3><%= @category.category_name %>の商品</h3>
+      <div class="row">
+        <% @products.each do |product| %>
+        <div class="col-xs-4 ">
+          <div class="thumbnail">
+            <%= link_to product_path(product.id) do %>
+            <%= attachment_image_tag product, :image, :fill, 100, 100 %>
+            <% end %>
+            <div class="caption">
+              <p><%= link_to product_path(product.id) do %>
+                <%= truncate(product.title, length: 10) %>
+                <% end %>
+              </p>
+              <p><% product.categories.each do |cate| %>
                 <%= link_to category_path(cate.id) do  %>
                 <%= cate.category_name %>
                 <% end %>
                 <% end %>
-            </p>
-            <p><%= link_to artist_path(product.artist.id) do  %>
-                  <%= product.artist.artist_name %>
-                  <% end %>
-            </p>
+              </p>
+              <p><%= link_to artist_path(product.artist.id) do  %>
+                <%= product.artist.artist_name %>
+                <% end %>
+              </p>
 
               <p>¥<%= product.price %></p>
 
-                  <p><% if product.stock == 0 then %>
-                    <p>在庫なし</p>
-                    <% else %>
-                    <p>在庫あり</p>
-                    <% end %></p>
-                  </div>
-                </div>
-
+              <p><% if product.stock == 0 then %>
+                <p>在庫なし</p>
+                <% else %>
+                <p>在庫あり</p>
+                <% end %></p>
               </div>
-              <% end %>
             </div>
-          </div>
-<div class="container">
-  <div class="row" style= "text-align: center;" >
-  <%= paginate @products, class: "pagenate" %>
-  
-</div>
-</div>
 
+          </div>
+          <% end %>
+        </div>
+        <div class="container">
+          <div class="row" style= "text-align: center;" >
+            <%= paginate @products, class: "pagenate" %>
+          </div>
+        </div>
+      </div>
+    </div>
 
 

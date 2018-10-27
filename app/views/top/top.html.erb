@@ -1,57 +1,58 @@
-<div class="container">
-	<div class="row">
-    <div class="col-xs-3">
-			<%= render 'category', categories: @categories, artists: @artists %>
-    </div>
-
-		<div class="col-xs-9 ">
-      <h3>最新商品</h3>
-       <% @products.each do |product| %>
-        <div class="col-xs-4 ">
+  <div class="bg-image2">
+    <div class = "bg-mask2" >
+      <div class="container" style="background-color: white;">
+        <h3>最新商品</h3>
+        <div class="row">
+         <% @products.each do |product| %>
+         <div class="col-xs-3">
           <div class="thumbnail">
-             <div class = "product-image" >
-               <%= link_to product_path(product.id) do %>
-               <%= attachment_image_tag product, :image, :fill, 100, 100 %>
-               <% end %>
-             </div>
-             <div class = "product-info" >
-               <ul>
-                 <li> <%= truncate(product.title, length: 10) %> </li>
-                 <li>発売日<br>
-	                   <%= product.release %></li>
-                 <li> <%= product.price %>円 </li>
-                  <li><%= link_to "詳細", product_path(product) %></li>
-                </ul>
-             </div>
+
+           <div class = "product-image" >
+             <%= link_to product_path(product.id) do %>
+             <%= attachment_image_tag product, :image, :fill, 100, 100 %>
+             <% end %>
+           </div>
+
+           <div class = "product-info" >
+             <ul>
+               <li> <%= truncate(product.title, length: 10) %> </li>
+               <li>発売日<br>
+                <%= product.release %></li>
+                <li> <%= product.price %>円 </li>
+                <li><%= link_to "詳細", product_path(product) %></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+        <% end %>
+      </div>
+
+      <h3>おすすめ</h3>
+      <div class="row">
+       <% @ranking.each do |ranking| %>
+       <div class="col-xs-3">
+        <div class="thumbnail">
+         <div class = "ranking-image" >
+           <%= link_to product_path(ranking) do %>
+           <%= attachment_image_tag ranking, :image, :fill, 100, 100 %>
+           <% end %>
+         </div>
+         <div class = "ranking-info" >
+           <ul>
+             <li> <%= ranking.title %> </li>
+             <li>発売日<br>
+               <%= ranking.release %></li>
+               <li> <%= ranking.price %>円 </li>
+               <li><%= link_to "詳細", product_path(ranking) %></li>
+             </ul>
+           </div>
          </div>
        </div>
        <% end %>
-     <div class="col-xs-12">
-      <div class="row">
-       <h3>おすすめ</h3>
-       <% @ranking.each do |ranking| %>
-        <div class="col-xs-4">
-          <div class="thumbnail">
-           <div class = "ranking-image" >
-             <%= link_to product_path(ranking) do %>
-             <%= attachment_image_tag ranking, :image, :fill, 100, 100 %>
-             <% end %>
-           </div>
-           <div class = "ranking-info" >
-               <ul>
-                 <li> <%= ranking.title %> </li>
-                 <li>発売日<br>
-                     <%= ranking.release %></li>
-                 <li> <%= ranking.price %>円 </li>
-                  <li><%= link_to "詳細", product_path(ranking) %></li>
-                </ul>
-             </div>
-           </div>
-         </div>
-        <% end %>
-       </div>
-      </div>
-    </div>
+     </div>
+   </div>
+ </div>
 </div>
 
 
