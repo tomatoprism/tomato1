@@ -2,6 +2,7 @@ class TopController < ApplicationController
 	def top
 		@categories = Category.all
 		@artists = Artist.all
+		@animes = Anime.all
 		@productfind = Product.search(params[:search])
 		productsort = Product.order(release: "DESC")
 		@products = productsort.limit(6)

@@ -11,6 +11,7 @@ class Public::ProductsController < Public::ApplicationController
 		@products = Product.page(params[:page]).reverse_order.order(release: "DESC")
 		@categories = Category.all
 		@artists = Artist.all
+		@animes = Anime.all
 	end
 
 	def show
@@ -22,6 +23,7 @@ class Public::ProductsController < Public::ApplicationController
 	def search
 		@categories = Category.all
 		@artists = Artist.all
+		@animes = Anime.all
 		@productsearch = Product.search(params[:search]).order(release: "DESC")
 		@artistsearch = Artist.search(params[:search])
 		# .order(release: "DESC")

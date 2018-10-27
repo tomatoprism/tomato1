@@ -28,6 +28,7 @@ class CategoriesController < ApplicationController
     @products = @category.products.page(params[:page]).order(release: "DESC")
     @categories = Category.all
     @artists = Artist.all
+    @animes = Anime.all
   end
 
   def edit

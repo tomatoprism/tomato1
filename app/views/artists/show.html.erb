@@ -7,8 +7,9 @@
       <div class="col-xs-3 ">
         <div class="thumbnail">
           <%= link_to product_path(product.id) do %>
-          <%= attachment_image_tag product, :image, :fill, 100, 100 %>
+          <%= attachment_image_tag product, :image,  size: '100x100' %>
           <% end %>
+
           <div class="caption" >
             <p><%= link_to product_path(product.id) do %>
               <%= truncate(product.title, length: 10) %>
