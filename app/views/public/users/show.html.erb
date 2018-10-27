@@ -1,4 +1,6 @@
-<div class = "container" >
+<div class="bg-image2">
+  <div class = "bg-mask2" >
+<div class = "container" style="background-color: white;" >
   <div class="col-xs-offset-3 col-md-6" >
     <table class="table" >
       <div class="row" >
@@ -30,7 +32,7 @@
       </div>
     </div>
   </table>
-  <%= link_to "お客様情報 編集", edit_user_path(@user), class:"btn btn-primary" %>
+  <%= link_to "お客様情報 編集", edit_user_path(@user), class:"btn btn-primary" %><br>
 
   <% if Post.where(user_id: @user.id).exists? %>
         <h3>お届け先住所</h3>
@@ -47,7 +49,7 @@
 
   <% end %>
 
-  <h3>購入履歴</h3>
+  <h3>購入履歴</h3><br>
   <%= link_to "購入履歴を見る", history_path, class:"btn btn-info" %><br>
 
   <div style = "padding-top: 30px;" >
@@ -56,4 +58,6 @@
 
     <%= link_to "トップへ戻る", root_path, class:"btn btn-info" %>
   </div>
+</div>
+</div>
 </div>

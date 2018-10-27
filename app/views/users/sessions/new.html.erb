@@ -1,7 +1,9 @@
 <div class = "container-fluid" >
+  <div class="bg-image">
+  <div class = "bg-mask" >
   <div class = "row" >
-    <div class="col-xs-offset-2 col-lg-6" >
-      <h2>ログイン</h2>
+    <div class ="sign" >
+      <h3>ログイン</h3>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
@@ -28,8 +30,9 @@
 
       <%= link_to "会員登録", new_registration_path(resource_name) %><br>
       <%= link_to "パスワードを忘れましたか?", new_password_path(resource_name) %>
+    </div>
 
-
+      </div>
     </div>
   </div>
 </div>
