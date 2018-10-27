@@ -11,6 +11,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :introduction
       t.integer :artist_id
       t.integer :category_id
+      t.integer :anime_id
 
       t.timestamps
     end

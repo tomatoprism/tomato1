@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-3">
-      <%= render 'top/category', categories: @categories, artists: @artists %>
+      <%= render 'category', categories: @categories, artists: @artists, animes: @animes %>
     </div>
     <div class="col-xs-9">
       <% @favariteproducts.each do |product| %>
@@ -10,7 +10,7 @@
             <div class="productbox">
               <div class = "product-image" >
                   <%= link_to product_path(product.id) do %>
-                    <%= attachment_image_tag product, :image %>
+                    <%= attachment_image_tag product, :image, size: '100x100' %>
                   <% end %>
               </div>
               <div class = "product-info" >

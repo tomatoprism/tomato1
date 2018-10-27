@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+		<h2>アニメ新規登録</h2>
+		<%= form_for(@anime_new) do |f| %>
+		<% if @anime_new.errors.any? %>
+	      <div id="error_explanation">
+	       <h3><%= @anime_new.errors.count %>件のエラーが発生しました。</h3>
+	        <ul>
+	         <% @anime_new.errors.full_messages.each do |message| %>
+	          <li><%= message %></li>
+	         <% end %>
+	        </ul>
+	      </div>
+	     <% end %>
+		<p>アニメタイトル</p>
+			<%= f.text_field :anime_name %>
+		<p></p>
+		<p>フリガナ</p>
+			<%= f.text_field :anime_kana %>
+		<p>ジャケット画像</p>
+      		<%= f.attachment_field :logo, placeholder: "アニメロゴ画像" %>
+		<p></p>
+		<%= f.submit '追加' %>
+		<% end %>
+		<p></p>
+		<%= link_to "商品追加", admin_user_path(current_admin.id), class: "btn btn-danger" %>
+		<%= link_to "アーティスト追加", artists_path, class: "btn btn-danger" %>
+		<p></p>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>アニメタイトル</th>
+					<th>フリガナ</th>
+					<th>ロゴ画像</th>
+					<th>編集</th>
+					<th>削除</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @animes.each do |anime| %>
+				<tr>
+					<td><%= anime.anime_name %></td>
+					<td><%= anime.anime_kana %></td>
+					<td><%= attachment_image_tag anime, :logo, size: '50x50' %></td>
+					<td><%= link_to "編集", edit_anime_path(anime) %></td>
+					<td><%= link_to "削除", anime_path(anime), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+  </div>
+</div>

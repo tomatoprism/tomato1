@@ -31,6 +31,9 @@
                     <li role="presentation">
                       <%= link_to "アーティスト追加", artists_path%>
                     </li>
+                    <li role="presentation">
+                      <%= link_to "アニメタイトル追加", animes_path%>
+                    </li>
                   </ul>
                 </li>
                 <li>
@@ -41,6 +44,8 @@
                 </li>
                 <li>
                   <%= link_to "受注一覧",histories_path %>
+                <li>
+                  <%= link_to "お問い合わせ一覧",histories_path %>
                 <li>
                   <%=link_to "ログアウト",destroy_admin_session_path, method: :delete %>
                 </li>

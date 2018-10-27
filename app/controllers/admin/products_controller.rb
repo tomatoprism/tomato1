@@ -42,7 +42,7 @@ class Admin::ProductsController < Admin::ApplicationController
 
 	private
 	def product_params
-        params.require(:product).permit(:title, :image, :price, :label, :stock, :release, :introduction, :artist_id, category_ids: [], discs_attributes: [:id, :disc_name, :done, :_destroy,tracks_attributes: [:id, :music, :list_num]])
+        params.require(:product).permit(:title, :image, :price, :label, :stock, :release, :introduction, :artist_id, :anime_id, category_ids: [], discs_attributes: [:id, :disc_name, :done, :_destroy,tracks_attributes: [:id, :music, :list_num]])
    	end
 end
 

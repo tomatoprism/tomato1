@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  before_action :correct_user, only:[:new, :create, :edit, :update, :destroy]
+  before_action :correct_user, only:[:new, :create, :edit, :update, :destroy,:index ]
 
   def correct_user
       unless admin_signed_in?
@@ -26,6 +26,7 @@ class ArtistsController < ApplicationController
     @products = @artist.products.page(params[:page]).order(release: "DESC")
     @categories = Category.all
     @artists = Artist.all
+    @animes = Anime.all
   end
 
   def edit

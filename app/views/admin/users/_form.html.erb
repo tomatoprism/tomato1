@@ -15,6 +15,8 @@
           <%= f.attachment_field :image, placeholder: "ジャケット画像" %>
         <p>シングル・アルバム名</p>
           <%= f.text_field :title %>
+        <p>アニメタイトル</p>
+          <%= f.select :anime_id, Anime.all.map{|u| [u.anime_name, u.id]}, include_blank: true %>
         <p>アーティスト名</p>
           <%= f.select :artist_id, Artist.all.map{|u| [u.artist_name, u.id]}, include_blank: true %>
         <p>カテゴリー</p>
