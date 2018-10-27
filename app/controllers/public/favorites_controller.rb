@@ -10,6 +10,7 @@ class Public::FavoritesController < ApplicationController
 	def index
         @categories = Category.all
         @artists = Artist.all
+        @animes = Anime.all
         @userfavorites = current_user.favorites
         if @userfavorites.count > 0
         products = @userfavorites.pluck(:product_id)

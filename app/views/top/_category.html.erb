@@ -1,9 +1,23 @@
 
 	<div class="thumbnail">
 		<div class="category_box">
+			<h2 class="">タイトル</h2>
 			<div>
-				<h2 class="">カテゴリー</h2>
+				<nav>
+					<ul>
+					<% animes.each do |a|%>
+						<li>
+							<%= link_to anime_path(a) do %>
+								<% if a.products.count > 0 %>
+									<%= a.anime_name %>(<%= a.products.count %>)
+								<% end %>
+							<% end %>
+						</li>
+					<% end %>
+					</ul>
+				</nav>
 			</div>
+			<h2 class="">カテゴリー</h2>
 			<div>
 				<nav>
 					<ul>
@@ -19,9 +33,7 @@
 					</ul>
 				</nav>
 			</div>
-			<div>
-				<h2>アーティスト</h2>
-			</div>
+			<h2>アーティスト</h2>
 			<div>
 				<nav>
 					<ul>

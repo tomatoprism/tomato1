@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  anime_name: MyString
+  string: MyString
+  anime_kana: MyString
+  string: MyString
+  anime_logo: MyString
+  text: MyString
+
+two:
+  anime_name: MyString
+  string: MyString
+  anime_kana: MyString
+  string: MyString
+  anime_logo: MyString
+  text: MyString

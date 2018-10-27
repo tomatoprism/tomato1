@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root to:'top#top'
 
   devise_for :admins, controllers: {
@@ -40,6 +39,7 @@ Rails.application.routes.draw do
 end
 
   resources :categories, only:[:new, :create, :update, :destroy, :show, :edit]
+  resources :animes, only:[:index, :create, :update, :destroy, :show, :edit]
 
   namespace :admin do
   	  resources :messages, only:[:index, :show]

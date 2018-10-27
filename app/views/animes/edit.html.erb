@@ -1,0 +1,27 @@
+<div class="container">
+	<h2>カテゴリー編集</h2>
+	<%= form_for(@anime_edit) do |f| %>
+	<% if @anime_edit.errors.any? %>
+      <div id="error_explanation">
+       <h3><%= @anime_edit.errors.count %>件のエラーが発生しました。</h3>
+        <ul>
+         <% @anime_edit.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+         <% end %>
+        </ul>
+      </div>
+     <% end %>
+	<p>現在表示されている画像</p>
+	<%= attachment_image_tag @anime_edit, :logo, size: '100x100' %>
+	<p>ロゴ画像</p>
+	<%= f.attachment_field :logo, placeholder: "ロゴ画像" %>
+	<p></p>
+	<p>アニメタイトル</p>
+	<%= f.text_field :anime_name %>
+	<p></p>
+	<p>フリガナ</p>
+	<%= f.text_field :anime_kana %>
+	<p></p>
+	<%= f.submit '編集' %>
+	<% end %>
+</div>
