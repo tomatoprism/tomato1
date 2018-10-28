@@ -15,6 +15,9 @@ class Public::ProductsController < Public::ApplicationController
 	end
 
 	def show
+		@categories = Category.all
+		@artists = Artist.all
+		@animes = Anime.all
 		@product = Product.find(params[:id])
 		@discs = @product.discs
         @review = Review.new
